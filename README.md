@@ -9,6 +9,7 @@
 | `source/dictionary_v0.17.0.md` | 変換元となる原辞書（全編）。読み取り専用の参照。編集しない。 |
 | `pilot/part1-asset.md` | 第1編（物理資産／Asset層）ISO形式試作版。原辞書 第I部（1.01〜1.07）＋新設1件（interaction interface）に対応。 |
 | `pilot/part2-integration.md` | 第2編（空間統合／Integration層）ISO形式試作版。原辞書 第II部（2.01〜2.16）に対応。 |
+| `pilot/part3-information.md` | 第3編（意味・情報／Information層）ISO形式試作版。原辞書 第III部（3.01〜3.16）に対応。 |
 | `decisions.md` | 変換過程で生じた判断の記録（改訂理由・命名判断・関係型の付与方針・検証で見つかった原辞書側の不整合など）。 |
 
 ## 変換の進め方
@@ -24,7 +25,7 @@
 
 - [x] 第1編 物理資産（Asset層） — 概念7件（+新設1件）
 - [x] 第2編 空間統合（Integration層） — 概念16件
-- [ ] 第3編 意味・情報（Information層） — 概念16件
+- [x] 第3編 意味・情報（Information層） — 概念16件
 - [ ] 第4編 機能・変換（Functional層） — 概念5件
 - [ ] 第5編 契約・ガバナンス（Business層） — 概念1件
 - [ ] メタ語彙編（M.01〜M.14、原辞書6.1節） — 全編化時に判断

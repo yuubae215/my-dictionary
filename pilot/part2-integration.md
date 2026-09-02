@@ -499,7 +499,7 @@ NOTE 3.1（座標系）、3.2の別表現、3.3（ハンドネス）、3.4（尺
 | 3.15 | exclusion zone | `eed:0022#001` | `term.exclusion-zone` | Field Device | Type | ProductDesign, MfgRobotics | StationControl | 独自 | 生産 ◯ / CAD — |
 | 3.16 | approach vector | `eed:0023#001` | `term.approach-vector` | Field Device | Type | MfgRobotics | StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
 
-NOTE `eed:0010`（3.3）と `eed:0017`（3.10）の Hierarchy Level は原辞書で `N/A` と記載されている。数学的な取り決めであり階層に依存しないという判断は 3.1（座標系、`N/A（メタ概念）`）と整合する。
+NOTE 本編で Hierarchy Level が `N/A` なのは `eed:0008`（3.1 座標系、原辞書表記 `N/A（メタ概念）`）と `eed:0017`（3.10 距離定義規約、原辞書表記 `N/A`）の**2件**である。いずれも数学的な取り決めであり設備階層に依存しない。原辞書4.3節 軸1×軸2 クロス表の Integration 行はこのセルを1件としており、行計も16ではなく15になっている（`decisions.md` D-2026-08-22-15）。
 
 ## 附属書C (informative) 関係型セマンティクス (Relational Semantics)
 

@@ -15,12 +15,12 @@ Conceptual vocabulary for spatial-data modelling — Part 3: Semantics and infor
 本仕様書は、第1編（物理資産／Asset層）・第2編（空間統合／Integration層）に続く、空間データを扱うモデリングにおける概念語彙の自主技術仕様書である。用語エントリの構造・記述フォーマット・変換方針は先行2編と同一であり、詳細は第1編前書きを参照。以下は本編（第3編）固有の申し合わせである。
 
 - 原辞書の**恒久ID（IRDI）は一切変更していない**。第III部の概念採番（原 `3.01`〜`3.16`）は本仕様書の `3.1`〜`3.16` に**欠番なく1対1で対応**する（附属書E.1）。
-- **メタ語彙（M.01〜M.14、原辞書6.1節）への参照は、引き続き forward reference として先送りする。** 第III部は第I・II部より参照頻度が高いが（`M.04` エンティティ・`M.11` キャッシュ鮮度の自己保証・`M.13` 遷移許可リスト・`M.14` 単一更新経路の強制）、メタ語彙編の起こし方（独立編か附属書か）は全編変換後に改めて判断することとした（`decisions.md` D-2026-08-22-01）。
+- **メタ語彙（M.01〜M.14、原辞書6.1節）への参照は、変換時点では forward reference として先送りした。** 第III部は第I・II部より参照頻度が高い（`M.04` エンティティ・`M.11` キャッシュ鮮度の自己保証・`M.13` 遷移許可リスト・`M.14` 単一更新経路の強制）。（2026-09-02追補：メタ語彙は独立編 `STD-EED-0001-M`（第M編）として変換され、本編の該当5箇所は第M編の採番（`第M編3.4`／`3.11`／`3.13`／`3.14`）への参照に解決済み。3.12 の `M.13` への参照は同時に `constrained-by` へ精密化した — `decisions.md` D-2026-09-02-01、-04。）
 - **写像作業の結果、本編16概念に新規の概念ドリフトは確認されなかった（0/16）。** ただし `3.11 V&V Level` は、原辞書5章の命名規約（State／Status／Level の使い分け）に基づき「検証ステータス」から「検証レベル」へ改称された経緯が既に原辞書側で記録されている（本仕様書では既解決の履歴として3.11のNoteに残した。`decisions.md` D-2026-08-22-04）。
 - **原辞書4.5節「新たに判明した未収録」の記述に陳腐化を1件発見した。** 同節は集計期間（ウィンドウ）を「判断保留」の未収録項目として記すが、Clause 5には `3.15 Aggregation Window` が RAMI 4.0 `Information / Enterprise / Type` として既に確定収録されている。本仕様書では3.15を通常の確定エントリとして収録した（`decisions.md` D-2026-08-22-02）。
 - 原辞書2.4節「対比によって識別される語彙ペア」のうち2組が本編に含まれる：`3.1 declared value` ／ `3.2 derived value`、`3.3 type identifier` ／ `3.4 instance identifier`。両組とも該当エントリのNote 2に対比ペアである旨を明記した。
 - 原辞書の一部エントリが持つ「対応する外部規格・慣例」欄（本編では3.13）は、Note 3 to entry（用法上の注意と同枠）へ統合する規則を新たに定めた（附属書E.2追補、`decisions.md` D-2026-08-22-03）。
-- `mates-to`（嵌合）関係型は本編でも確定使用箇所が見つからなかった。3.7（型付き関係）が内部ファセット値として近い内容を持つが、概念エントリ間の関係を表すNote 2の対象とは性質が異なるため採用を見送った（`decisions.md` D-2026-08-22-05）。
+- `mates-to`（嵌合）関係型は本編でも確定使用箇所が見つからなかった。3.7（型付き関係）が内部ファセット値として近い内容を持つが、概念エントリ間の関係を表すNote 2の対象とは性質が異なるため採用を見送った（`decisions.md` D-2026-08-22-05）。（2026-09-02追補：全6編で確定使用ゼロが確定し、本型は廃止された。）
 
 ## 序文 (Introduction)
 
@@ -92,7 +92,7 @@ Note 2 to entry: Concept relations:
 — refers-to 3.2 (derived value) ※対比ペア。原辞書2.4節参照
 — refers-to 1.3 (mass properties, 第1編)
 — refers-to 3.9 (grasp specification and synthesis), 3.11 (v&v level)
-— refers-to transformation activity（原4.04、第4編で採番予定）
+— refers-to 3.5 (transformation activity, 第4編)
 
 Note 3 to entry: プログラミング言語の変数宣言（declare）やアサーション（assert）とは別の軸の概念である。変数宣言は「この名前の変数が存在し、この型を持つ」という構文上の取り決め、assertは「ある条件が真であるはずだ」という実行時の検証手段であり、いずれも**値の由来を問わない**。本エントリは値の出どころが「利用者が明示的に与えた」ものか「システムが計算で導いた」ものかを区別する分類である。対になる算出値（3.2）との違いを、1つの答えの裏に隠さないこと。
 
@@ -114,8 +114,8 @@ Note 2 to entry: Concept relations:
 — refers-to 3.1 (declared value) ※対比ペア。原辞書2.4節参照
 — refers-to 1.3 (mass properties, 第1編)
 — refers-to 3.9 (grasp specification and synthesis), 3.11 (v&v level), 3.15 (aggregation window)
-— refers-to transformation activity（原4.04）、measurement（原4.05、いずれも第4編で採番予定）
-— refers-to freshness guarantee（原M.11、メタ語彙編で採番予定）
+— refers-to 3.5 (transformation activity, 第4編), 3.2 (measurement, 第4編)
+— refers-to 3.11 (self-validating freshness guarantee, 第M編)
 
 **III-B. 識別と意味の同定**
 
@@ -143,7 +143,7 @@ Note 3 to entry: 対になる個体識別子（3.4）と混同してはならな
 個体識別子
 IRDI: `eed:0027#001`
 
-物理的・具体的な個体を指す識別子。同じ型識別子（3.3）を共有する個体同士でも、個体識別子は重複しない。発番権限は単一システムに限定される（原M.14、メタ語彙編で採番予定）。
+物理的・具体的な個体を指す識別子。同じ型識別子（3.3）を共有する個体同士でも、個体識別子は重複しない。発番権限は単一システムに限定される（single write path、第M編3.14）。
 
 EXAMPLE （生産）ワーク個体識別子（2次元コード・RFIDで個体に紐づく）。
 
@@ -152,7 +152,7 @@ Note 1 to entry: Core image：「一個一個に貼られたシリアル名札�
 Note 2 to entry: Concept relations:
 — refers-to 3.3 (type identifier) ※対比ペア。原辞書2.4節参照
 — refers-to 3.16 (traceability record)
-— refers-to entity（原M.04）、single write path（原M.14、いずれもメタ語彙編で採番予定）
+— refers-to 3.4 (entity, 第M編), 3.14 (single write path, 第M編)
 
 ### 3.5
 **revision**
@@ -191,7 +191,7 @@ Note 3 to entry: 辞書はリリース単位で版が変わり、あるリリー
 型付き関係
 IRDI: `eed:0030#001`
 
-2つのエンティティ（原M.04、メタ語彙編で採番予定）間の関係を、幾何情報を持たない純粋な関係性として、種類（型）付きの有向辺で表現する考え方。
+2つのエンティティ（第M編3.4）間の関係を、幾何情報を持たない純粋な関係性として、種類（型）付きの有向辺で表現する考え方。
 
 EXAMPLE 1 （生産）ワークの親子構成関係（アセンブリ構造）。
 
@@ -201,7 +201,7 @@ Note 1 to entry: Core image：二つの物を線でつなぐとき、その線�
 
 Note 2 to entry: Concept relations:
 — refers-to 2.9 (hierarchical coordinate structure, 第2編), 2.13 (datum reference feature, 第2編)
-— refers-to entity（原M.04、メタ語彙編で採番予定）
+— refers-to 3.4 (entity, 第M編)
 
 Note 3 to entry: 本エントリの「意味カテゴリ」軸が持つ「固定／取付／包含／整列」という値は、`mates-to`（嵌合）型が本来対象とする実務内容に近い。しかしこれは本エントリという1つの概念が内部に持つファセット値であり、2つの概念エントリ間の関係（Note 2の対象）とは表現の階層が異なるため、`mates-to` をここに正式適用することは見送った（`decisions.md` D-2026-08-22-05）。
 
@@ -238,7 +238,7 @@ Note 2 to entry: Concept relations:
 — refers-to 1.4 (stable pose, 第1編)
 — refers-to 2.5 (pose, 第2編), 2.15 (exclusion zone, 第2編), 2.16 (approach vector, 第2編)
 — refers-to 3.1 (declared value), 3.2 (derived value), 3.10 (symmetry rule), 3.11 (v&v level)
-— refers-to transformation activity（原4.04、第4編で採番予定）
+— refers-to 3.5 (transformation activity, 第4編)
 
 Note 3 to entry: 「宣言してから解決する」という逐次ワークフローを1つの概念としてまとめて扱っており、原辞書2.4節の対比ペアとは性質が異なる（分割していない）。
 
@@ -284,7 +284,7 @@ Note 3 to entry: 和文名は原辞書で「検証ステータス」から「検
 admitted term: lifecycle state
 IRDI: `eed:0035#001`
 
-対象がライフサイクルのどの段階にあるかを表す状態。あらかじめ定義された遷移ルール（原M.13、メタ語彙編で採番予定）に従ってのみ変化する。
+対象がライフサイクルのどの段階にあるかを表す状態。あらかじめ定義された遷移ルール（第M編3.13）に従ってのみ変化する。
 
 EXAMPLE （生産）加工工程状態（原材料／半完成／完成／手直し／廃棄）。
 
@@ -293,9 +293,11 @@ Note 1 to entry: Core image：その対象が今どの工程の途中にいる�
 Note 2 to entry: Concept relations:
 — refers-to 1.6 (process location, 第1編)
 — refers-to 3.14 (event), 3.16 (traceability record)
-— refers-to work interface（原4.02、第4編で採番予定）、allowed-transition list（原M.13、メタ語彙編で採番予定）
+— refers-to 3.3 (work interface, 第4編)
+— refers-to 3.11 (v&v level) ※Note 3 が対比している隣接概念（第M編附属書F.4 で追加）
+— constrained-by 3.13 (allowed-transition list, 第M編) ※定義文の「あらかじめ定義された遷移ルールに従ってのみ変化する」による。第M編の変換にあたり refers-to から精密化した（`decisions.md` D-2026-09-02-04）
 
-Note 3 to entry: State と Status を混同しないこと。本エントリ（State）は対象に内在する様態であり、遷移規則（原M.13）に従ってのみ変化する。これに対し 3.11 V&V Level（Level）は、外から判定者が付与する、順序のある段階である。「ワークは半完成である」は工程状態、「この把持姿勢は実機検証済である」は 3.11 V&V Level。
+Note 3 to entry: State と Status を混同しないこと。本エントリ（State）は対象に内在する様態であり、遷移規則（第M編3.13）に従ってのみ変化する。これに対し 3.11 V&V Level（Level）は、外から判定者が付与する、順序のある段階である。「ワークは半完成である」は工程状態、「この把持姿勢は実機検証済である」は 3.11 V&V Level。
 
 ### 3.13
 **state expectation**
@@ -311,7 +313,7 @@ Note 1 to entry: Core image：「ここに来る時はこうなっていてほ�
 Note 2 to entry: Concept relations:
 — refers-to 1.6 (process location, 第1編)
 — refers-to 3.11 (v&v level), 3.14 (event)
-— refers-to work interface（原4.02）、nested ipo decomposition（原4.03）、transformation activity（原4.04）、contract boundary（原5.01、いずれも第4編・第5編で採番予定）
+— refers-to 3.3 (work interface, 第4編), 3.4 (nested IPO decomposition, 第4編), 3.5 (transformation activity, 第4編), 3.1 (contract boundary, 第5編)
 
 Note 3 to entry: 契約による設計（Design by Contract）の事前条件・事後条件と同型であり、原5.01「契約境界」の、状態という側面への適用と見ることもできる（原辞書「対応する外部規格・慣例」欄をNote 3へ統合。`decisions.md` D-2026-08-22-03）。
 
@@ -473,17 +475,18 @@ NOTE 3.15（集計期間）の Hierarchy Level（`Enterprise`）・Life Cycle（
 
 ### C.1 概念間関係型
 
-本編で確定使用した関係型はrefers-toのみである。is-a・part-of・constrained-by・transformsの確定使用箇所は見つからなかった。
+本編で確定使用した関係型はrefers-toのみだった。第M編の変換にあたり、3.12（工程状態）→ 第M編3.13（遷移許可リスト）を `constrained-by` へ精密化したため、現在の確定使用は refers-to・constrained-by の2型である（`decisions.md` D-2026-09-02-04）。
 
 | 関係型 | 意味 | 本編での使用 |
 |---|---|---|
 | refers-to | 参照・パラメータ関連付け | 本編の全関係 |
 | is-a | 上位概念・下位概念関係 | 未確定使用（3.8「目印」分類値↔第2編3.14 は候補にとどめる） |
-| part-of / constrained-by / transforms | （第1・2編を参照） | 本編では未出現 |
+| constrained-by | 条件・規則による拘束 | **確定1件**（3.12 → 第M編3.13。定義文の「あらかじめ定義された遷移ルールに従ってのみ変化する」による。第M編の変換時に refers-to から精密化） |
+| part-of / transforms | （第1・2編を参照） | 本編では未出現 |
 | calibrated-from / aligns-with | （第2編で候補提示） | 本編では該当箇所なし |
-| mates-to | 嵌合を表す関係（第1編で予告） | 本編でも未出現（3.7のNote 3参照。`decisions.md` D-2026-08-22-05） |
+| ~~mates-to~~ | 嵌合を表す関係（第1編で予告） | 本編でも未出現（3.7のNote 3参照）。全6編で確定使用ゼロのため**廃止**（第M編附属書C.1 NOTE 3） |
 
-NOTE 対比ペア（3.1/3.2、3.3/3.4）は正式な関係型ではなく、原辞書2.4節に由来する注記レベルの対応として Note 2 に明記した。第2編の局所/ワールド空間ペアと同じ扱いである。
+NOTE 対比ペア（3.1/3.2、3.3/3.4）は正式な関係型ではなく、原辞書2.4節に由来する注記レベルの対応として Note 2 に明記した。第2編の局所/ワールド空間ペアと同じ扱いである。対比ペアの親概念を辞書に立てるかは第M編附属書F.1 で裁き、**立てない**という結論になった（親概念の受け皿はサブグループ名である。`decisions.md` D-2026-09-02-06）。
 
 ## 附属書D (informative) 登場人物対応表 — 本編の概念で語られる実在物
 
@@ -527,6 +530,8 @@ NOTE 対比ペア（3.1/3.2、3.3/3.4）は正式な関係型ではなく、原�
 | 3.16 | 3.16 | `eed:0039#001` | traceability record |
 
 NOTE 原辞書の採番（`3.01`〜`3.16`）と本仕様書の採番（`3.1`〜`3.16`）は欠番なく1対1で対応する。第1・2編と同様、本編にも概念分離・新設は発生していない。
+
+NOTE（2026-09-02追補） 本編の Note 2（Concept relations）が編をまたいで参照する箇所は、**参照先の編の採番と編番号を必ず含む**（例：`3.3 (work interface, 第4編)`。原採番を併記している箇所もある — 例：`1.04 (stable pose, 第1編 3.4)`）。第4編のみ原辞書の採番と本仕様書の採番が一致しないため（原 `4.02` → 第4編 `3.3` 等）、原採番との対応は第4編附属書E.1 を参照すること。他の編は原採番と1対1で対応する（第1編は `1.0N` → `3.N`）。
 
 ### E.2 欄の写像規則（追補）
 

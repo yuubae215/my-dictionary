@@ -170,7 +170,7 @@ Note 1 to entry: Core image：「どこにいて、どちらを向いている�
 Note 2 to entry: Concept relations:
 — refers-to 1.04 (stable pose, 第1編 3.4), 1.05 (resolution, 第1編 3.5)
 — refers-to 3.2 (reference coordinate frame), 3.6 (rotation representation convention), 3.10 (distance metric convention), 3.11 (homogeneous transformation matrix), 3.16 (approach vector)
-— refers-to grasp specification and synthesis（原3.09、第3編で採番予定）、symmetry rule（原3.10、第3編で採番予定）
+— refers-to 3.9 (grasp specification and synthesis, 第3編), 3.10 (symmetry rule, 第3編)
 
 ### 3.6
 **rotation representation convention**
@@ -226,8 +226,8 @@ Note 1 to entry: Core image：「街全体の地図での位置」。どの建�
 Note 2 to entry: Concept relations:
 — refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame), 3.3 (handedness)
 — refers-to 3.7 (local space) ※対比ペア。3.4節参照
-— refers-to 3.12 (coordinate transformation)
-— refers-to freshness guarantee（原M.11、メタ語彙編で採番予定）
+— refers-to 3.9 (hierarchical coordinate structure), 3.12 (coordinate transformation) ※定義文が「階層座標構造（3.9）に沿って親から親へと座標変換（3.12）することで得られる」と両者を名指ししている（3.9 は第M編附属書F.4 で追加）
+— refers-to 3.11 (self-validating freshness guarantee, 第M編)
 
 ### 3.9
 **hierarchical coordinate structure**
@@ -245,7 +245,7 @@ Note 1 to entry: Core image：体の各部位が親子関係でつながった�
 Note 2 to entry: Concept relations:
 — refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame) ※3.2は3.9の構成要素である可能性（part-of候補、全編化時に精密化）
 — refers-to 3.11 (homogeneous transformation matrix), 3.12 (coordinate transformation)
-— refers-to typed relation（原3.07、第3編で採番予定）
+— refers-to 3.7 (typed relation, 第3編)
 
 ### 3.10
 **distance metric convention**
@@ -263,7 +263,8 @@ Note 1 to entry: Core image：「2点間の距離は5」と言われても、ま
 
 Note 2 to entry: Concept relations:
 — refers-to 3.1 (coordinate system), 3.5 (pose)
-— refers-to measurement（原4.05、第4編で採番予定）
+— refers-to 3.2 (measurement, 第4編)
+— refers-to 3.4 (unit scale convention), 3.6 (rotation representation convention) ※Note 3 が名指しする「同じ型の落とし穴」の2件（第M編附属書F.4 で追加）
 
 Note 3 to entry: 3.4（尺度定義）、3.6（回転表現規約）と同じ型の落とし穴である。いずれも「技術的には他の選択肢でも成立するが、どれを採ったかを書かなければ受け手が復元できない」取り決めであり、書き忘れても数値としては通ってしまう。
 
@@ -304,7 +305,7 @@ Note 1 to entry: Core image：「自分の部屋の中での位置」を「街�
 Note 2 to entry: Concept relations:
 — transforms 3.7 (local space) → 3.8 (world space) ※本編で確定した最初の transforms 型。ローカル空間の値を、階層座標構造（3.9）に沿ってワールド空間の値へ変換する操作関係を表す
 — refers-to 3.2 (reference coordinate frame), 3.9 (hierarchical coordinate structure), 3.11 (homogeneous transformation matrix), 3.14 (calibration reference)
-— refers-to freshness guarantee（原M.11、メタ語彙編で採番予定）
+— refers-to 3.11 (self-validating freshness guarantee, 第M編)
 
 Note 3 to entry: 階層座標構造（3.9）が座標系同士の木構造そのものを指すのに対し、本エントリはその木を辿って値を実際に計算する**動作**を指す。
 
@@ -327,7 +328,7 @@ Note 2 to entry: Concept relations:
 — refers-to 1.02 (topology, 第1編 3.2)
 — refers-to 3.2 (reference coordinate frame) ※constrained-by の候補（3.2 のNote 2参照）
 — refers-to 3.14 (calibration reference) ※aligns-with の候補。カメラ座標系とロボットベース座標系はランドマーク（3.14）で結び、ロボットとワーク座標系は本エントリ（データム）を実測して結ぶという、2つの位置合わせ手段が連鎖する関係にあたる
-— refers-to typed relation（原3.07、第3編で採番予定）、spatial element classification（原3.08、第3編で採番予定）
+— refers-to 3.7 (typed relation, 第3編), 3.8 (spatial element classification, 第3編)
 
 ### 3.14
 **calibration reference**
@@ -349,7 +350,7 @@ Note 2 to entry: Concept relations:
 — refers-to 3.11 (homogeneous transformation matrix) ※calibrated-from の候補（3.11 のNote 2参照）
 — refers-to 3.12 (coordinate transformation)
 — refers-to 3.13 (datum reference feature) ※aligns-with の候補（3.13 のNote 2参照）
-— refers-to spatial element classification（原3.08、第3編で採番予定）
+— refers-to 3.8 (spatial element classification, 第3編)
 
 Note 3 to entry: 3.13（基準フィーチャー）とは役割が異なるが、実務では**連鎖して使う**。カメラ座標系とロボットベース座標系はランドマークや校正ボード（本エントリ）で結び、ロボットとワーク座標系はデータム（3.13）を実測して結ぶ。どちらか一方だけでは、カメラで見た点をワークのどこかとして語れない。読み取れる細かさは 1.05（分解能、第1編 3.5）が上限を決める。
 
@@ -365,7 +366,7 @@ EXAMPLE （生産）鏡面加工部・センサ受光部など、把持ツール
 Note 1 to entry: Core image：「ここに触れるな」という見えない立入禁止テープ。
 
 Note 2 to entry: Concept relations:
-— refers-to grasp specification and synthesis（原3.09、第3編で採番予定）
+— refers-to 3.9 (grasp specification and synthesis, 第3編)
 
 ### 3.16
 **approach vector**
@@ -382,7 +383,7 @@ Note 1 to entry: Core image：手を伸ばす最後の一瞬、どの向きか�
 
 Note 2 to entry: Concept relations:
 — refers-to 3.5 (pose)
-— refers-to grasp specification and synthesis（原3.09、第3編で採番予定）
+— refers-to 3.9 (grasp specification and synthesis, 第3編)
 
 ## 4 基礎規約 (Foundational Physical & Mathematical Rules)
 
@@ -516,7 +517,7 @@ NOTE 本編で Hierarchy Level が `N/A` なのは `eed:0008`（3.1 座標系、
 | **transforms** | ある空間・座標系上の値を、別の空間・座標系上の値へ変換する操作関係（本編で新規確定） | 連想関係 (associative) | 3.12 → 3.7, 3.8（1組） |
 | calibrated-from | 未知の変換が、既知幾何を持つ基準物によって解かれた、という由来関係（提案・未確定） | 連想関係 (associative) | 候補：3.2↔3.14、3.11↔3.14 |
 | aligns-with | 異なる位置合わせ手段が、同じ2座標系間の対応づけを目的として連鎖的に使われる関係（提案・未確定） | 連想関係 (associative) | 候補：3.13↔3.14 |
-| mates-to | 嵌合・作業一致を表す関係（第1編で予告） | 連想関係 (associative) | 本編でも未出現。第3編（3.07 型付き関係）以降で候補を検討 |
+| ~~mates-to~~ | 嵌合・作業一致を表す関係（第1編で予告） | 連想関係 (associative) | 本編でも未出現。第3〜5編・第M編でも出現せず、**廃止**（第M編附属書C.1 NOTE 3） |
 
 NOTE 1 `calibrated-from`・`aligns-with` を候補にとどめた理由：どちらも実務上の連携（キャリブレーションのワークフロー、位置合わせ手段の使い分け）としては明確だが、概念定義そのものが相手概念を前提とする関係（is-aやtransformsのように定義文が直接その関係を述べている）ではなく、**エントリの用法上の注意・具体例が間接的に示す運用上の関係**にとどまる。ISO 704の連想関係は本来幅広い実務上の関連付けを許容するため、全編化時のレビューで正式採用してよい候補である（`decisions.md` D-2026-08-21-03）。
 
@@ -594,6 +595,8 @@ eed:LocalSpace a owl:Class ;
 | 3.16 | 2.16 | `eed:0023#001` | approach vector |
 
 NOTE 第1編と異なり、本編には概念分離・新設は発生していない。原辞書の採番（`2.01`〜`2.16`）と本仕様書の採番（`3.1`〜`3.16`）は欠番なく1対1で対応する。
+
+NOTE（2026-09-02追補） 本編の Note 2（Concept relations）が編をまたいで参照する箇所は、**参照先の編の採番と編番号を必ず含む**（例：`3.3 (work interface, 第4編)`。原採番を併記している箇所もある — 例：`1.04 (stable pose, 第1編 3.4)`）。第4編のみ原辞書の採番と本仕様書の採番が一致しないため（原 `4.02` → 第4編 `3.3` 等）、原採番との対応は第4編附属書E.1 を参照すること。他の編は原採番と1対1で対応する（第1編は `1.0N` → `3.N`）。
 
 ### E.2 欄の写像規則
 

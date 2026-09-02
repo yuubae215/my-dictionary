@@ -14,10 +14,11 @@ Conceptual vocabulary for spatial-data modelling — Part 2: Spatial integration
 
 本仕様書は、第1編（物理資産／Asset層、STD-EED-0001-1）に続く、空間データを扱うモデリングにおける概念語彙の自主技術仕様書である。用語エントリの構造・記述フォーマット・変換方針は第1編と同一であり、詳細は第1編前書きを参照。以下は本編（第2編）固有の申し合わせである。
 
-- 原辞書の**恒久ID（IRDI）は一切変更していない**。第II部の概念採番（原 `2.01`〜`2.16`）は本仕様書の `3.1`〜`3.16` に**欠番なく1対1で対応**する（附属書E.1）。第1編で発生した概念分離（原1.07 → 3.7／3.8）のような番号のずれは、本編には生じていない。
+- 原辞書の**恒久ID（IRDI）は一切変更していない**。第II部の概念採番（原 `2.01`〜`2.16`）は本仕様書の `3.1`〜`3.16` に**欠番なく1対1で対応**する（附属書E.1）。第1編で発生した概念分離（原1.07 → 3.8／3.9）のような番号のずれは、本編には生じていない。
 - 第1編の申し合わせどおり、**エントリ本文には IRDI のみを残し、その他のメタデータは附属書Bに集約**する。
-- **概念間関係には第1編で定義した4型（is-a／part-of／refers-to／constrained-by）に加え、本編で新たに `transforms` 型を導入する**（附属書C.1）。第1編附属書C.1 NOTE 1 で予告した4型のうち、`transforms` は 3.12（座標変換）が 3.7（ローカル空間）の値を 3.8（ワールド空間）の値へ変換するという操作関係を表すために確定使用した。`calibrated-from`・`aligns-with`・`mates-to` は本編でも根拠となりうる候補箇所が見つかったが、確信度が is-a／transforms ほど高くないため、各該当エントリの Note に**候補**として明記するにとどめ、正式な型としては採用していない（確定は全編化時のレビューに委ねる。詳細は `decisions.md` D-2026-08-21-03）。
-- **写像作業（定義文の逐語読み直し）による検証の結果、本編16概念に、第1編1.07（eed:0007）のような概念ドリフト（定義文と命名意図の乖離）は確認されなかった（0/16）。** 英語主名称・旧恒久ID（`term.*` スラグ）・定義文の三者は全エントリで整合していた。
+- **概念間関係には第1編で定義した4型（is-a／part-of／refers-to／constrained-by）に加え、本編で新たに `transforms` 型を導入する**（附属書C.1）。第1編附属書C.1 NOTE 1 で予告した4型のうち、`transforms` は 3.13（座標変換）が 3.8（ローカル空間）の値を 3.9（ワールド空間）の値へ変換するという操作関係を表すために確定使用した。`calibrated-from`・`aligns-with`・`mates-to` は本編でも根拠となりうる候補箇所が見つかったが、確信度が is-a／transforms ほど高くないため、各該当エントリの Note に**候補**として明記するにとどめ、正式な型としては採用していない（確定は全編化時のレビューに委ねる。詳細は `decisions.md` D-2026-08-21-03）。
+- **対比ペア「ローカル空間／ワールド空間」の上位概念として `3.7`（空間表現、`eed:0146#001`）を新設した**（**新設提案**）。子概念だけが並んでいると、読み手はそれが何の一種なのかを掴めないまま定義文に入ることになる、という理由による（`decisions.md` D-2026-09-02-12、`backlog.md` P-05）。これにともない `3.7` 以降の採番が1つずつ繰り下がった（附属書E.1。恒久IDは不変）。
+- **写像作業（定義文の逐語読み直し）による検証の結果、原辞書由来の16概念に、原1.07（`eed:0007`、第1編3.7）のような概念ドリフト（定義文と命名意図の乖離）は確認されなかった（0/16）。** 英語主名称・旧恒久ID（`term.*` スラグ）・定義文の三者は全エントリで整合していた。
 - **原辞書の記述に、部立て説明文（4.2節相当）の件数・範囲の誤記を1件発見した。** 原辞書該当箇所（前文592行目付近）は「II-B 位置・姿勢という値（2.05〜2.09、4件）」「II-D 空間に設置される意味づけられた要素（2.13〜2.16、3件）」と記すが、実際の本文見出し・エントリ配置は II-B が `2.05`〜`2.10`（6件、見出し自体は「位置・姿勢・**隔たり**という値」と正しく `2.10` を含意している）、II-D が `2.13`〜`2.16`（4件）である。本仕様書 Clause 5 では実体に合わせて是正した表記を採用する（`decisions.md` D-2026-08-21-01）。
 - 原辞書 3章「基礎規約」は、第1編附属書E.3が定めた変換計画（「3章 基礎規約 → 第2編（Integration層）の Clause 4 として規定」）に従い、本編 **Clause 4** として収録する。第1編には基礎規約に相当するClauseがなかったため、本編で初めて登場する（`decisions.md` D-2026-08-21-02）。この配置替えに伴い、第1編で Clause 4 だった「概念体系」は本編では **Clause 5** に繰り下がる。
 - 原辞書の独自コンテンツ（登場人物対応表の該当抜粋）は、第1編と同様に informative な附属書Dとして保全する。
@@ -72,7 +73,7 @@ flowchart TD
 
 各エントリは、用語（英語主名称・和文名・admitted term）、恒久ID（IRDI）、定義文、適用例（EXAMPLE）、およびエントリ注記（Note 1: コアイメージ／Note 2: 概念間関係／Note 3以降: 用法上の注意）で構成されます。分類メタデータは附属書Bに集約しています。
 
-**サブグループ（区分基準＝主題。原辞書の件数誤記を是正、`decisions.md` D-2026-08-21-01）:** II-A 座標系そのもの（3.1〜3.4、4件）／ II-B 位置・姿勢・隔たりという値（3.5〜3.10、6件）／ II-C 変換という操作（3.11〜3.12、2件）／ II-D 空間に設置される意味づけられた要素（3.13〜3.16、4件）。
+**サブグループ（区分基準＝主題。原辞書の件数誤記を是正、`decisions.md` D-2026-08-21-01）:** II-A 座標系そのもの（3.1〜3.4、4件）／ II-B 位置・姿勢・隔たりという値（3.5〜3.11、7件。うち3.7は本仕様書での新設提案）／ II-C 変換という操作（3.12〜3.13、2件）／ II-D 空間に設置される意味づけられた要素（3.14〜3.17、4件）。
 
 **II-A. 座標系そのもの**
 
@@ -81,7 +82,7 @@ flowchart TD
 座標系
 IRDI: `eed:0008#001`
 
-空間上の点の位置・向きを、1つの原点と、互いに直交する軸（本仕様書ではClause 4に従い右手系のX, Y, Z軸）に対する数値の組として表現するための、最も基本的な枠組み。本編の他のエントリ（3.2、3.7、3.8等）は、いずれもこの枠組みが具体的にどこに設置され、他の座標系とどう関係するかを規定する下位概念である。
+空間上の点の位置・向きを、1つの原点と、互いに直交する軸（本仕様書ではClause 4に従い右手系のX, Y, Z軸）に対する数値の組として表現するための、最も基本的な枠組み。本編の他のエントリ（3.2、3.8、3.9等）は、いずれもこの枠組みが具体的にどこに設置され、他の座標系とどう関係するかを規定する下位概念である。
 
 EXAMPLE （生産・CAD共通）Clause 4 に定めるROS REP-103準拠の右手直交座標系（+X前方、Y左、Z上）。あらゆる位置・姿勢データは、最終的にこの座標系上の数値の組として表現される。
 
@@ -89,9 +90,9 @@ Note 1 to entry: Core image：空間内のあらゆる位置を、原点から�
 
 Note 2 to entry: Concept relations:
 — refers-to 3.3 (handedness)
-— refers-to 3.7 (local space), 3.8 (world space)
-— refers-to 3.9 (hierarchical coordinate structure)
-— refers-to 3.10 (distance metric convention)
+— refers-to 3.8 (local space), 3.9 (world space)
+— refers-to 3.10 (hierarchical coordinate structure)
+— refers-to 3.11 (distance metric convention)
 
 ### 3.2
 **reference coordinate frame**
@@ -108,10 +109,10 @@ Note 1 to entry: Core image：空間のどこかに立てられた、それ自�
 
 Note 2 to entry: Concept relations:
 — is-a 3.1 (coordinate system)
-— refers-to 3.3 (handedness), 3.4 (unit scale convention), 3.5 (pose), 3.7 (local space), 3.8 (world space), 3.11 (homogeneous transformation matrix), 3.12 (coordinate transformation)
-— refers-to 3.9 (hierarchical coordinate structure) ※階層座標構造を構成する各ノードは参照座標系であり、part-of（3.2 が 3.9 の部分）の候補。確信度は is-a ほど高くなく、全編化時に精密化する
-— refers-to 3.13 (datum reference feature) ※constrained-by（拘束）の候補。3-2-1データム拘束によって参照座標系（例：製品基準座標系）が確立される関係にあたる
-— refers-to 3.14 (calibration reference) ※calibrated-from の候補。2つの参照座標系間の未知変換がキャリブレーション基準によって解かれる関係にあたる
+— refers-to 3.3 (handedness), 3.4 (unit scale convention), 3.5 (pose), 3.8 (local space), 3.9 (world space), 3.12 (homogeneous transformation matrix), 3.13 (coordinate transformation)
+— refers-to 3.10 (hierarchical coordinate structure) ※階層座標構造を構成する各ノードは参照座標系であり、part-of（3.2 が 3.10 の部分）の候補。確信度は is-a ほど高くなく、全編化時に精密化する
+— refers-to 3.14 (datum reference feature) ※constrained-by（拘束）の候補。3-2-1データム拘束によって参照座標系（例：製品基準座標系）が確立される関係にあたる
+— refers-to 3.15 (calibration reference) ※calibrated-from の候補。2つの参照座標系間の未知変換がキャリブレーション基準によって解かれる関係にあたる
 
 ### 3.3
 **handedness**
@@ -129,7 +130,7 @@ Note 1 to entry: Core image：右手でも左手でも「X軸→Y軸→Z軸」�
 
 Note 2 to entry: Concept relations:
 — refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame)
-— refers-to 3.7 (local space), 3.8 (world space)
+— refers-to 3.8 (local space), 3.9 (world space)
 — refers-to 3.6 (rotation representation convention)
 
 ### 3.4
@@ -148,7 +149,7 @@ Note 1 to entry: Core image：図面に書かれた「10」という数値が、
 
 Note 2 to entry: Concept relations:
 — refers-to 3.2 (reference coordinate frame)
-— refers-to 3.11 (homogeneous transformation matrix)
+— refers-to 3.12 (homogeneous transformation matrix)
 
 Note 3 to entry: 単位系そのものの規定はClause 4が担う。本エントリは、個々のCADファイル・センサデータ・通信メッセージが実際にその規約を守れているかを検証・変換する運用側の責務を指す。
 
@@ -168,9 +169,9 @@ EXAMPLE 2 （CAD）立体の主要状態（原点位置と向き）。
 Note 1 to entry: Core image：「どこにいて、どちらを向いているか」を一組で表す1枚のスナップショット。
 
 Note 2 to entry: Concept relations:
-— refers-to 1.04 (stable pose, 第1編 3.4), 1.05 (resolution, 第1編 3.5)
-— refers-to 3.2 (reference coordinate frame), 3.6 (rotation representation convention), 3.10 (distance metric convention), 3.11 (homogeneous transformation matrix), 3.16 (approach vector)
-— refers-to 3.9 (grasp specification and synthesis, 第3編), 3.10 (symmetry rule, 第3編)
+— refers-to 第1編3.4 (stable pose), 第1編3.5 (resolution)
+— refers-to 3.2 (reference coordinate frame), 3.6 (rotation representation convention), 3.11 (distance metric convention), 3.12 (homogeneous transformation matrix), 3.17 (approach vector)
+— refers-to 第3編3.11 (grasp specification and synthesis), 第3編3.12 (symmetry rule)
 
 ### 3.6
 **rotation representation convention**
@@ -186,11 +187,34 @@ EXAMPLE 2 （CAD）外部フォーマットからオイラー角を取り込む�
 Note 1 to entry: Core image：「Z→Y→X の順に回す」と言われても、軸が回転に連れて一緒に動くのか、床に描いた線のように固定されたままなのかで、行き着く姿勢はまったく別物になる。
 
 Note 2 to entry: Concept relations:
-— refers-to 3.3 (handedness), 3.5 (pose), 3.11 (homogeneous transformation matrix)
+— refers-to 3.3 (handedness), 3.5 (pose), 3.12 (homogeneous transformation matrix)
 
 Note 3 to entry: ジンバルロックはオイラー角に固有の縮退であり、表現形式の選択理由になる。Clause 4 は本アーキテクチャの既定値（クォータニオン、外因性X→Y→Z）を定めるが、外部から受け取るデータがその規約に従っている保証はないため、取り込み時に必ず順序と内因性・外因性を確認する。
 
 ### 3.7
+**spatial representation**
+空間表現
+IRDI: `eed:0146#001`（**新設提案**。Note 3参照）
+
+対象の位置・姿勢を、ある参照座標系（3.2）を基準として表した値。どの参照座標系を基準に取るかによって、同じ対象が異なる値で表される。
+
+EXAMPLE 1 （CAD）同じ頂点が、部品自身を基準にすれば (0, 0, 0)、シーン全体を基準にすれば (1200, 300, 850) と表される。
+
+EXAMPLE 2 （生産）同じ把持点を、ワークを基準に語るか、ロボットベースを基準に語るか。
+
+Note 1 to entry: Core image：「どこから見た値か」を添えなければ意味を持たない数値。
+
+Note 2 to entry: Concept relations:
+— is-a の逆方向: 3.8 (local space)、3.9 (world space) が本概念の下位概念である。両者は基準に取る参照座標系が**親フレームか、シーン全体のルートか**で分かれる
+— refers-to 3.2 (reference coordinate frame) ※基準に取るもの
+— refers-to 3.13 (coordinate transformation) ※基準を取り替える操作
+— refers-to 3.10 (hierarchical coordinate structure) ※基準の親子関係をたどる木構造
+
+Note 3 to entry: 本エントリは、原辞書2.4節の対比ペア「ローカル空間／ワールド空間」の**上位概念（genus）として本仕様書で新設した**ものである（**新設提案**。恒久IDの発番は原辞書側の承認を要する。`decisions.md` D-2026-09-02-12、`backlog.md` P-05）。下位2概念は互いを参照して差異を述べているが、両者に共通する上位概念には原辞書に見出し語がなかった。
+
+Note 4 to entry: 本エントリを「値」一般（第3編3.1）と混同しないこと。本概念が画定するのは**参照座標系を伴う**表現であり、参照座標系を持たない量（質量、時間、個数）は含まない。Clause 4（基礎規約）が「ローカル空間とワールド空間の混同を禁止」と定めているのは、この上位概念のもとで基準の取り違えが起こりうるためである。
+
+### 3.8
 **local space**
 ローカル空間
 IRDI: `eed:0014#001`
@@ -204,18 +228,19 @@ EXAMPLE 2 （CAD）オブジェクトの原点位置・向きを親フレーム�
 Note 1 to entry: Core image：「自分の部屋の中での位置」。部屋（親フレーム）が動けば、部屋の中の物の見え方は変わらないまま一緒に動く。
 
 Note 2 to entry: Concept relations:
+— is-a 3.7 (spatial representation) ※本概念は、基準に取る参照座標系を親フレームとした空間表現である
 — refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame), 3.3 (handedness)
-— refers-to 3.8 (world space) ※対比ペア。3.4節参照
-— refers-to 3.12 (coordinate transformation)
+— refers-to 3.9 (world space) ※対比ペア。3.4節参照
+— refers-to 3.13 (coordinate transformation)
 
-Note 3 to entry: 対になるワールド空間（3.8）と暗黙に混同してはならない（Clause 4 の規約）。原辞書2.4節「対比によって識別される語彙ペア」の一組（ローカル空間／ワールド空間）にあたる。
+Note 3 to entry: 対になるワールド空間（3.9）と暗黙に混同してはならない（Clause 4 の規約）。原辞書2.4節「対比によって識別される語彙ペア」の一組（ローカル空間／ワールド空間）にあたる。
 
-### 3.8
+### 3.9
 **world space**
 ワールド空間
 IRDI: `eed:0015#001`
 
-シーン全体（ルートとなる座標系）を基準とした絶対的な空間。ローカル空間（3.7）の値を、階層座標構造（3.9）に沿って親から親へと座標変換（3.12）することで得られる。
+シーン全体（ルートとなる座標系）を基準とした絶対的な空間。ローカル空間（3.8）の値を、階層座標構造（3.10）に沿って親から親へと座標変換（3.13）することで得られる。
 
 EXAMPLE 1 （生産）搬送経路計画で、複数のロボット・治具の位置を1つの共通基準で比較する際に必要になる表現。
 
@@ -224,12 +249,13 @@ EXAMPLE 2 （CAD）ワールド座標キャッシュが保持する、シーン�
 Note 1 to entry: Core image：「街全体の地図での位置」。どの建物（親フレーム）に属していても、同じ1枚の地図上の1点として表せる。
 
 Note 2 to entry: Concept relations:
+— is-a 3.7 (spatial representation) ※本概念は、基準に取る参照座標系をシーン全体のルートとした空間表現である
 — refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame), 3.3 (handedness)
-— refers-to 3.7 (local space) ※対比ペア。3.4節参照
-— refers-to 3.9 (hierarchical coordinate structure), 3.12 (coordinate transformation) ※定義文が「階層座標構造（3.9）に沿って親から親へと座標変換（3.12）することで得られる」と両者を名指ししている（3.9 は第M編附属書F.4 で追加）
-— refers-to 3.11 (self-validating freshness guarantee, 第M編)
+— refers-to 3.8 (local space) ※対比ペア。3.4節参照
+— refers-to 3.10 (hierarchical coordinate structure), 3.13 (coordinate transformation) ※定義文が「階層座標構造（3.10）に沿って親から親へと座標変換（3.13）することで得られる」と両者を名指ししている（3.10 は第M編附属書F.4 で追加）
+— refers-to 第M編3.13 (self-validating freshness guarantee)
 
-### 3.9
+### 3.10
 **hierarchical coordinate structure**
 階層座標構造
 IRDI: `eed:0016#001`
@@ -243,11 +269,11 @@ EXAMPLE 2 （CAD）座標フレームの親子関係、ロボットのベース�
 Note 1 to entry: Core image：体の各部位が親子関係でつながった骨格アニメーションの骨。
 
 Note 2 to entry: Concept relations:
-— refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame) ※3.2は3.9の構成要素である可能性（part-of候補、全編化時に精密化）
-— refers-to 3.11 (homogeneous transformation matrix), 3.12 (coordinate transformation)
-— refers-to 3.7 (typed relation, 第3編)
+— refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame) ※3.2は3.10の構成要素である可能性（part-of候補、全編化時に精密化）
+— refers-to 3.12 (homogeneous transformation matrix), 3.13 (coordinate transformation)
+— refers-to 第3編3.9 (typed relation)
 
-### 3.10
+### 3.11
 **distance metric convention**
 距離定義規約
 admitted term: metric／Minkowski距離（L1・L2・L∞）
@@ -263,33 +289,33 @@ Note 1 to entry: Core image：「2点間の距離は5」と言われても、ま
 
 Note 2 to entry: Concept relations:
 — refers-to 3.1 (coordinate system), 3.5 (pose)
-— refers-to 3.2 (measurement, 第4編)
+— refers-to 第4編3.3 (measurement)
 — refers-to 3.4 (unit scale convention), 3.6 (rotation representation convention) ※Note 3 が名指しする「同じ型の落とし穴」の2件（第M編附属書F.4 で追加）
 
 Note 3 to entry: 3.4（尺度定義）、3.6（回転表現規約）と同じ型の落とし穴である。いずれも「技術的には他の選択肢でも成立するが、どれを採ったかを書かなければ受け手が復元できない」取り決めであり、書き忘れても数値としては通ってしまう。
 
 **II-C. 変換という操作**
 
-### 3.11
+### 3.12
 **homogeneous transformation matrix**
 同次変換行列
 IRDI: `eed:0018#001`
 
 回転行列と並進ベクトルを1つの4×4正方行列にまとめ、複数の座標変換を単純な行列積の連鎖として合成できるようにする数学的表現。
 
-EXAMPLE 1 （生産）ロボットのベースフレームからTCPフレームへの変換を表す4×4行列。TFツリー（3.9）のノード間変換の実体。
+EXAMPLE 1 （生産）ロボットのベースフレームからTCPフレームへの変換を表す4×4行列。TFツリー（3.10）のノード間変換の実体。
 
 EXAMPLE 2 （CAD）座標フレームの親子関係を辿って、あるオブジェクトのワールド座標を求める際に内部で連鎖させる変換行列。
 
 Note 1 to entry: Core image：「回転」と「平行移動」という別々の操作を、1回の掛け算だけで連続的につなげられるようにする、4×4の計算専用の箱。
 
 Note 2 to entry: Concept relations:
-— refers-to 3.2 (reference coordinate frame), 3.4 (unit scale convention), 3.5 (pose), 3.6 (rotation representation convention), 3.9 (hierarchical coordinate structure), 3.12 (coordinate transformation)
-— refers-to 3.14 (calibration reference) ※calibrated-from の候補。キャリブレーションで得られた変換行列である場合に成立する関係であり、全ての同次変換行列がこの由来を持つわけではない
+— refers-to 3.2 (reference coordinate frame), 3.4 (unit scale convention), 3.5 (pose), 3.6 (rotation representation convention), 3.10 (hierarchical coordinate structure), 3.13 (coordinate transformation)
+— refers-to 3.15 (calibration reference) ※calibrated-from の候補。キャリブレーションで得られた変換行列である場合に成立する関係であり、全ての同次変換行列がこの由来を持つわけではない
 
 Note 3 to entry: 姿勢（3.5）が「位置と向きという値そのもの」を指すのに対し、本エントリはその値を座標変換の計算に使える形に変換した**表現手段**を指す。
 
-### 3.12
+### 3.13
 **coordinate transformation**
 座標変換
 IRDI: `eed:0019#001`
@@ -303,15 +329,15 @@ EXAMPLE 2 （CAD）親フレームのローカル座標をワールド座標へ�
 Note 1 to entry: Core image：「自分の部屋の中での位置」を「街全体の地図での位置」に翻訳する、変換という作業そのもの。
 
 Note 2 to entry: Concept relations:
-— transforms 3.7 (local space) → 3.8 (world space) ※本編で確定した最初の transforms 型。ローカル空間の値を、階層座標構造（3.9）に沿ってワールド空間の値へ変換する操作関係を表す
-— refers-to 3.2 (reference coordinate frame), 3.9 (hierarchical coordinate structure), 3.11 (homogeneous transformation matrix), 3.14 (calibration reference)
-— refers-to 3.11 (self-validating freshness guarantee, 第M編)
+— transforms 3.8 (local space) → 3.9 (world space) ※本編で確定した最初の transforms 型。ローカル空間の値を、階層座標構造（3.10）に沿ってワールド空間の値へ変換する操作関係を表す
+— refers-to 3.2 (reference coordinate frame), 3.10 (hierarchical coordinate structure), 3.12 (homogeneous transformation matrix), 3.15 (calibration reference)
+— refers-to 第M編3.13 (self-validating freshness guarantee)
 
-Note 3 to entry: 階層座標構造（3.9）が座標系同士の木構造そのものを指すのに対し、本エントリはその木を辿って値を実際に計算する**動作**を指す。
+Note 3 to entry: 階層座標構造（3.10）が座標系同士の木構造そのものを指すのに対し、本エントリはその木を辿って値を実際に計算する**動作**を指す。
 
 **II-D. 空間に設置される意味づけられた要素**
 
-### 3.13
+### 3.14
 **datum reference feature**
 基準フィーチャー
 IRDI: `eed:0020#001`
@@ -320,17 +346,17 @@ IRDI: `eed:0020#001`
 
 EXAMPLE 1 （生産）データムフィーチャーおよび位置決めフィーチャー（治具の基準ピン穴・突き当て面）。
 
-EXAMPLE 2 （CAD）空間注記における「ハブ」（結節点・基準点：交差点、出入口、基準穴、治具固定点）。この役割は一般には**ランドマーク**と呼ばれ、校正基準としての側面は 3.14（キャリブレーション基準）が扱う。
+EXAMPLE 2 （CAD）空間注記における「ハブ」（結節点・基準点：交差点、出入口、基準穴、治具固定点）。この役割は一般には**ランドマーク**と呼ばれ、校正基準としての側面は 3.15（キャリブレーション基準）が扱う。
 
 Note 1 to entry: Core image：測るときに誰もが指を置く物差しの起点。
 
 Note 2 to entry: Concept relations:
-— refers-to 1.02 (topology, 第1編 3.2)
+— refers-to 第1編3.2 (topology)
 — refers-to 3.2 (reference coordinate frame) ※constrained-by の候補（3.2 のNote 2参照）
-— refers-to 3.14 (calibration reference) ※aligns-with の候補。カメラ座標系とロボットベース座標系はランドマーク（3.14）で結び、ロボットとワーク座標系は本エントリ（データム）を実測して結ぶという、2つの位置合わせ手段が連鎖する関係にあたる
-— refers-to 3.7 (typed relation, 第3編), 3.8 (spatial element classification, 第3編)
+— refers-to 3.15 (calibration reference) ※aligns-with の候補。カメラ座標系とロボットベース座標系はランドマーク（3.15）で結び、ロボットとワーク座標系は本エントリ（データム）を実測して結ぶという、2つの位置合わせ手段が連鎖する関係にあたる
+— refers-to 第3編3.9 (typed relation), 第3編3.10 (spatial element classification)
 
-### 3.14
+### 3.15
 **calibration reference**
 キャリブレーション基準
 admitted term: calibration target
@@ -340,21 +366,21 @@ IRDI: `eed:0021#001`
 
 EXAMPLE 1 （生産）チェッカーボード（格子ピッチが既知）、ARマーカー（辺長と符号が既知）、基準球（直径が既知、3Dスキャナ用）、校正治具（穴位置が既知）。ハンドアイキャリブレーションでは、ロボットのTCPの既知幾何そのものが基準になる。
 
-EXAMPLE 2 （CAD・ロボティクス）校正結果はカメラ座標系からロボットベース座標系への同次変換行列（3.11）として保存される。
+EXAMPLE 2 （CAD・ロボティクス）校正結果はカメラ座標系からロボットベース座標系への同次変換行列（3.12）として保存される。
 
 Note 1 to entry: Core image：寸法が分かっているものを1つ置いてやると、カメラとロボットが「同じ世界の話をしている」と初めて言えるようになる。
 
 Note 2 to entry: Concept relations:
-— refers-to 1.05 (resolution, 第1編 3.5)
+— refers-to 第1編3.5 (resolution)
 — refers-to 3.2 (reference coordinate frame) ※calibrated-from の候補（3.2 のNote 2参照）
-— refers-to 3.11 (homogeneous transformation matrix) ※calibrated-from の候補（3.11 のNote 2参照）
-— refers-to 3.12 (coordinate transformation)
-— refers-to 3.13 (datum reference feature) ※aligns-with の候補（3.13 のNote 2参照）
-— refers-to 3.8 (spatial element classification, 第3編)
+— refers-to 3.12 (homogeneous transformation matrix) ※calibrated-from の候補（3.12 のNote 2参照）
+— refers-to 3.13 (coordinate transformation)
+— refers-to 3.14 (datum reference feature) ※aligns-with の候補（3.14 のNote 2参照）
+— refers-to 第3編3.10 (spatial element classification)
 
-Note 3 to entry: 3.13（基準フィーチャー）とは役割が異なるが、実務では**連鎖して使う**。カメラ座標系とロボットベース座標系はランドマークや校正ボード（本エントリ）で結び、ロボットとワーク座標系はデータム（3.13）を実測して結ぶ。どちらか一方だけでは、カメラで見た点をワークのどこかとして語れない。読み取れる細かさは 1.05（分解能、第1編 3.5）が上限を決める。
+Note 3 to entry: 3.14（基準フィーチャー）とは役割が異なるが、実務では**連鎖して使う**。カメラ座標系とロボットベース座標系はランドマークや校正ボード（本エントリ）で結び、ロボットとワーク座標系はデータム（3.14）を実測して結ぶ。どちらか一方だけでは、カメラで見た点をワークのどこかとして語れない。読み取れる細かさは 第1編3.5（分解能）が上限を決める。
 
-### 3.15
+### 3.16
 **exclusion zone**
 干渉禁止領域
 IRDI: `eed:0022#001`
@@ -366,9 +392,9 @@ EXAMPLE （生産）鏡面加工部・センサ受光部など、把持ツール
 Note 1 to entry: Core image：「ここに触れるな」という見えない立入禁止テープ。
 
 Note 2 to entry: Concept relations:
-— refers-to 3.9 (grasp specification and synthesis, 第3編)
+— refers-to 第3編3.11 (grasp specification and synthesis)
 
-### 3.16
+### 3.17
 **approach vector**
 アプローチ方向
 IRDI: `eed:0023#001`
@@ -383,29 +409,29 @@ Note 1 to entry: Core image：手を伸ばす最後の一瞬、どの向きか�
 
 Note 2 to entry: Concept relations:
 — refers-to 3.5 (pose)
-— refers-to 3.9 (grasp specification and synthesis, 第3編)
+— refers-to 第3編3.11 (grasp specification and synthesis)
 
 ## 4 基礎規約 (Foundational Physical & Mathematical Rules)
 
-原辞書3章「基礎規約」を、第1編附属書E.3の変換計画に従い本編Clauseとして収録したものである（`decisions.md` D-2026-08-21-02）。本章は規約そのものを定める。**規約が実データ上で実際にどう扱われるか**（変換・尺度検証・軸の向きの取り違え防止）はClause 3の各エントリ（3.1〜3.12）が扱う。ただし計測限界（分解能）は計測装置という物理資産そのものの限界であるため、第1編3.5（Resolution）にある。
+原辞書3章「基礎規約」を、第1編附属書E.3の変換計画に従い本編Clauseとして収録したものである（`decisions.md` D-2026-08-21-02）。本章は規約そのものを定める。**規約が実データ上で実際にどう扱われるか**（変換・尺度検証・軸の向きの取り違え防止）はClause 3の各エントリ（3.1〜3.13）が扱う。ただし計測限界（分解能）は計測装置という物理資産そのものの限界であるため、第1編3.5（Resolution）にある。
 
 | 項目 | 規定仕様 | 準拠規格 / 備考 |
 | :--- | :--- | :--- |
 | **空間座標系** | $+X$ 前方、$Y$ 左、$Z$ 上、右手直交座標系 | ROS REP-103 準拠 → 3.1, 3.3 |
-| **長さ・距離** | $\text{mm}$ (ミリメートル) | SI単位系 → 3.4, 3.10 |
+| **長さ・距離** | $\text{mm}$ (ミリメートル) | SI単位系 → 3.4, 3.11 |
 | **角度** | $\text{deg}$ (度) または $\text{rad}$ (ラジアン) | 内部処理は $\text{rad}$、UI/対話は $\text{deg}$ → 3.6 |
-| **質量 / 慣性** | $\text{kg}$ / $\text{kg}\cdot\text{m}^2$ | IEC 61360 → 第1編 3.3 |
+| **質量 / 慣性** | $\text{kg}$ / $\text{kg}\cdot\text{m}^2$ | IEC 61360 → 第1編3.3 |
 | **力 / トルク** | $\text{N}$ / $\text{N}\cdot\text{m}$ | 把持力・締結トルク（第3編 把持宣言と解決で使用） |
 | **回転姿勢** | クォータニオン $[q_x, q_y, q_z, q_w]$ ($q_w$ は実部) | 補助表示としてオイラー角を併記する場合は、**外因性（extrinsic・固定軸）$X$→$Y$→$Z$**（ROS REP-103のroll-pitch-yaw、内因性 $Z$-$Y$-$X$ と等価）と明示する。順序と内因性・外因性の指定を欠いた「RPY」表記は姿勢を一意に定めない → 3.6 |
-| **空間参照** | 親フレーム中心からの相対オフセット | ローカル空間とワールド空間の混同を禁止 → 3.7, 3.8 |
+| **空間参照** | 親フレーム中心からの相対オフセット | ローカル空間とワールド空間の混同を禁止 → 3.8, 3.9 |
 
 ## 5 概念体系 (Concept System)
 
-本編の16概念は、主題により4つのサブグループに区分されます（区分基準＝主題。原辞書の件数・範囲の誤記を是正、`decisions.md` D-2026-08-21-01）。
+本編の17概念（うち3.7 空間表現は本仕様書での新設提案）は、主題により4つのサブグループに区分されます（区分基準＝主題。原辞書の件数・範囲の誤記を是正、`decisions.md` D-2026-08-21-01）。
 
 ```mermaid
 flowchart TB
-    P2["第2編 Integration層（16概念）"]
+    P2["第2編 Integration層（17概念）"]
     P2 --> A["II-A 座標系そのもの"]
     P2 --> B["II-B 位置・姿勢・隔たりという値"]
     P2 --> C["II-C 変換という操作"]
@@ -417,18 +443,21 @@ flowchart TB
     A --> A4["3.4 unit scale convention"]
     B --> B1["3.5 pose"]
     B --> B2["3.6 rotation representation convention"]
-    B --> B3["3.7 local space"]
-    B --> B4["3.8 world space"]
-    B --> B5["3.9 hierarchical coordinate structure"]
-    B --> B6["3.10 distance metric convention"]
-    C --> C1["3.11 homogeneous transformation matrix"]
-    C --> C2["3.12 coordinate transformation"]
-    D --> D1["3.13 datum reference feature"]
-    D --> D2["3.14 calibration reference"]
-    D --> D3["3.15 exclusion zone"]
-    D --> D4["3.16 approach vector"]
+    B --> B0["3.7 spatial representation（新設提案）"]
+    B --> B3["3.8 local space"]
+    B --> B4["3.9 world space"]
+    B --> B5["3.10 hierarchical coordinate structure"]
+    B --> B6["3.11 distance metric convention"]
+    C --> C1["3.12 homogeneous transformation matrix"]
+    C --> C2["3.13 coordinate transformation"]
+    D --> D1["3.14 datum reference feature"]
+    D --> D2["3.15 calibration reference"]
+    D --> D3["3.16 exclusion zone"]
+    D --> D4["3.17 approach vector"]
 
     A2 -->|is-a| A1
+    B3 -->|is-a| B0
+    B4 -->|is-a| B0
     C2 -->|transforms| B3
     C2 -->|transforms| B4
     B3 <-->|"対比ペア"| B4
@@ -455,24 +484,24 @@ flowchart TB
 | `eed:0077#001` | 3.6 rotation representation convention | 回転ベクトル | 産業用ロボット（多関節マニピュレータ） | 一部のロボットメーカーが姿勢指令に使う軸角表現 | 軸角／Rodriguesベクトル |
 | `eed:0078#001` | 3.6 rotation representation convention | オイラー角 | 産業用ロボット（多関節マニピュレータ） | UI表示と人手ティーチング。順序と内因性・外因性の併記が必須 | RPY／ロール・ピッチ・ヨー／ABC角 |
 | `eed:0079#001` | 3.6 rotation representation convention | 内因性・外因性 | 産業用ロボット（多関節マニピュレータ） | オイラー角の解釈を確定させる指定 | intrinsic／extrinsic、rotated axes／static axes、可動軸／固定軸 |
-| `eed:0080#001` | 3.9 hierarchical coordinate structure | TFツリー | 産業用ロボット（多関節マニピュレータ） | ロボティクス・ベースからTCPまでの座標系の木 | 座標変換ツリー／TF |
-| `eed:0081#001` | 3.9 hierarchical coordinate structure | アセンブリ親子構成 | ワーク（被加工物・部品・製品） | 製品設計・部品の組み付け階層 | BOM構造／構成ツリー |
-| `eed:0082#001` | 3.10 distance metric convention | ユークリッド距離 | ワーク（被加工物・部品・製品） | 2点を直線で結んだときの隔たり。クリアランスや公差の評価 | 直線距離／L2ノルム |
-| `eed:0083#001` | 3.10 distance metric convention | マンハッタン距離 | 工作機械・専用機（CNC、プレス、溶接機など） | 軸ごとの移動量を足し合わせた隔たり。直交機構の移動コスト評価 | 市街地距離／L1ノルム |
-| `eed:0084#001` | 3.10 distance metric convention | チェビシェフ距離 | ワーク（被加工物・部品・製品） | 各軸の差の最大値。AABB同士の隔たり判定 | L∞ノルム／最大値ノルム |
-| `eed:0085#001` | 3.11 homogeneous transformation matrix | 4×4変換行列 | 産業用ロボット（多関節マニピュレータ） | ロボティクス・ベースからTCPへの変換の実体 | 同次行列／変換マトリクス |
-| `eed:0086#001` | 3.13 datum reference feature | データムフィーチャー | ワーク（被加工物・部品・製品） | 製品設計・GD&T（ISO 5459）における測定と位置決めの起点 | データム／基準面・基準穴 |
-| `eed:0087#001` | 3.13 datum reference feature | 位置決めフィーチャー | 治具（ジグ）・位置決めピン・突き当て面 | 設備制御・治具側でワークを毎回同じ姿勢に決める要素 | 基準ピン穴／突き当て面 |
-| `eed:0088#001` | 3.13 datum reference feature | データム | ワーク（被加工物・部品・製品） | データムフィーチャーから導かれる、理論的に完全な点・軸・平面 | 理論データム／datum |
-| `eed:0089#001` | 3.14 calibration reference | ランドマーク | 架台・ベースプレート・床 | ビジョン系の校正・自己位置推定で、既知の位置に固定して座標系どうしを対応づける | 校正基準／（本アーキテクチャ内の呼称）ハブ |
-| `eed:0090#001` | 3.14 calibration reference | チェッカーボード | ビジョンカメラ・3Dスキャナ | カメラ内部パラメータと外部パラメータの同時校正 | 校正ボード／格子パターン |
-| `eed:0091#001` | 3.14 calibration reference | ARマーカー | ビジョンカメラ・3Dスキャナ | 辺長既知の平面マーカーで単眼から姿勢を得る | ArUco／AprilTag／基準マーカー |
-| `eed:0092#001` | 3.14 calibration reference | 基準球 | ビジョンカメラ・3Dスキャナ | 直径既知の球で3Dスキャナ間の位置合わせを行う | 校正球／ターゲットスフィア |
-| `eed:0093#001` | 3.14 calibration reference | 校正治具 | 治具（ジグ）・位置決めピン・突き当て面 | 穴位置が既知の治具でロボットとワーク座標系を対応づける | キャリブレーションジグ／マスタージグ |
-| `eed:0094#001` | 3.15 exclusion zone | 接触禁止領域 | ワーク（被加工物・部品・製品） | 生産・鏡面加工部やセンサ受光部など触れてはならない面 | タッチ禁止面／NGエリア |
-| `eed:0095#001` | 3.16 approach vector | 許容アプローチ方向 | エンドエフェクタ（ハンド・グリッパ・吸着パッド） | ロボティクス・把持直前の進入向き | 進入ベクトル／アプローチベクトル |
+| `eed:0080#001` | 3.10 hierarchical coordinate structure | TFツリー | 産業用ロボット（多関節マニピュレータ） | ロボティクス・ベースからTCPまでの座標系の木 | 座標変換ツリー／TF |
+| `eed:0081#001` | 3.10 hierarchical coordinate structure | アセンブリ親子構成 | ワーク（被加工物・部品・製品） | 製品設計・部品の組み付け階層 | BOM構造／構成ツリー |
+| `eed:0082#001` | 3.11 distance metric convention | ユークリッド距離 | ワーク（被加工物・部品・製品） | 2点を直線で結んだときの隔たり。クリアランスや公差の評価 | 直線距離／L2ノルム |
+| `eed:0083#001` | 3.11 distance metric convention | マンハッタン距離 | 工作機械・専用機（CNC、プレス、溶接機など） | 軸ごとの移動量を足し合わせた隔たり。直交機構の移動コスト評価 | 市街地距離／L1ノルム |
+| `eed:0084#001` | 3.11 distance metric convention | チェビシェフ距離 | ワーク（被加工物・部品・製品） | 各軸の差の最大値。AABB同士の隔たり判定 | L∞ノルム／最大値ノルム |
+| `eed:0085#001` | 3.12 homogeneous transformation matrix | 4×4変換行列 | 産業用ロボット（多関節マニピュレータ） | ロボティクス・ベースからTCPへの変換の実体 | 同次行列／変換マトリクス |
+| `eed:0086#001` | 3.14 datum reference feature | データムフィーチャー | ワーク（被加工物・部品・製品） | 製品設計・GD&T（ISO 5459）における測定と位置決めの起点 | データム／基準面・基準穴 |
+| `eed:0087#001` | 3.14 datum reference feature | 位置決めフィーチャー | 治具（ジグ）・位置決めピン・突き当て面 | 設備制御・治具側でワークを毎回同じ姿勢に決める要素 | 基準ピン穴／突き当て面 |
+| `eed:0088#001` | 3.14 datum reference feature | データム | ワーク（被加工物・部品・製品） | データムフィーチャーから導かれる、理論的に完全な点・軸・平面 | 理論データム／datum |
+| `eed:0089#001` | 3.15 calibration reference | ランドマーク | 架台・ベースプレート・床 | ビジョン系の校正・自己位置推定で、既知の位置に固定して座標系どうしを対応づける | 校正基準／（本アーキテクチャ内の呼称）ハブ |
+| `eed:0090#001` | 3.15 calibration reference | チェッカーボード | ビジョンカメラ・3Dスキャナ | カメラ内部パラメータと外部パラメータの同時校正 | 校正ボード／格子パターン |
+| `eed:0091#001` | 3.15 calibration reference | ARマーカー | ビジョンカメラ・3Dスキャナ | 辺長既知の平面マーカーで単眼から姿勢を得る | ArUco／AprilTag／基準マーカー |
+| `eed:0092#001` | 3.15 calibration reference | 基準球 | ビジョンカメラ・3Dスキャナ | 直径既知の球で3Dスキャナ間の位置合わせを行う | 校正球／ターゲットスフィア |
+| `eed:0093#001` | 3.15 calibration reference | 校正治具 | 治具（ジグ）・位置決めピン・突き当て面 | 穴位置が既知の治具でロボットとワーク座標系を対応づける | キャリブレーションジグ／マスタージグ |
+| `eed:0094#001` | 3.16 exclusion zone | 接触禁止領域 | ワーク（被加工物・部品・製品） | 生産・鏡面加工部やセンサ受光部など触れてはならない面 | タッチ禁止面／NGエリア |
+| `eed:0095#001` | 3.17 approach vector | 許容アプローチ方向 | エンドエフェクタ（ハンド・グリッパ・吸着パッド） | ロボティクス・把持直前の進入向き | 進入ベクトル／アプローチベクトル |
 
-NOTE 3.1（座標系）、3.2の別表現、3.3（ハンドネス）、3.4（尺度定義）、3.5（姿勢）、3.7（ローカル空間）、3.8（ワールド空間）、3.12（座標変換）に対応する現場語は未抽出（原辞書の記載を保存。存在しない現場語を創作しない）。
+NOTE 3.1（座標系）、3.2の別表現、3.3（ハンドネス）、3.4（尺度定義）、3.5（姿勢）、3.8（ローカル空間）、3.9（ワールド空間）、3.13（座標変換）に対応する現場語は未抽出（原辞書の記載を保存。存在しない現場語を創作しない）。
 
 ## 附属書B (informative) 概念メタデータ一覧 (Concept Metadata Registry)
 
@@ -489,18 +518,19 @@ NOTE 3.1（座標系）、3.2の別表現、3.3（ハンドネス）、3.4（尺
 | 3.4 | unit scale convention | `eed:0011#001` | `term.scale-factor` | Product | Type | MetaArchitecture | ProductDesign, MfgRobotics, StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
 | 3.5 | pose | `eed:0012#001` | `term.pose` | Product | Type & Instance | ProductDesign, MfgRobotics | StationControl, ShopfloorIT | 標準（ISO 9787、OPC UA for Robotics） | 生産 ◯ / CAD ◯ |
 | 3.6 | rotation representation convention | `eed:0013#001` | `term.rotation-convention` | Product | Type | MetaArchitecture | ProductDesign, MfgRobotics, StationControl | 標準（ROS REP-103） | 生産 ◯ / CAD ◯ |
-| 3.7 | local space | `eed:0014#001` | `term.local-space` | Product | Type | MetaArchitecture | ProductDesign, MfgRobotics, StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
-| 3.8 | world space | `eed:0015#001` | `term.world-space` | Product | Type | MetaArchitecture | ProductDesign, MfgRobotics, StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
-| 3.9 | hierarchical coordinate structure | `eed:0016#001` | `term.coordinate-hierarchy` | Product | Type & Instance | ProductDesign, MfgRobotics | StationControl, ShopfloorIT | 業界一般（シーングラフ、ROSのTFツリー） | 生産 ◯ / CAD ◯ |
-| 3.10 | distance metric convention | `eed:0017#001` | `term.distance-metric` | N/A（メタ概念） | Type | MetaArchitecture | MfgRobotics, StationControl, ProductDesign | 標準（数学の距離空間） | 生産 ◯ / CAD ◯ |
-| 3.11 | homogeneous transformation matrix | `eed:0018#001` | `term.homogeneous-transform` | Product | Type | ProductDesign, MfgRobotics | StationControl, ShopfloorIT | 標準（線形代数・ロボティクス） | 生産 ◯ / CAD ◯ |
-| 3.12 | coordinate transformation | `eed:0019#001` | `term.coordinate-transformation` | Product | Type & Instance | ProductDesign, MfgRobotics | StationControl, ShopfloorIT | 標準（線形代数・ロボティクス） | 生産 ◯ / CAD ◯ |
-| 3.13 | datum reference feature | `eed:0020#001` | `term.datum-feature` | Field Device | Type | ProductDesign | MfgRobotics, StationControl | 標準（ISO 5459、ISO 10303-242） | 生産 ◯ / CAD ◯ |
-| 3.14 | calibration reference | `eed:0021#001` | `term.calibration-reference` | Control Device | Type | StationControl | MfgRobotics, ProductDesign | 業界一般 | 生産 ◯ / CAD ◯ |
-| 3.15 | exclusion zone | `eed:0022#001` | `term.exclusion-zone` | Field Device | Type | ProductDesign, MfgRobotics | StationControl | 独自 | 生産 ◯ / CAD — |
-| 3.16 | approach vector | `eed:0023#001` | `term.approach-vector` | Field Device | Type | MfgRobotics | StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
+| 3.7 | spatial representation | `eed:0146#001`（新設提案） | —（新設） | Product | Type | MetaArchitecture | ProductDesign, MfgRobotics, StationControl | 独自 | 生産 ◯ / CAD ◯ |
+| 3.8 | local space | `eed:0014#001` | `term.local-space` | Product | Type | MetaArchitecture | ProductDesign, MfgRobotics, StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
+| 3.9 | world space | `eed:0015#001` | `term.world-space` | Product | Type | MetaArchitecture | ProductDesign, MfgRobotics, StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
+| 3.10 | hierarchical coordinate structure | `eed:0016#001` | `term.coordinate-hierarchy` | Product | Type & Instance | ProductDesign, MfgRobotics | StationControl, ShopfloorIT | 業界一般（シーングラフ、ROSのTFツリー） | 生産 ◯ / CAD ◯ |
+| 3.11 | distance metric convention | `eed:0017#001` | `term.distance-metric` | N/A（メタ概念） | Type | MetaArchitecture | MfgRobotics, StationControl, ProductDesign | 標準（数学の距離空間） | 生産 ◯ / CAD ◯ |
+| 3.12 | homogeneous transformation matrix | `eed:0018#001` | `term.homogeneous-transform` | Product | Type | ProductDesign, MfgRobotics | StationControl, ShopfloorIT | 標準（線形代数・ロボティクス） | 生産 ◯ / CAD ◯ |
+| 3.13 | coordinate transformation | `eed:0019#001` | `term.coordinate-transformation` | Product | Type & Instance | ProductDesign, MfgRobotics | StationControl, ShopfloorIT | 標準（線形代数・ロボティクス） | 生産 ◯ / CAD ◯ |
+| 3.14 | datum reference feature | `eed:0020#001` | `term.datum-feature` | Field Device | Type | ProductDesign | MfgRobotics, StationControl | 標準（ISO 5459、ISO 10303-242） | 生産 ◯ / CAD ◯ |
+| 3.15 | calibration reference | `eed:0021#001` | `term.calibration-reference` | Control Device | Type | StationControl | MfgRobotics, ProductDesign | 業界一般 | 生産 ◯ / CAD ◯ |
+| 3.16 | exclusion zone | `eed:0022#001` | `term.exclusion-zone` | Field Device | Type | ProductDesign, MfgRobotics | StationControl | 独自 | 生産 ◯ / CAD — |
+| 3.17 | approach vector | `eed:0023#001` | `term.approach-vector` | Field Device | Type | MfgRobotics | StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
 
-NOTE 本編で Hierarchy Level が `N/A` なのは `eed:0008`（3.1 座標系、原辞書表記 `N/A（メタ概念）`）と `eed:0017`（3.10 距離定義規約、原辞書表記 `N/A`）の**2件**である。いずれも数学的な取り決めであり設備階層に依存しない。原辞書4.3節 軸1×軸2 クロス表の Integration 行はこのセルを1件としており、行計も16ではなく15になっている（`decisions.md` D-2026-08-22-15）。
+NOTE 本編で Hierarchy Level が `N/A` なのは `eed:0008`（3.1 座標系、原辞書表記 `N/A（メタ概念）`）と `eed:0017`（3.11 距離定義規約、原辞書表記 `N/A`）の**2件**である。いずれも数学的な取り決めであり設備階層に依存しない。原辞書4.3節 軸1×軸2 クロス表の Integration 行はこのセルを1件としており、行計も16ではなく15になっている（`decisions.md` D-2026-08-22-15）。
 
 ## 附属書C (informative) 関係型セマンティクス (Relational Semantics)
 
@@ -510,18 +540,18 @@ NOTE 本編で Hierarchy Level が `N/A` なのは `eed:0008`（3.1 座標系、
 
 | 関係型 | 意味 | ISO 704 分類 | 本編での使用 |
 |---|---|---|---|
-| is-a | 上位概念・下位概念関係（Taxonomic Specialization） | 類種関係 (generic) | 3.2 → 3.1（1件） |
-| part-of | 全体・部分構成関係（Aggregation / Composition） | 部分関係 (partitive) | 未確定使用（3.2/3.9 は候補にとどめる） |
+| is-a | 上位概念・下位概念関係（Taxonomic Specialization） | 類種関係 (generic) | **3件**（3.2 → 3.1、および 3.8・3.9 → 3.7 空間表現。後者は本仕様書での新設提案にともなう。`decisions.md` D-2026-09-02-12） |
+| part-of | 全体・部分構成関係（Aggregation / Composition） | 部分関係 (partitive) | 未確定使用（3.2/3.10 は候補にとどめる） |
 | refers-to | 参照・パラメータ関連付け（Semantic Reference） | 連想関係 (associative) | 大多数の関係 |
-| constrained-by | 幾何条件・境界拘束（Constraint Enforcement） | 連想関係 (associative) | 未確定使用（3.2/3.13 は候補にとどめる） |
-| **transforms** | ある空間・座標系上の値を、別の空間・座標系上の値へ変換する操作関係（本編で新規確定） | 連想関係 (associative) | 3.12 → 3.7, 3.8（1組） |
-| calibrated-from | 未知の変換が、既知幾何を持つ基準物によって解かれた、という由来関係（提案・未確定） | 連想関係 (associative) | 候補：3.2↔3.14、3.11↔3.14 |
-| aligns-with | 異なる位置合わせ手段が、同じ2座標系間の対応づけを目的として連鎖的に使われる関係（提案・未確定） | 連想関係 (associative) | 候補：3.13↔3.14 |
+| constrained-by | 幾何条件・境界拘束（Constraint Enforcement） | 連想関係 (associative) | 未確定使用（3.2/3.14 は候補にとどめる） |
+| **transforms** | ある空間・座標系上の値を、別の空間・座標系上の値へ変換する操作関係（本編で新規確定） | 連想関係 (associative) | 3.13 → 3.8, 3.9（1組） |
+| calibrated-from | 未知の変換が、既知幾何を持つ基準物によって解かれた、という由来関係（提案・未確定） | 連想関係 (associative) | 候補：3.2↔3.15、3.12↔3.15 |
+| aligns-with | 異なる位置合わせ手段が、同じ2座標系間の対応づけを目的として連鎖的に使われる関係（提案・未確定） | 連想関係 (associative) | 候補：3.14↔3.15 |
 | ~~mates-to~~ | 嵌合・作業一致を表す関係（第1編で予告） | 連想関係 (associative) | 本編でも未出現。第3〜5編・第M編でも出現せず、**廃止**（第M編附属書C.1 NOTE 3） |
 
 NOTE 1 `calibrated-from`・`aligns-with` を候補にとどめた理由：どちらも実務上の連携（キャリブレーションのワークフロー、位置合わせ手段の使い分け）としては明確だが、概念定義そのものが相手概念を前提とする関係（is-aやtransformsのように定義文が直接その関係を述べている）ではなく、**エントリの用法上の注意・具体例が間接的に示す運用上の関係**にとどまる。ISO 704の連想関係は本来幅広い実務上の関連付けを許容するため、全編化時のレビューで正式採用してよい候補である（`decisions.md` D-2026-08-21-03）。
 
-NOTE 2 `transforms` の方向は「操作 → 操作対象（変換前・変換後）」で統一する。3.12 の場合、変換前（3.7）・変換後（3.8）の両方を transforms の対象として記載した。
+NOTE 2 `transforms` の方向は「操作 → 操作対象（変換前・変換後）」で統一する。3.13 の場合、変換前（3.8）・変換後（3.9）の両方を transforms の対象として記載した。
 
 ### C.2 OWL / RDF ナレッジグラフ記述例 (Turtle形式)
 
@@ -557,18 +587,18 @@ eed:LocalSpace a owl:Class ;
 
 ## 附属書D (informative) 登場人物対応表 — 本編の概念で語られる実在物
 
-原辞書1.2節の趣旨を保全する附属書です。以下は本編（Integration層）の16概念に接続する登場人物の抜粋です。
+原辞書1.2節の趣旨を保全する附属書です。以下は本編（Integration層）の17概念に接続する登場人物の抜粋です。
 
 | 登場人物 | 一言でいうと | 本編ではどう語られるか |
 |---|---|---|
-| 産業用ロボット（多関節マニピュレータ） | 掴んで運ぶ・組み付ける腕 | ベースからTCPまでの関節連鎖は3.9、その計算は3.11・3.12、手先の位置と向きは3.5、向きの形式は3.6 |
-| 架台・ベースプレート・床 | 設備が据え付けられる土台 | そもそもの物差しの枠組みは3.1、シーン全体基準の3.8、そこからの親子関係は3.9、ランドマーク（3.14）の設置場所 |
-| 治具（ジグ）・位置決めピン・突き当て面 | ワークを毎回同じ位置・姿勢に固定する道具 | 基準となる穴や面そのものは3.13、そこから立つ座標系は3.2、校正治具としては3.14 |
-| ビジョンカメラ・3Dスキャナ | ワークがどこにどの向きであるかを見つける目 | 出力そのものは3.5、カメラとロボットの座標系を対応づけるのは3.14 |
-| 無人搬送車（AGV／AMR） | 床を走ってワークを別の場所へ運ぶ | 走行して基準が動くため3.7と3.8の区別が要になる |
-| 工作機械・専用機（CNC、プレス、溶接機など） | ワークの形そのものを変える設備 | 軸ごとに順に動かす移動量の見積もりは3.10（マンハッタン距離） |
-| エンドエフェクタ（ハンド・グリッパ・吸着パッド） | ロボットの手先。実際にワークに触れる部分 | 最後に近づく向きは3.16、触れてはいけない場所は3.15 |
-| 安全柵・ライトカーテン | 人と機械を隔てる境界 | 立ち入ってはいけない空間として3.15 |
+| 産業用ロボット（多関節マニピュレータ） | 掴んで運ぶ・組み付ける腕 | ベースからTCPまでの関節連鎖は3.10、その計算は3.12・3.13、手先の位置と向きは3.5、向きの形式は3.6 |
+| 架台・ベースプレート・床 | 設備が据え付けられる土台 | そもそもの物差しの枠組みは3.1、シーン全体基準の3.9、そこからの親子関係は3.10、ランドマーク（3.15）の設置場所 |
+| 治具（ジグ）・位置決めピン・突き当て面 | ワークを毎回同じ位置・姿勢に固定する道具 | 基準となる穴や面そのものは3.14、そこから立つ座標系は3.2、校正治具としては3.15 |
+| ビジョンカメラ・3Dスキャナ | ワークがどこにどの向きであるかを見つける目 | 出力そのものは3.5、カメラとロボットの座標系を対応づけるのは3.15 |
+| 無人搬送車（AGV／AMR） | 床を走ってワークを別の場所へ運ぶ | 走行して基準が動くため3.8と3.9の区別が要になる |
+| 工作機械・専用機（CNC、プレス、溶接機など） | ワークの形そのものを変える設備 | 軸ごとに順に動かす移動量の見積もりは3.11（マンハッタン距離） |
+| エンドエフェクタ（ハンド・グリッパ・吸着パッド） | ロボットの手先。実際にワークに触れる部分 | 最後に近づく向きは3.17、触れてはいけない場所は3.16 |
+| 安全柵・ライトカーテン | 人と機械を隔てる境界 | 立ち入ってはいけない空間として3.16 |
 | CADシステム・PLM | 設計データの出どころ | 他システムへ渡す際の軸の向きと単位の食い違いは3.3・3.4 |
 
 ## 附属書E (informative) 変換対応表 (Conversion Mapping)
@@ -583,20 +613,21 @@ eed:LocalSpace a owl:Class ;
 | 3.4 | 2.04 | `eed:0011#001` | unit scale convention |
 | 3.5 | 2.05 | `eed:0012#001` | pose |
 | 3.6 | 2.06 | `eed:0013#001` | rotation representation convention |
-| 3.7 | 2.07 | `eed:0014#001` | local space |
-| 3.8 | 2.08 | `eed:0015#001` | world space |
-| 3.9 | 2.09 | `eed:0016#001` | hierarchical coordinate structure |
-| 3.10 | 2.10 | `eed:0017#001` | distance metric convention |
-| 3.11 | 2.11 | `eed:0018#001` | homogeneous transformation matrix |
-| 3.12 | 2.12 | `eed:0019#001` | coordinate transformation |
-| 3.13 | 2.13 | `eed:0020#001` | datum reference feature |
-| 3.14 | 2.14 | `eed:0021#001` | calibration reference |
-| 3.15 | 2.15 | `eed:0022#001` | exclusion zone |
-| 3.16 | 2.16 | `eed:0023#001` | approach vector |
+| 3.7 | —（本仕様書での新設提案） | `eed:0146#001`（提案） | spatial representation |
+| 3.8 | 2.07 | `eed:0014#001` | local space |
+| 3.9 | 2.08 | `eed:0015#001` | world space |
+| 3.10 | 2.09 | `eed:0016#001` | hierarchical coordinate structure |
+| 3.11 | 2.10 | `eed:0017#001` | distance metric convention |
+| 3.12 | 2.11 | `eed:0018#001` | homogeneous transformation matrix |
+| 3.13 | 2.12 | `eed:0019#001` | coordinate transformation |
+| 3.14 | 2.13 | `eed:0020#001` | datum reference feature |
+| 3.15 | 2.14 | `eed:0021#001` | calibration reference |
+| 3.16 | 2.15 | `eed:0022#001` | exclusion zone |
+| 3.17 | 2.16 | `eed:0023#001` | approach vector |
 
 NOTE 第1編と異なり、本編には概念分離・新設は発生していない。原辞書の採番（`2.01`〜`2.16`）と本仕様書の採番（`3.1`〜`3.16`）は欠番なく1対1で対応する。
 
-NOTE（2026-09-02追補） 本編の Note 2（Concept relations）が編をまたいで参照する箇所は、**参照先の編の採番と編番号を必ず含む**（例：`3.3 (work interface, 第4編)`。原採番を併記している箇所もある — 例：`1.04 (stable pose, 第1編 3.4)`）。第4編のみ原辞書の採番と本仕様書の採番が一致しないため（原 `4.02` → 第4編 `3.3` 等）、原採番との対応は第4編附属書E.1 を参照すること。他の編は原採番と1対1で対応する（第1編は `1.0N` → `3.N`）。
+NOTE（2026-09-02追補） 本編の Note 2（Concept relations）が編をまたいで参照する箇所は、**参照先の編の採番と編番号を必ず含む**（例：`第4編3.4 (work interface)`。原採番を併記している箇所もある — 例：`第1編3.4 (stable pose)`）。第4編のみ原辞書の採番と本仕様書の採番が一致しないため（原 `4.02` → 第4編 `3.3` 等）、原採番との対応は第4編附属書E.1 を参照すること。他の編は原採番と1対1で対応する（第1編は `1.0N` → `3.N`）。
 
 ### E.2 欄の写像規則
 
@@ -608,6 +639,6 @@ NOTE（2026-09-02追補） 本編の Note 2（Concept relations）が編をま�
 |---|---|---|
 | 3章 基礎規約 | 第2編（Integration層）の Clause 4 として規定 | Clause 4 として実現。第1編ではこの内容に相当するClauseがなかったため、本編で初めて登場する |
 | 4章 分類軸・MECE検証・空セル一覧 | 附属書F (informative)（全編化時。集計元は附属書B） | 未実施（全編化時に対応） |
-| 5章 用語及び定義 | 各編の Clause 3 | Clause 3（3.1〜3.16）として実現 |
+| 5章 用語及び定義 | 各編の Clause 3 | Clause 3（3.1〜3.17）として実現 |
 
 NOTE Clause 4 を基礎規約に割り当てたことに伴い、第1編で Clause 4 だった「概念体系」は本編では **Clause 5** に繰り下がる。この繰り下げは編ごとの構成差であり、恒久IDやエントリ内容には影響しない。

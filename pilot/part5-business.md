@@ -27,9 +27,9 @@ Conceptual vocabulary for spatial-data modelling — Part 5: Contract and govern
 
 ```mermaid
 flowchart LR
-    SE["第3編3.13<br/>状態期待値<br/>（Information層）"]
+    SE["第3編3.15<br/>状態期待値<br/>（Information層）"]
     CB["3.1 契約境界<br/>（Business層）"]
-    META["第M編3.3 境界づけられたコンテキスト<br/>第M編3.13 遷移許可リスト<br/>第M編3.14 単一更新経路の強制"]
+    META["第M編3.3 境界づけられたコンテキスト<br/>第M編3.15 遷移許可リスト<br/>第M編3.16 単一更新経路の強制"]
 
     SE -->|"工程の入口・出口の約束を"| CB
     CB -->|"閉じた版管理されたスキーマとして固定し"| META
@@ -80,12 +80,12 @@ EXAMPLE 2 （CAD）フロントエンドとバックエンド間のJSON Schema�
 Note 1 to entry: Core image：部署の壁に貼られた「ここから先はこの書式でしかやり取りしない」という掲示。
 
 Note 2 to entry: Concept relations:
-— refers-to 3.13 (state expectation, 第3編) ※工程の入口・出口における約束を、システム間の契約として固定したもの
-— refers-to 3.3 (bounded context, 第M編), 3.13 (allowed-transition list, 第M編), 3.14 (single write path, 第M編)
+— refers-to 第3編3.15 (state expectation) ※工程の入口・出口における約束を、システム間の契約として固定したもの
+— refers-to 第M編3.3 (bounded context), 第M編3.15 (allowed-transition list), 第M編3.16 (single write path)
 
 Note 3 to entry: 本エントリは実装非依存の段階に位置する。スキーマ化（原辞書6.2節の手順4）そのものは本辞書より下流の工程であり、本エントリが規定するのは「境界を閉じたスキーマとして扱う」という概念であって、特定のスキーマ言語ではない。
 
-Note 4 to entry: 原辞書4.5節は `Business × Station`（工程間の受け渡し契約）を「未収録」とし、その理由を「3.13 状態期待値がInformation層にある分、Business層側が空洞になっている」と説明している。本エントリのNote 2にある 3.13（状態期待値、第3編）への参照は、この空洞を跨ぐ唯一の橋にあたる。空洞を埋めるエントリの新設要否は第M編附属書F.3 で裁き、**新設しない**（第2段で独自造語となり、第3段で書けなくなっている記述を示せない）という結論になった。原辞書4.5節の「未収録」表示は維持する（`decisions.md` D-2026-09-02-09）。
+Note 4 to entry: 原辞書4.5節は `Business × Station`（工程間の受け渡し契約）を「未収録」とし、その理由を「3.13 状態期待値がInformation層にある分、Business層側が空洞になっている」と説明している。本エントリのNote 2にある 第3編3.15（状態期待値）への参照は、この空洞を跨ぐ唯一の橋にあたる。空洞を埋めるエントリの新設要否は第M編附属書F.3 で裁き、**新設しない**（第2段で独自造語となり、第3段で書けなくなっている記述を示せない）という結論になった。原辞書4.5節の「未収録」表示は維持する（`decisions.md` D-2026-09-02-09）。
 
 ## 4 概念体系 (Concept System)
 
@@ -96,8 +96,8 @@ flowchart TB
     P5["第5編 Business層（1概念）"]
     P5 --> A["V-A 契約"]
     A --> A1["3.1 contract boundary"]
-    A1 -->|refers-to| S["3.13 state expectation（第3編）"]
-    A1 -->|refers-to| M["第M編 3.3 / 3.13 / 3.14"]
+    A1 -->|refers-to| S["第3編3.15 state expectation"]
+    A1 -->|refers-to| M["第M編3.3 / 3.13 / 3.14"]
 ```
 
 図の見方：`M` は第M編（メタ語彙）のエントリである。本図は第M編の成立にあわせて forward reference を解決した（`decisions.md` D-2026-09-02-01）。
@@ -134,12 +134,12 @@ NOTE 原辞書4.5節は `Business × Instance` と `Business × Type & Instance`
 
 | 関係型 | 意味 | 本編での使用 |
 |---|---|---|
-| refers-to | 参照・パラメータ関連付け | 本編の全関係（3.13（第3編）、および第M編3件） |
+| refers-to | 参照・パラメータ関連付け | 本編の全関係（第3編3.15、および第M編3件） |
 | is-a / part-of / constrained-by / transforms | （第1〜4編を参照） | 本編では未出現 |
 | calibrated-from / aligns-with | （第2編で候補提示） | 本編では該当箇所なし |
 | mates-to | 嵌合を表す関係（第1編で予告） | 本編でも未出現（下記 NOTE） |
 
-NOTE `mates-to` は第I部での予告以来、対象語彙5編（第II〜V部）を通じて確定使用箇所が見つからなかった。近い実務内容を扱う箇所（3.7（型付き関係、第3編）の「意味カテゴリ」軸、3.3（作業インタフェース、第4編）の「変化対象＝結合構成」）はいずれも**1つの概念が内部に持つファセット値**であり、概念エントリ間の関係を表す Note 2 の対象とは性質が異なる。（2026-09-02追補：第M編でも出現せず、本型は**廃止**された — 第M編附属書C.1 NOTE 3、`decisions.md` D-2026-09-02-05。）
+NOTE `mates-to` は第I部での予告以来、対象語彙5編（第II〜V部）を通じて確定使用箇所が見つからなかった。近い実務内容を扱う箇所（第3編3.9（型付き関係）の「意味カテゴリ」軸、第4編3.4（作業インタフェース）の「変化対象＝結合構成」）はいずれも**1つの概念が内部に持つファセット値**であり、概念エントリ間の関係を表す Note 2 の対象とは性質が異なる。（2026-09-02追補：第M編でも出現せず、本型は**廃止**された — 第M編附属書C.1 NOTE 3、`decisions.md` D-2026-09-02-05。）
 
 ## 附属書D (informative) 登場人物対応表 — 本編の概念で語られる実在物
 

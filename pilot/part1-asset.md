@@ -115,8 +115,8 @@ Note 1 to entry: Core image：立体を頂点・辺・面という骨組みだ�
 
 Note 2 to entry: Concept relations:
 — refers-to 3.1 (bounding volume)
-— refers-to datum reference feature（原2.13、第2編で採番予定）※データムフィーチャーは本概念の要素（面・穴・エッジ）から選定されるため、全編化時に部分関係（part-of の逆方向）へ精密化する候補
-— refers-to sweep operation（原4.01、第4編で採番予定）
+— refers-to 第2編3.14 (datum reference feature) ※データムフィーチャーは本概念の要素（面・穴・エッジ）から選定されるため、全編化時に部分関係（part-of の逆方向）へ精密化する候補
+— refers-to 第4編3.2 (dimension-raising operation) ※原4.01。第4編で名称を「掃引操作」から是正した（同編3.1 Note 3）
 
 Note 3 to entry: トポロジーは「頂点・辺・面がどうつながっているか」という connectivity（接続関係）を表し、各頂点の座標値そのもの（形状・寸法、ジオメトリ）とは区別される。本概念はこのうち、頂点・辺・面数といった構造の数え上げに焦点を当てた側面を指す。
 
@@ -132,8 +132,8 @@ EXAMPLE （生産）ワークの重心・慣性テンソル。CAD の理論値�
 Note 1 to entry: Core image：ワークを指一本でバランスさせられる、やじろべえの支点。
 
 Note 2 to entry: Concept relations:
-— refers-to declared value（原3.01、第3編で採番予定）
-— refers-to derived value（原3.02、第3編で採番予定）
+— refers-to 第3編3.2 (declared value)
+— refers-to 第3編3.3 (derived value)
 ※理論値／実測値の由来区別は第3編の値由来概念で表現される
 
 ### 3.4
@@ -148,8 +148,8 @@ EXAMPLE （生産）搬送安定姿勢。複数の安定姿勢がある部品で
 Note 1 to entry: Core image：机の上に置いたときに倒れずに静止する置き方。
 
 Note 2 to entry: Concept relations:
-— is-a pose（原2.05、第2編で採番予定）※安定姿勢は、静的安定条件で拘束された姿勢の下位概念
-— refers-to grasp specification and synthesis（原3.09、第3編で採番予定）
+— is-a 第2編3.5 (pose) ※安定姿勢は、静的安定条件で拘束された姿勢の下位概念
+— refers-to 第3編3.11 (grasp specification and synthesis)
 
 ### 3.5
 **resolution**
@@ -163,7 +163,7 @@ EXAMPLE （生産）ロボット関節エンコーダのパルス分解能、ビ
 Note 1 to entry: Core image：ものさしの最小目盛りより細かい違いは、そもそも読み取れないという、計測装置そのものの限界。
 
 Note 2 to entry: Concept relations:
-— refers-to pose（原2.05）、calibration reference（原2.14）、symmetry rule（原3.10）、V&V level（原3.11）、measurement（原4.05）（いずれも第2編以降で採番予定）
+— refers-to 第2編3.5 (pose), 第2編3.15 (calibration reference), 第3編3.12 (symmetry rule), 第3編3.13 (v&v level), 第4編3.3 (measurement)
 ※逆方向では、姿勢推定・計測の各概念が constrained-by 3.5 (resolution) の関係に立つ
 
 Note 3 to entry: 計測限界は計測装置という物理資産そのものの限界であるため、規約（第2編）ではなく本編（Asset層）に置く。
@@ -182,7 +182,7 @@ Note 1 to entry: Core image：工程図の中の、名前の付いた1つの箱�
 
 Note 2 to entry: Concept relations:
 — refers-to 3.7 (human-machine function allocation)
-— refers-to work interface（原4.02）、nested IPO decomposition（原4.03）、spatial element classification（原3.08）、process state（原3.12）、state expectation（原3.13）（いずれも第3編・第4編で採番予定）
+— refers-to 第4編3.4 (work interface), 第4編3.5 (nested IPO decomposition), 第3編3.10 (spatial element classification), 第3編3.14 (process state), 第3編3.15 (state expectation)
 
 Note 3 to entry: 場所そのもの（物理資産）は本概念、その場所が果たす機能的役割は work interface（原4.02）、そこを通過する対象の状態は process state（原3.12）。関心事の層が異なるため編をまたぐ。
 
@@ -201,7 +201,7 @@ Note 1 to entry: Core image：その場所で人は「触れる」のか「見�
 Note 2 to entry: Concept relations:
 — refers-to 3.6 (process location)
 — refers-to 3.8 (interaction interface) ※機能配分は接点を通じて行使される（「監視」はパトライトを介し、「手動操作」は制御盤を介する）
-— refers-to work interface（原4.02、第4編で採番予定）※3軸ファセット分類である原4.02と同型の構造であり、対比によって識別すべき2概念ではない。原辞書 参考表4-1 の「典型的な人インタフェース／機械インタフェース」2列は本概念の値を用いており、第4編変換時に列名を「典型的な機能配分」へ是正する
+— refers-to 第4編3.4 (work interface) ※3軸ファセット分類である同エントリと同型の構造であり、対比によって識別すべき2概念ではない。原辞書 参考表4-1 の「典型的な人インタフェース／機械インタフェース」2列は本概念の値を用いており、第4編附属書Fで列名を「典型的な機能配分」へ是正済み（原辞書側は未反映。`backlog.md` F-11）
 
 Note 3 to entry: 原辞書 v0.17.0 では本エントリ（原1.07）の和文名が「関与インタフェース分類」だったが、定義文が表すのは関与の度合い・主体の配分であり、旧和文名が指す「接点」概念（3.8）とは別概念であることが本変換で判明した。定義文はそのまま存続させ、和文名のみ「人・機械機能配分」へ是正した（**提案値**。名称変更は恒久IDの版を上げない — 原辞書8.9節）。
 
@@ -222,8 +222,8 @@ Note 1 to entry: Core image：場所の「受付窓口」。ランプは見せ�
 Note 2 to entry: Concept relations:
 — refers-to 3.6 (process location) ※接点は場所に設置される
 — refers-to 3.7 (human-machine function allocation) ※どの接点が要るかは機能配分に依存する（無人なら制御盤は不要になりうる）
-— refers-to state expectation（原3.13、第3編で採番予定）※受け渡し接点の受け入れ条件を規定
-— refers-to datum reference feature（原2.13、第2編で採番予定）※受け渡し接点の幾何的位置決めを担う
+— refers-to 第3編3.15 (state expectation) ※受け渡し接点の受け入れ条件を規定
+— refers-to 第2編3.14 (datum reference feature) ※受け渡し接点の幾何的位置決めを担う
 
 Note 3 to entry: 本概念は原1.07の元来の意図（旧ID `term.involvement-interface`）を独立エントリとして再建したもの。原1.07の定義文は機能配分概念（3.7）を定義していたため、恒久IDは版上げではなく新項目コード `eed:0145` で発番した（原辞書8.9節「非互換な変更は新しい項目コードを振る」。項目コード0145は原辞書の割り当て 0001〜0144 の直後）。**新設・発番とも提案値**であり、確定時は原辞書と decisions.md に反映のこと。
 
@@ -313,7 +313,7 @@ NOTE 2 本表の各行は附属書Cの OWL 記述例における個体・クラ�
 | refers-to | 参照・パラメータ関連付け（Semantic Reference） | 連想関係 (associative) |
 | constrained-by | 幾何条件・境界拘束（Constraint Enforcement） | 連想関係 (associative) |
 
-NOTE 1 原辞書の見本（STD-GEO-24159）はこのほか transforms、calibrated-from、aligns-with、mates-to の4型を定義するが、これらは座標変換・校正・作業一致・嵌合を表す型であり、Asset層（本編）には出現しない。第2編（Integration層）以降の変換で導入する。
+NOTE 1 原辞書の見本（STD-GEO-24159）はこのほか transforms、calibrated-from、aligns-with、mates-to の4型を定義するが、これらは座標変換・校正・作業一致・嵌合を表す型であり、Asset層（本編）には出現しない。第2編（Integration層）以降の変換で導入する。（2026-09-02追補：`transforms` は第2編・第4編で確定使用、`calibrated-from`・`aligns-with` は第2編で候補提示のまま全編化時のレビュー待ち、`mates-to` は全6編を通じて確定使用ゼロのため**廃止した** — 第M編附属書C.1 NOTE 3、`decisions.md` D-2026-09-02-05。）
 
 NOTE 2 本編で関係型を確定できたのは is-a 1件（3.4 → pose）のみで、他は保守的に refers-to とした。付与判断が原辞書の記載を超える箇所（3.2 の部分関係候補、3.5 の constrained-by 逆方向）は、各エントリの Note 2 内に「候補」「逆方向」として明示し、確定は全編化時のレビューに委ねる。
 
@@ -380,6 +380,8 @@ NOTE 登場人物の完全な一覧（19件）と双方向網羅性の検証（�
 | 3.6 | 1.06 | `eed:0006#001` | process location |
 | 3.7 | 1.07 | `eed:0007#001` | human-machine function allocation |
 | 3.8 | —（原1.07から概念分離により新設） | `eed:0145#001`（提案） | interaction interface |
+
+NOTE（2026-09-02追補） 本編の Note 2（Concept relations）が編をまたいで参照する箇所は、**参照先の編の採番と編番号を必ず含む**（例：`第4編3.4 (work interface)`。原採番を併記している箇所もある — 例：`第1編3.4 (stable pose)`）。第4編のみ原辞書の採番と本仕様書の採番が一致しないため（原 `4.02` → 第4編 `3.3` 等）、原採番との対応は第4編附属書E.1 を参照すること。他の編は原採番と1対1で対応する（第1編は `1.0N` → `3.N`）。
 
 ### E.2 欄の写像規則（全編展開時にこの規則で機械的に変換する）
 

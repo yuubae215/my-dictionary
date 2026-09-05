@@ -19,8 +19,8 @@ Conceptual vocabulary for spatial-data modelling — Part 1: Physical assets (As
 本試作版に関する変換上の申し合わせ:
 
 - 本文書は既存の概念辞書（v0.17.0、以下「原辞書」）の第I部（Asset層）のみを ISO 形式に変換した試作である。第2編以降（Integration層〜Business層、原辞書 第II部〜第V部）は同一フォーマットで順次変換する。
-- 原辞書の**恒久ID（IRDI: `eed:XXXX#YYY` 形式）は一切変更していない**。外部参照は引き続き恒久IDで行うこと。採番（3.1〜3.7）は本仕様書内の表示位置であり、原辞書採番（1.01〜1.07）との対応は附属書Eに示す。
-- **エントリ本文には IRDI のみを残し、その他のメタデータ（RAMI 4.0 軸・責務タグ・語彙区分・実例カバレッジ）は附属書Bの一覧表に集約**した（v0.2.0）。RAMI 4.0 の Layers 軸は編構成（第1編＝Asset層）と一対一のため欄そのものを廃止し、他の2軸（Hierarchy Levels / Life Cycle）と責務タグはデータとして保全する。空セル分析（原辞書4.5節）・P/C逆引き（原辞書8.3節）・OWL出力は附属書Bの表から再構築できる。
+- 原辞書の**恒久ID（EED-ID: `eed:XXXX#YYY` 形式）は一切変更していない**。外部参照は引き続き恒久IDで行うこと。採番（3.1〜3.7）は本仕様書内の表示位置であり、原辞書採番（1.01〜1.07）との対応は附属書Eに示す。
+- **エントリ本文には EED-ID のみを残し、その他のメタデータ（RAMI 4.0 軸・責務タグ・語彙区分・実例カバレッジ）は附属書Bの一覧表に集約**した（v0.2.0）。RAMI 4.0 の Layers 軸は編構成（第1編＝Asset層）と一対一のため欄そのものを廃止し、他の2軸（Hierarchy Levels / Life Cycle）と責務タグはデータとして保全する。空セル分析（原辞書4.5節）・P/C逆引き（原辞書8.3節）・OWL出力は附属書Bの表から再構築できる。
 - 原辞書の「関連エントリ」欄は関係の存在のみを示し関係型を持たなかった（原辞書5章冒頭が既知の弱点として明記）。本変換では各関係に**関係型（附属書C）を新規に付与**した。関係型の付与は本変換における提案であり、原辞書の記載事実ではない。
 - 原1.07 には**概念ドリフト**が確認された：定義文は関与の度合い・主体の配分（機能配分）を定義しているが、旧ID `term.involvement-interface` と旧和文名「関与インタフェース分類」が示す元来の意図は「関与を媒介する接点（パトライト・制御盤・置き治具等）」だった。本変換では両概念を分離し、`eed:0007` は定義文どおり機能配分概念として存続（3.7、和文名のみ「人・機械機能配分」へ是正）、接点概念は新項目コード `eed:0145` で新設した（3.8）。版上げでなく新規発番としたのは原辞書8.9節の規則（非互換な変更は新しい項目コードを振る）に従うため。詳細経緯は別紙 decisions ドラフト参照。
 - 原辞書の独自コンテンツ（登場人物対応表・現場語体系・MECE検証・索引）は削除せず、informative な附属書として保全する。本試作には第I部スコープ分の附属書A（現場語）・附属書D（登場人物）を収録し、全編化時に MECE 検証・索引類を附属書F以降として追加する。（2026-09-03追補：**全編附属書 `STD-EED-0001-0` として実現した。** MECE検証は同編の附属書F、索引類は同編の附属書G であり、この行が予告した記号のとおりになっている。）
@@ -68,6 +68,8 @@ flowchart TD
 本仕様書の構築にあたり、以下の標準・規格の構成ルールおよび技術概念を参照・活用しています：
 
 * ISO 704:2009, Terminology work — Principles and methods
+* ISO 10241-1:2011, Terminological entries in standards — Part 1: General requirements and examples of presentation（admitted term・DEPRECATED の扱い。2026-09-05 追加）
+* ISO/IEC Directives, Part 2, Principles and rules for the structure and drafting of ISO and IEC documents（定義文に要件を含めない規則）
 * ISO 10303 (STEP), Industrial automation systems and integration — Product data representation and exchange（B-rep 境界表現）
 * IEC 61360-1, Standard data element types with associated classification scheme
 * IEC 62264 (ISA-95), Enterprise-control system integration（設備階層）
@@ -78,13 +80,13 @@ flowchart TD
 
 ## 3 用語及び定義 (Terms and Definitions)
 
-各エントリは、用語（英語主名称・和文名・admitted term）、恒久ID（IRDI）、定義文、適用例（EXAMPLE）、およびエントリ注記（Note 1: コアイメージ／Note 2: 概念間関係／Note 3以降: 用法上の注意）で構成されます。分類メタデータ（RAMI 4.0 軸・責務タグ・語彙区分・実例カバレッジ）は附属書Bの概念メタデータ一覧に集約しています。
+各エントリは、用語（英語主名称・和文名・admitted term・DEPRECATED）、恒久ID（EED-ID）、定義文、適用例（EXAMPLE）、およびエントリ注記（Note 1: コアイメージ／Note 2: 概念間関係／Note 3以降: 用法上の注意）で構成されます。分類メタデータ（RAMI 4.0 軸・責務タグ・語彙区分・実例カバレッジ）は附属書Bの概念メタデータ一覧に集約しています。
 
 ### 3.1
 **bounding volume**
 バウンディングボリューム
 admitted term: 外接包絡形状
-IRDI: `eed:0001#001`
+EED-ID: `eed:0001#001`
 
 対象物を包含する最小限の単純な立体（直方体・球など）。搬送経路や干渉チェックの一次スクリーニングに使う簡略表現。
 
@@ -103,7 +105,7 @@ Note 3 to entry: 実務でより頻繁に使われる「バウンディングボ
 **topology**
 トポロジー構造
 admitted term: 境界グラフ（boundary graph）
-IRDI: `eed:0002#001`
+EED-ID: `eed:0002#001`
 
 頂点・辺・面から成る局所的な幾何構造。次元によって要素数が決まる。
 
@@ -123,7 +125,7 @@ Note 3 to entry: トポロジーは「頂点・辺・面がどうつながって
 ### 3.3
 **mass properties**
 質量特性
-IRDI: `eed:0003#001`
+EED-ID: `eed:0003#001`
 
 対象の質量中心位置と質量、慣性テンソル。高速な移動・操作時の遠心力・慣性補償計算に必須。
 
@@ -139,7 +141,7 @@ Note 2 to entry: Concept relations:
 ### 3.4
 **stable pose**
 安定姿勢
-IRDI: `eed:0004#001`
+EED-ID: `eed:0004#001`
 
 対象が外力なしに静止できる姿勢。支持多角形と接地面の法線ベクトルで表す。
 
@@ -154,7 +156,7 @@ Note 2 to entry: Concept relations:
 ### 3.5
 **resolution**
 分解能
-IRDI: `eed:0005#001`
+EED-ID: `eed:0005#001`
 
 センサ・エンコーダ・ビジョン系などの計測系が区別できる最小の変化量。対象の実際の精密さがどれほど高くても、計測系の分解能を超えた差異はデータ上で区別できない。
 
@@ -172,7 +174,7 @@ Note 3 to entry: 計測限界は計測装置という物理資産そのものの
 **process location**
 工程内場所
 admitted term: station
-IRDI: `eed:0006#001`
+EED-ID: `eed:0006#001`
 
 生産ラインやワークフローの中で、特定の役割（work interface、原4.02）と、特定の人・機械の関与（3.7）を持つ、機能的に区切られた場所。
 
@@ -189,8 +191,7 @@ Note 3 to entry: 場所そのもの（物理資産）は本概念、その場所
 ### 3.7
 **human-machine function allocation**
 人・機械機能配分
-admitted term: 人・機械の2軸
-IRDI: `eed:0007#001`
+EED-ID: `eed:0007#001`
 
 ある場所への関与のしかたを、人インタフェース（手動操作／監視／例外対応／無人）と機械インタフェース（ロボット／専用機／コンベア／搬送車／無し）という2軸の組み合わせで表す分類。1つの場所は両軸の値を同時に持つ。
 
@@ -207,11 +208,13 @@ Note 3 to entry: 原辞書 v0.17.0 では本エントリ（原1.07）の和文�
 
 Note 4 to entry: 本概念に対応する現場語は未抽出（附属書A参照）。
 
+Note 5 to entry: 原辞書の別称欄「人・機械の2軸」は本概念の構造を述べる説明句であり用語ではないため、ISO 10241-1 に従い admitted term から外し本注記に置く。Levels of Automation（LoA）／Fitts list 系の機能配分に連なる考え方である（`decisions.md` D-2026-09-05-11）。
+
 ### 3.8
 **interaction interface**
 関与インタフェース
-admitted term: 関与インタフェース分類（原1.07の旧和文名）
-IRDI: `eed:0145#001`（本変換で新設提案）
+DEPRECATED: 関与インタフェース分類（原1.07の旧和文名。別概念 3.7 の名でもあった。Note 3参照）
+EED-ID: `eed:0145#001`（本変換で新設提案）
 
 工程内場所とその関与者（人・機械）との間で関与を媒介する、物理的・情報的な接点。接点は方向により3種に分かれる：**提示**（場所→関与者：状態を見せる）、**操作**（関与者→場所：指示を受け付ける）、**受け渡し**（ワークの授受）。
 
@@ -289,7 +292,7 @@ Clause 3 の各エントリに付随する分類メタデータの一覧です�
 - **語彙区分**: 標準（外部規格に定義あり）／業界一般／独自（本アーキテクチャの造語。外部共有時に説明が必要）。
 - **カバレッジ**: 実例を確認済みの分野（生産 / CAD・ロボティクス）。`—` は未確認（実例を創作しない）。
 
-| 採番 | 用語 | IRDI | 旧ID | Hier. Level | Life Cycle | Provider | Consumer | 語彙区分 | カバレッジ |
+| 採番 | 用語 | EED-ID | 旧ID | Hier. Level | Life Cycle | Provider | Consumer | 語彙区分 | カバレッジ |
 |---|---|---|---|---|---|---|---|---|---|
 | 3.1 | bounding volume | `eed:0001#001` | `term.bounding-volume` | Product | Type | ProductDesign | MfgRobotics, StationControl | 業界一般 | 生産 ◯ / CAD ◯ |
 | 3.2 | topology | `eed:0002#001` | `term.topology` | Product | Type | ProductDesign | MfgRobotics | 標準（ISO 10303 B-rep） | 生産 ◯ / CAD ◯ |
@@ -375,7 +378,7 @@ NOTE **登場人物の完全な一覧と双方向網羅性の検証は、全編�
 
 ### E.1 採番対応
 
-| 本仕様書 | 原辞書採番 | 恒久ID (IRDI) | English Name |
+| 本仕様書 | 原辞書採番 | 恒久ID (EED-ID) | English Name |
 |---|---|---|---|
 | 3.1 | 1.01 | `eed:0001#001` | bounding volume |
 | 3.2 | 1.02 | `eed:0002#001` | topology |
@@ -393,9 +396,10 @@ NOTE（2026-09-02追補） 本編の Note 2（Concept relations）が編をま�
 | 原辞書の欄 | ISO形式での行き先 |
 |---|---|
 | 見出し（English Name） | エントリの主見出し（preferred term、英語小文字） |
-| 和文名 | 見出し直下の副見出し（英語名との不一致は改称提案＋旧称の admitted term 降格で解消し、Note に経緯を記す） |
-| 別称 | admitted term |
-| 恒久ID | エントリ頭の IRDI 行＋附属書B |
+| 和文名 | 見出し直下の副見出し（英語名との不一致は改称提案＋旧称の `DEPRECATED:` 行への降格で解消し、Note に経緯を記す） |
+| 別称 | admitted term（**同一概念の同義語のみ**。ISO 10241-1）。別称欄にある**値**（right-handed／left-handed）・**下位概念**（掃引操作）・**説明句**（人・機械の2軸）は Note へ移す |
+| （旧称） | `DEPRECATED:` 行（2026-09-05 追加。改称前の名称・旧和文名を置く。admitted term とは区別する — `decisions.md` D-2026-09-05-11） |
+| 恒久ID | エントリ頭の EED-ID 行＋附属書B |
 | 定義 | 定義文（エントリ本文、無番） |
 | 具体例（生産／CAD） | EXAMPLE 1 / EXAMPLE 2（片方未確認なら EXAMPLE 1件のみ） |
 | コアイメージ | Note 1 to entry: Core image |

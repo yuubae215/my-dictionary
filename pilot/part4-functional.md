@@ -14,10 +14,10 @@ Conceptual vocabulary for spatial-data modelling — Part 4: Function and transf
 
 本仕様書は、第1編（物理資産／Asset層）・第2編（空間統合／Integration層）・第3編（意味・情報／Information層）に続く、空間データを扱うモデリングにおける概念語彙の自主技術仕様書である。用語エントリの構造・記述フォーマット・変換方針は先行3編と同一であり、詳細は第1編前書きを参照。以下は本編（第4編）固有の申し合わせである。
 
-- 原辞書の**恒久ID（IRDI）は一切変更していない**。ただし本編は、先行3編と異なり**原辞書の採番順と本仕様書の採番順が一致しない**。原辞書 第IV部のサブグループ IV-A は `4.01` と `4.05` という非連続な2件で構成されており、サブグループ順に並べると採番が飛ぶためである。本仕様書では主題（サブグループ）順に `3.2`〜`3.6` を振り直した（`3.2`←原`4.01`、`3.3`←原`4.05`、`3.4`←原`4.02`、`3.5`←原`4.03`、`3.6`←原`4.04`）。項目コードは採番に依存しないため影響を受けない（原辞書8.9節「項目コードに意味を持たせない」。附属書E.1、`decisions.md` D-2026-08-22-10）。
+- 原辞書の**恒久ID（EED-ID）は一切変更していない**。ただし本編は、先行3編と異なり**原辞書の採番順と本仕様書の採番順が一致しない**。原辞書 第IV部のサブグループ IV-A は `4.01` と `4.05` という非連続な2件で構成されており、サブグループ順に並べると採番が飛ぶためである。本仕様書では主題（サブグループ）順に `3.2`〜`3.6` を振り直した（`3.2`←原`4.01`、`3.3`←原`4.05`、`3.4`←原`4.02`、`3.5`←原`4.03`、`3.6`←原`4.04`）。項目コードは採番に依存しないため影響を受けない（原辞書8.9節「項目コードに意味を持たせない」。附属書E.1、`decisions.md` D-2026-08-22-10）。
 - **サブグループ IV-A の主題を上位概念として立て、`3.1`（幾何要素に対する操作、`eed:0149#001`）を新設した**（**新設提案**）。3.2（次元上昇操作）と 3.3（計測）は「一方を他方に含めてはならない」という関係にあるが、両者に共通する上位概念が辞書に立っていなかった（`decisions.md` D-2026-09-02-12、`backlog.md` P-05）。これにともない本編の採番が1つずつ繰り下がった（附属書E.1。恒久IDは不変）。
 - **写像作業の結果、原辞書由来の5概念に概念ドリフトを1件検出した（1/5）。** `3.2`（原4.01）の和文名「掃引操作」および英語主名称 Sweep Operation は、定義文が画定している概念（次元を一段上げる操作一般）の**下位概念**にすぎない。定義文・具体例・現場語・旧恒久ID（`term.dimension-raising-op`）のいずれもが上位概念の側を指しているため、原辞書8.9節の規則に従い**定義文を存続させ、名称のみを「次元上昇操作 / dimension-raising operation」へ是正した（提案値。名称変更は版を上げない）**。詳細は3.2のNote 3、および `decisions.md` D-2026-08-22-07。
-- **原辞書4.5節の空セル一覧が「判断保留」としていた `Functional × N/A` に、本変換の結果として回答を与えた。** 3.2 の定義文が明示的に「設計パターン」であり設備階層に依存しないことから、Hierarchy Level を `Product` から `N/A（メタ概念）` へ改める提案を附属書Bに記載した（`decisions.md` D-2026-08-22-08）。
+- **原辞書4.5節の空セル一覧が「判断保留」としていた `Functional × N/A` に、本変換の結果として回答を与えた。** 当初（2026-08-22）は 3.2 の定義文が「設計パターン」であることから Hierarchy Level を `Product` から `N/A（メタ概念）` へ改める提案を附属書Bに記載した（`decisions.md` D-2026-08-22-08）。**2026-09-05 にこの提案を撤回し、`Product` に戻した。** 3.2 は名称・コアイメージ・具体例・現場語（主語＝ワーク）の4要素がすべて「操作」を指しており、概念種別は operation である。設計原則は本辞書ではメタ語彙（第M編 M-D）に置く方針であり、対象語彙にある以上「操作」と見るのが整合的である。原辞書4.5節の判断保留への回答は「`Product` のまま」となり、`Functional × N/A` は空セル（未収録）として残る（`decisions.md` D-2026-09-05-10、`backlog.md` B-11 クローズ）。
 - **第1編で予告した参考表4-1の列名是正を本編で実施した。** 「典型的な人インタフェース／典型的な機械インタフェース」の2列は、列名が「インタフェース」でありながら値は機能配分（監視・コンベア等）であったため、「典型的な機能配分（人／機械）」へ改めた（附属書F。第1編3.7 Note 2 の予告どおり。`decisions.md` D-2026-08-18-02 の実施、および D-2026-08-22-12）。
 - **原辞書 参考表4-2 の前書きにある「3.18」は宙に浮いた参照である。** 第III部の採番は `3.01`〜`3.16` であり `3.18` は存在しない。同表の列見出しが「入力状態期待値（3.13）」「出力状態期待値（3.13）」と2度 `3.13` を引いていることから、`3.13 状態期待値` の誤記と判断し、本仕様書（附属書G）では `3.13` と記載した（`decisions.md` D-2026-08-22-11）。
 - **メタ語彙（M.01〜M.14、原辞書6.1節）への参照は、引き続き forward reference として先送りする**（`decisions.md` D-2026-08-22-01）。本編からの参照は無い。
@@ -63,7 +63,7 @@ flowchart TD
 
 ## 3 用語及び定義 (Terms and Definitions)
 
-各エントリは、用語（英語主名称・和文名・admitted term）、恒久ID（IRDI）、定義文、適用例（EXAMPLE）、およびエントリ注記（Note 1: コアイメージ／Note 2: 概念間関係／Note 3以降: 用法上の注意）で構成されます。分類メタデータは附属書Bに集約しています。
+各エントリは、用語（英語主名称・和文名・admitted term・DEPRECATED）、恒久ID（EED-ID）、定義文、適用例（EXAMPLE）、およびエントリ注記（Note 1: コアイメージ／Note 2: 概念間関係／Note 3以降: 用法上の注意）で構成されます。分類メタデータは附属書Bに集約しています。
 
 **サブグループ（区分基準＝主題）:** IV-A 幾何に対する機能（3.1〜3.3、3件。うち3.1は本仕様書での新設提案）／ IV-B 工程に対する機能（3.4〜3.6、3件）。
 
@@ -74,7 +74,7 @@ NOTE 原辞書の記載は「IV-A（4.01、4.05、2件）／ IV-B（4.02〜4.04�
 ### 3.1
 **geometric operation**
 幾何要素に対する操作
-IRDI: `eed:0149#001`（**新設提案**。Note 3参照）
+EED-ID: `eed:0149#001`（**新設提案**。Note 3参照）
 
 既存の幾何要素を入力として、新しい幾何要素または量を得る操作。得られるものが**幾何要素**か**量**かによって、次元上昇操作（3.2）と計測（3.3）に分かれる。
 
@@ -96,8 +96,8 @@ Note 4 to entry: 3.3（計測）Note 3 の「両者が同じ操作に見える�
 ### 3.2
 **dimension-raising operation**
 次元上昇操作
-admitted term: 掃引操作／sweep operation（下位概念。Note 3参照）／swept_area_solid・swept_surface (ISO 10303)
-IRDI: `eed:0040#001`
+DEPRECATED: 掃引操作／Sweep Operation（原辞書 v0.17.0 の名称。下位概念の名であったため是正。Note 3参照）
+EED-ID: `eed:0040#001`
 
 低次元のエンティティに対する操作が、それ自体を変化させず、より高次元の新しいエンティティを生成するという設計パターン。
 
@@ -113,17 +113,17 @@ Note 2 to entry: Concept relations:
 — refers-to 3.4 (work interface) ※変化対象＝形状である場所（加工）で行使される操作の抽象
 — refers-to 第1編3.2 (topology) ※生成される高次元エンティティの接続関係
 
-Note 3 to entry: 原辞書 v0.17.0 では本エントリ（原4.01）の和文名が「掃引操作」、英語主名称が Sweep Operation だったが、これは定義文が画定する概念の**下位概念**である。掃引（ISO 10303 の `swept_area_solid`／`swept_surface`）は低次元エンティティを経路に沿って移動させて高次元エンティティを得る操作であり、押し出し・回転・ロフトの3つを覆うが、ライン作成（2点→線分）とスケッチ（点・線→2D輪郭）は掃引ではない。原辞書自身も具体例欄で「〔5操作〕の総称」と「ISO 10303 では〔うち3操作〕をまとめて swept_area_solid／swept_surface として扱う」を書き分けており、5要素の概念に3要素の下位概念名が付いていた。旧恒久ID `term.dimension-raising-op`・旧和文名「次元上昇操作」に本来の意図が残存している。定義文はそのまま存続させ、名称のみ「次元上昇操作 / dimension-raising operation」へ是正した（**提案値**。名称変更は恒久IDの版を上げない — 原辞書8.9節）。掃引は admitted term として保全したうえで、独立した下位概念エントリを立てるかは `decisions.md` D-2026-08-22-06（対比ペアの親概念）と同じ棚卸しで判断する。
+Note 3 to entry: 原辞書 v0.17.0 では本エントリ（原4.01）の和文名が「掃引操作」、英語主名称が Sweep Operation だったが、これは定義文が画定する概念の**下位概念**である。掃引（ISO 10303 の `swept_area_solid`／`swept_surface`）は低次元エンティティを経路に沿って移動させて高次元エンティティを得る操作であり、押し出し・回転・ロフトの3つを覆うが、ライン作成（2点→線分）とスケッチ（点・線→2D輪郭）は掃引ではない。原辞書自身も具体例欄で「〔5操作〕の総称」と「ISO 10303 では〔うち3操作〕をまとめて swept_area_solid／swept_surface として扱う」を書き分けており、5要素の概念に3要素の下位概念名が付いていた。旧恒久ID `term.dimension-raising-op`・旧和文名「次元上昇操作」に本来の意図が残存している。定義文はそのまま存続させ、名称のみ「次元上昇操作 / dimension-raising operation」へ是正した（**提案値**。名称変更は恒久IDの版を上げない — 原辞書8.9節）。旧名称は `DEPRECATED:` 行に保全し（ISO 10241-1 の旧称の扱い。下位概念 `swept_area_solid`／`swept_surface` の ISO 10303 名は同義語ではないため admitted term には置かない）、独立した下位概念エントリを立てるかは `decisions.md` D-2026-08-22-06（対比ペアの親概念）と同じ棚卸しで判断する。
 
 Note 4 to entry: 語彙区分は「標準（ISO 10303）」から「業界一般」へ改める提案とした（附属書B）。ISO 10303 が定義しているのは下位概念である掃引であり、本エントリが画定する次元上昇操作一般ではないためである。原辞書8.8節（語彙区分別一覧）・8.1節・8.2節の索引にも同じ是正が波及する。
 
-Note 5 to entry: 原辞書4.5節は空セル `Functional × N/A` を「判断保留（4.01 掃引操作を `Product` としているが、階層に依存しないメタ操作と見る余地がある）」としていた。定義文が明示的に「設計パターン」であり、EXAMPLE 2 のように幾何以外にも適用される以上、設備階層には依存しないと判断し、Hierarchy Level を `N/A（メタ概念）` とする提案を附属書Bに記載した（**提案値**。RAMI軸の値は定義文の意味ではないため版は上げない）。確定時は原辞書4.3節のクロス表（Functional 行：`Product` 1→0、`N/A` 0→1）にも波及する。
+Note 5 to entry: 原辞書4.5節は空セル `Functional × N/A` を「判断保留（4.01 掃引操作を `Product` としているが、階層に依存しないメタ操作と見る余地がある）」としていた。本仕様書は当初（2026-08-22）、定義文の「設計パターン」を根拠に Hierarchy Level を `N/A（メタ概念）` とする提案を出したが（`decisions.md` D-2026-08-22-08）、設計レビュー（§2.3）が指摘したとおり、幾何以外にも適用される設計パターンであるなら 3.1（幾何要素に対する操作）の下位概念ではありえず、is-a と N/A は両立しない。**2026-09-05 に N/A の提案を撤回し、原辞書どおり `Product` とした。** 根拠は、名称・コアイメージ・EXAMPLE 1・現場語（ライン作成・スケッチ・押し出し。主語＝ワーク）の4要素がすべて「ワークの幾何に対する操作」を指していることにある。定義文の genus 語「設計パターン」だけが浮いており、設計原則は本辞書ではメタ語彙（第M編 M-D）に置く方針であるから、対象語彙にある本エントリの概念種別は operation である（全編附属書B の種別欄）。原辞書側には定義文の genus を「操作」へ改める（版上げ `#002`）ことを推奨した（`backlog.md` F-26）。EXAMPLE 2（モデリング手順への適用）は原辞書由来の具体例として保存するが、これは同型のパターンが手順にも現れるという**類比**であり、本概念の個体ではない（`decisions.md` D-2026-09-05-10、`backlog.md` B-11 クローズ）。
 
 ### 3.3
 **measurement**
 計測
 admitted term: 測定／measurement operation
-IRDI: `eed:0041#001`
+EED-ID: `eed:0041#001`
 
 既存の幾何要素から距離・角度・面積などの量を取り出す操作。新しい幾何要素を生まない点で3.2（次元上昇操作）と異なり、幾何を生む操作の副次的な結果として値を得る。
 
@@ -150,7 +150,7 @@ Note 4 to entry: 第2編3.11（距離定義規約）との関係は、値が規�
 **work interface**
 作業インタフェース
 admitted term: 場所の役割
-IRDI: `eed:0042#001`
+EED-ID: `eed:0042#001`
 
 ある場所で、ワークに対してどのような変化（またはどのような評価）が行われるかを表す分類。単一のカテゴリ名の列挙ではなく、区分基準（characteristic of division）を一つに揃えた3本の独立した軸の組み合わせとして定義する。
 
@@ -177,7 +177,7 @@ Note 4 to entry: 本辞書は「インタフェース」という語を3つの�
 **nested IPO decomposition**
 IPOネスト構造
 admitted term: nested input-process-output decomposition
-IRDI: `eed:0043#001`
+EED-ID: `eed:0043#001`
 
 ある処理単位を、入力状態期待値・処理・出力状態期待値の三つ組として捉え、その処理自体をさらにズームインすると内部に同じ構造が現れる再帰的な分解の考え方。
 
@@ -198,8 +198,9 @@ Note 4 to entry: 分解の境界に置かれる期待値そのもの（第3編3.
 ### 3.6
 **transformation activity**
 変換行為
-admitted term: ギャップ充填行為／Gap-Filling Action／旧称 処理
-IRDI: `eed:0044#001`
+admitted term: ギャップ充填行為／Gap-Filling Action
+DEPRECATED: 処理（旧称）
+EED-ID: `eed:0044#001`
 
 入力状態期待値を出力状態期待値（第3編3.15）へと実際に変換する処理そのもの。必ず満たすべき**制約**と、可能なら満たしたい**選好**の両方を持ちうる。
 
@@ -275,18 +276,18 @@ NOTE 2 3.5 (nested IPO decomposition) に対応する現場語は未抽出（原
 - **語彙区分**: 標準／業界一般／独自の3値。
 - **カバレッジ**: 実例を確認済みの分野（生産 / CAD・ロボティクス）。`—` は未確認。
 
-| 採番 | 用語 | IRDI | 旧ID | Hier. Level | Life Cycle | Provider | Consumer | 語彙区分 | カバレッジ |
+| 採番 | 用語 | EED-ID | 旧ID | Hier. Level | Life Cycle | Provider | Consumer | 語彙区分 | カバレッジ |
 |---|---|---|---|---|---|---|---|---|---|
-| 3.1 | geometric operation | `eed:0149#001`（新設提案） | —（新設） | N/A（メタ概念） | Type | MetaArchitecture, ProductDesign | MfgRobotics, StationControl | 独自 | 生産 ◯ / CAD ◯ |
-| 3.2 | dimension-raising operation | `eed:0040#001` | `term.dimension-raising-op` | N/A（メタ概念）※提案値 | Type | MetaArchitecture, ProductDesign | MfgRobotics | 業界一般 ※提案値 | 生産 ◯ / CAD ◯ |
+| 3.1 | geometric operation | `eed:0149#001`（新設提案） | —（新設） | Product | Type | MetaArchitecture, ProductDesign | MfgRobotics, StationControl | 独自 | 生産 ◯ / CAD ◯ |
+| 3.2 | dimension-raising operation | `eed:0040#001` | `term.dimension-raising-op` | Product | Type | MetaArchitecture, ProductDesign | MfgRobotics | 業界一般 ※提案値 | 生産 ◯ / CAD ◯ |
 | 3.3 | measurement | `eed:0041#001` | `term.measurement` | Field Device | Instance | ProductDesign, MfgRobotics | StationControl, ShopfloorIT | 標準（VIM） | 生産 ◯ / CAD ◯ |
 | 3.4 | work interface | `eed:0042#001` | `term.work-interface` | Station | Type | StationControl | MfgRobotics, ShopfloorIT | 独自 | 生産 ◯ / CAD — |
 | 3.5 | nested IPO decomposition | `eed:0043#001` | `term.ipo-nesting` | Station | Type | StationControl | MfgRobotics, ShopfloorIT | 標準（IDEF0／SADT） | 生産 ◯ / CAD — |
 | 3.6 | transformation activity | `eed:0044#001` | `term.process-action` | Station | Type & Instance | MfgRobotics, StationControl | StationControl, ShopfloorIT | 業界一般（IDEF0／SADT、CSP） | 生産 ◯ / CAD ◯ |
 
-NOTE 1 3.2 の Hier. Level と語彙区分は本変換での**提案値**である。原辞書の記載はそれぞれ `Product`／`標準（ISO 10303）`。変更理由は3.2のNote 4・Note 5、および `decisions.md` D-2026-08-22-07・D-2026-08-22-08 を参照。確定時は原辞書4.3節のクロス表と8.8節（語彙区分別一覧）に波及する。
+NOTE 1 3.2 の語彙区分は本変換での**提案値**である。原辞書の記載は `標準（ISO 10303）`。変更理由は3.2のNote 4、および `decisions.md` D-2026-08-22-07 を参照。確定時は原辞書8.8節（語彙区分別一覧）に波及する。**Hier. Level は 2026-09-05 に提案（`Product`→`N/A`、D-2026-08-22-08）を撤回し、原辞書どおり `Product` に戻した**（3.2 Note 5、`decisions.md` D-2026-09-05-10）。したがって原辞書4.3節のクロス表への波及はなくなった。
 
-NOTE 2 提案を確定した場合の原辞書4.3節 Functional 行は、軸1×軸2 が `Product` 0／`Field Device` 1／`Station` 3／`N/A` 1（計5）、軸1×軸3 は変更なし（`Type` 3／`Instance` 1／`Type & Instance` 1）となる。
+NOTE 2 3.1（新設提案）の Hier. Level は `Product` である。全編附属書B の概念種別で 3.1・3.2 はいずれも operation であり、操作はその対象（ワークの幾何要素）の設備階層を取る。原辞書4.3節 Functional 行は、3.1 が確定すれば軸1×軸2 が `Product` 2／`Field Device` 1／`Station` 3／`N/A` 0（計6）、軸1×軸3 は `Type` 4／`Instance` 1／`Type & Instance` 1 となる。
 
 ## 附属書C (informative) 関係型セマンティクス (Relational Semantics)
 
@@ -326,7 +327,7 @@ NOTE 2 `mates-to` は第I部での予告以来、第II・III・IV部を通じて
 
 ### E.1 採番対応
 
-| 本仕様書 | 原辞書採番 | 恒久ID (IRDI) | English Name | サブグループ |
+| 本仕様書 | 原辞書採番 | 恒久ID (EED-ID) | English Name | サブグループ |
 |---|---|---|---|---|
 | 3.1 | —（本仕様書での新設提案） | `eed:0149#001`（提案） | geometric operation | IV-A |
 | 3.2 | 4.01 | `eed:0040#001` | dimension-raising operation（原: Sweep Operation） | IV-A |

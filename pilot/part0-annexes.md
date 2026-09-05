@@ -12,14 +12,15 @@ Conceptual vocabulary for spatial-data modelling — Consolidated Annexes: Class
 
 ## 前書き (Foreword)
 
-本編は、第1〜5編（対象語彙52概念）と第M編（メタ語彙16概念）の**上に立つ集計と索引の編**である。原辞書5章・6章の変換が全編で完了したことを受け、原辞書4章（分類軸とMECE検証）と8章（索引）を復元する。以下は本編固有の申し合わせである。
+本編は、第1〜5編・第C編（対象語彙53概念）と第M編（メタ語彙16概念）の**上に立つ集計と索引の編**である。原辞書5章・6章の変換が全編で完了したことを受け、原辞書4章（分類軸とMECE検証）と8章（索引）を復元する。以下は本編固有の申し合わせである。
 
 - **本編は概念を1件も定義しない。** 規定（normative）にあたる用語及び定義は第1〜5編・第M編の Clause 3 にあり、本編の内容はすべて各編の附属書Bからの集計、または各編への索引である。したがって本編の附属書はすべて informative であり、Clause 3 は他編への参照のみを置く（Clause 3 参照）。
 - **文書番号は `STD-EED-0001-0` とする。** `-1`〜`-5` は RAMI 4.0 Layers 軸との一対一対応で振られ（`decisions.md` D-2026-08-18-03）、Layers 軸を持たないメタ語彙は `-6` ではなく `-M` を用いた（D-2026-08-22-19）。本編も Layers 軸を持たないが、メタ語彙とは違って**語彙ですらない**——全編を横断する集計である。原辞書が横断的な内容（0章 ドメイン視点）を `0` に置いたのと同じ位置づけとして `-0` を与える。`0` は Layers 軸の値域（5値＝1〜5）の外にあるため、一対一対応の不変条件は壊れない（`decisions.md` D-2026-09-03-01）。
 - **附属書の記号は第1〜5編・第M編と揃えた。** A＝現場語、B＝概念メタデータ、C＝関係型、D＝登場人物、E＝変換対応表という並びは全編共通である。本編ではこれに続けて、第1編附属書E.3 が全編化時の行き先として予告した2つ——**F＝原辞書4章（分類軸・MECE検証・空セル一覧）、G＝原辞書8章（索引）**——を置く。予告された記号がそのまま実現している。
-- **本編の集計母数は68エントリである**（対象語彙52＋メタ語彙16）。内訳は原辞書由来59＋本仕様書での新設提案9（`eed:0145` 関与インタフェース、`eed:0146`〜`0151` 対比ペアの親概念6件、`eed:0152`〜`0153` 方向の言語表現2件）。**原辞書4.3節・4.4節・8章の数字はいずれも59件以前の母数で書かれているため、本編の表と直接は一致しない。** 対応は附属書F・附属書Hに示す。
+- **本編の集計母数は69エントリである**（対象語彙53＋メタ語彙16）。内訳は原辞書由来59＋本仕様書での新設提案10（`eed:0145` 関与インタフェース、`eed:0146`〜`0151` 対比ペアの親概念6件、`eed:0152`〜`0153` 方向の言語表現2件、`eed:0174` 公開言語）。**原辞書4.3節・4.4節・8章の数字はいずれも59件以前の母数で書かれているため、本編の表と直接は一致しない。** 対応は附属書F・附属書Hに示す。
 - **2026-09-05 追補：設計レビュー（`review/2026-09-05-design-review.md`）を受けて4点を改めた。** ①第2編に `3.18` 方向参照枠・`3.19` 離散姿勢区分を新設し（`decisions.md` D-2026-09-05-02・-03）、母数を66→68、現場語を85→105語に更新した。②現場語の一意性を「（語, 主語）の組」単位へ改め、原辞書2.1節の同音異義3語と「インタフェース」を附属書Aに登録した（D-2026-09-05-04）。③RAMI 4.0 の Layers 軸は**6層**であり、本編がこれまで5値としていた軸1に `Communication` を加えた。同層は現時点で未収録であり、MECE 判定の軸1の行は「成立」から「部分的」へ改めた（D-2026-09-05-05、`backlog.md` B-09）。④第2編 Clause 4 の座標系規定をワールド／装置ボディ／光学の3行に分けた（D-2026-09-05-01、F-22）。
-- **本編の集計は提案値を織り込んだ状態で行っている。** `backlog.md` P-02（`eed:0007` の和文名）・P-03（`eed:0040` の名称・語彙区分・Hierarchy Level）・P-04（`eed:0056` の英語主名称）・P-01／P-05／P-06（新設9件と現場語20語）はいずれも原辞書側の承認待ちであり、確定するまで索引の該当行には `※提案値` を付す。**提案が却下された場合に元へ戻す先**は附属書G.1・G.2 の注記に明記した。
+- **2026-09-05 第2次追補：設計レビューが残した判断待ち5件（`backlog.md` B-09〜B-13）を裁いた。** ①Communication 層の受け皿として第C編3.1 公開言語 ★（`eed:0174`）を新設し、軸1は6層すべてに最低1件が立った（D-2026-09-05-08）。②第2編3.7 を「空間表現」から「座標空間」へ改称し genus を子に揃えた。pose の定義文は ISO 8373 と同一のため据え置いた（D-2026-09-05-09）。③附属書Bに**概念種別**の欄を加え、「convention・principle は Hier. Level `N/A`」と規則化した。これにより第2編3.3・3.4・3.6 が `N/A` の提案値になり（P-07）、第4編3.2 の `N/A` 提案は撤回して `Product` に戻した（D-2026-09-05-10）。④admitted term を同義語のみに絞り `DEPRECATED:` 行を導入、恒久IDの呼称を EED-ID に改めた（D-2026-09-05-11）。母数は 68→69、空セルは 26→24。
+- **本編の集計は提案値を織り込んだ状態で行っている。** `backlog.md` P-02（`eed:0007` の和文名）・P-03（`eed:0040` の名称・語彙区分・Hierarchy Level）・P-04（`eed:0056` の英語主名称）・P-01／P-05／P-06／P-08（新設10件と現場語20語）・P-07（規約3件の Hierarchy Level）はいずれも原辞書側の承認待ちであり、確定するまで索引の該当行には `※提案値` を付す。**提案が却下された場合に元へ戻す先**は附属書G.1・G.2 の注記に明記した。
 - **`backlog.md` B-08（`calibrated-from`・`aligns-with` の正式採用可否）を本編で裁いた。** 結論は**いずれも概念間関係型として採用しない**であり、関係型は5型（is-a／part-of／refers-to／constrained-by／transforms）で確定した（附属書C、`decisions.md` D-2026-09-03-02）。これをもって `backlog.md` の§1 判断待ちは0件になる。
 - **全編を通した機械照合により、原辞書側の不整合を新たに5件検出した**（`backlog.md` F-16〜F-20）。いずれも個々の編の変換では見えず、**全編を1つの母数として数え直したときにだけ現れる**種類のものである（附属書H）。
 
@@ -42,7 +43,7 @@ Conceptual vocabulary for spatial-data modelling — Consolidated Annexes: Class
 
 ## 1 適用範囲 (Scope)
 
-本仕様書は、STD-EED-0001 シリーズ（第1〜5編および第M編）に収録された全エントリについて、**分類軸の分布・MECE検証・空セルの一覧、および各種索引**を規定します。
+本仕様書は、STD-EED-0001 シリーズ（第1〜5編、第C編および第M編）に収録された全エントリについて、**分類軸の分布・MECE検証・空セルの一覧、および各種索引**を規定します。
 
 適用範囲は以下の通りです：
 
@@ -75,8 +76,9 @@ Conceptual vocabulary for spatial-data modelling — Consolidated Annexes: Class
 | 第3編 意味・情報 (Information層) | STD-EED-0001-3 | 18 |
 | 第4編 機能・変換 (Functional層) | STD-EED-0001-4 | 6 |
 | 第5編 契約・ガバナンス (Business層) | STD-EED-0001-5 | 1 |
+| 第C編 交換語彙 (Communication層) | STD-EED-0001-C | 1 |
 | 第M編 メタ語彙 | STD-EED-0001-M | 16 |
-| **計** | | **68** |
+| **計** | | **69** |
 
 ## 4 集計の母数と表記規約 (Aggregation Basis and Notation)
 
@@ -86,15 +88,15 @@ Conceptual vocabulary for spatial-data modelling — Consolidated Annexes: Class
 
 | 母数 | 件数 | 対象 | 使う集計 |
 | :--- | ---: | :--- | :--- |
-| **全エントリ** | **68** | 第1〜5編＋第M編 | 索引（附属書G.1・G.2・G.3・G.5・G.8）、サブグループのMECE検証 |
-| **対象語彙のみ** | **52** | 第1〜5編（RAMI 4.0 の3軸を持つ） | 分類軸の分布・クロス表・空セル（附属書F.3・F.5）、Layers軸と編構成のMECE検証、登場人物の逆引き（附属書G.6） |
+| **全エントリ** | **69** | 第1〜5編＋第C編＋第M編 | 索引（附属書G.1・G.2・G.3・G.5・G.8）、サブグループのMECE検証 |
+| **対象語彙のみ** | **53** | 第1〜5編・第C編（RAMI 4.0 の3軸を持つ） | 分類軸の分布・クロス表・空セル（附属書F.3・F.5）、Layers軸と編構成のMECE検証、登場人物の逆引き（附属書G.6） |
 | **メタ語彙のみ** | **16** | 第M編（3軸をいずれも持たない） | 軸に関する集計から除外されることの明示 |
 
 **メタ語彙が軸の集計に入らない理由**は原辞書6.1節にあり、「軸そのものが工場の対象を前提にしている」ためです。メタ語彙は工場に実在するモノ・人を主語にして述語として言えないため、設備階層（軸2）も型と個体の別（軸3）も問いとして成立しません。これは欠落ではなく、対象語彙とメタ語彙を分ける基準そのものです（第M編 序文）。
 
 ### 4.2 集計元
 
-すべての集計は各編の**附属書B（概念メタデータ一覧）**を単一の集計元とします。附属書Bは IEC 61360 のデータ辞書方式に倣い、分類メタデータを用語記述の本文から分離して登録簿側で管理するために置かれたものであり、本編はその設計意図が実際に機能するかを試す最初の場面にあたります。本編の附属書Bは、6編ぶんを1表に統合したものです。
+すべての集計は各編の**附属書B（概念メタデータ一覧）**を単一の集計元とします。附属書Bは IEC 61360 のデータ辞書方式に倣い、分類メタデータを用語記述の本文から分離して登録簿側で管理するために置かれたものであり、本編はその設計意図が実際に機能するかを試す最初の場面にあたります。本編の附属書Bは、7編ぶんを1表に統合したものです。
 
 **エントリ本文（Clause 3）からは何も集計していません。** 本文と附属書Bが食い違っていれば集計は誤りますが、その食い違いは各編の変換時に照合済みです（`decisions.md` D-2026-09-02-10）。
 
@@ -104,9 +106,9 @@ Conceptual vocabulary for spatial-data modelling — Consolidated Annexes: Class
 | :--- | :--- |
 | `第N編3.M` | 本仕様書のエントリ参照。編番号＋その編での採番（`decisions.md` D-2026-09-02-13） |
 | `原1.07`・`原M.11` | 原辞書 v0.17.0 の採番。`原` を冠する |
-| `eed:0042#001` | 恒久ID（IRDI）。採番が変わっても動かない（原辞書8.9節、附属書G.9） |
-| ★ | 本仕様書での**新設提案**エントリ（9件。`backlog.md` P-01・P-05・P-06）、および本仕様書で登録した現場語（20語、P-06） |
-| ※提案値 | 原辞書側の承認待ちの値（`backlog.md` P-02・P-03・P-04） |
+| `eed:0042#001` | 恒久ID（EED-ID。正式な IRDI ではない — 附属書G.9）。採番が変わっても動かない（原辞書8.9節） |
+| ★ | 本仕様書での**新設提案**エントリ（10件。`backlog.md` P-01・P-05・P-06・P-08）、および本仕様書で登録した現場語（20語、P-06） |
+| ※提案値 | 原辞書側の承認待ちの値（`backlog.md` P-02・P-03・P-04・P-07） |
 | — | 未確認・該当なし（存在しない値を創作しない） |
 
 ---
@@ -231,7 +233,7 @@ Conceptual vocabulary for spatial-data modelling — Consolidated Annexes: Class
 
 NOTE 1 **105語は欠番なく揃っている。** 原辞書由来の85語（`eed:0060`〜`eed:0144`）は第1編12語／第2編24語／第3編39語／第4編8語／第5編2語で全域を埋める。2026-09-05 に本仕様書で登録した20語（`eed:0154`〜`eed:0173`、★）を加えると第1編14語／第2編39語／第3編40語／第4編10語／第5編2語＝105語になる。★の20語は原辞書側の存在確認・発番の承認待ちであり、確定するまで原辞書8.7節とは一致しない。**同じ語が複数行に現れるのは同音異義の登録である**——「原点」3行・「姿勢」3行・「クリアランス」2行・「インタフェース」3行は、原辞書2.1節の同音異義表と D-2026-08-22-14 を、主語（文脈）ごとに代表形へ振り分けたものである。2.1節が挙げる「原点（センサON位置）」「クリアランス（設備の逃げしろ）」は代表形となる概念が未収録のため登録していない（附属書F.5）。第M編には現場語が1語もない（第M編附属書A）。これは欠落ではなく、現場で口にされるのは対象語彙の側だという構造の現れである。
 
-NOTE 2 **現場語を持つ代表形は42件、持たない対象語彙は10件である**（対象語彙52件のうち。メタ語彙16件は全件が現場語を持たない）。1概念あたりの現場語数は最多6語（第2編3.18 方向参照枠★、第3編3.10 空間注記の意味分類）から1語まで幅があり、未抽出の10件は原辞書の記載を保存した結果である（存在しない現場語を創作しない）。本仕様書での新設提案9件のうち現場語が付いているのは第2編3.18・3.19 の2件（いずれも★）だけであり、`eed:0145`（第1編3.8 関与インタフェース）については「パトライト」「操作盤」「置き治具」等が有力な候補として挙がっている（第1編3.8 Note 4、`backlog.md` P-01）。
+NOTE 2 **現場語を持つ代表形は42件、持たない対象語彙は11件である**（対象語彙53件のうち。第C編3.1 公開言語 ★ は未抽出。メタ語彙16件は全件が現場語を持たない）。1概念あたりの現場語数は最多6語（第2編3.18 方向参照枠★、第3編3.10 空間注記の意味分類）から1語まで幅があり、未抽出の11件は原辞書の記載を保存した結果（第C編3.1 は新設のため未抽出）である（存在しない現場語を創作しない）。本仕様書での新設提案9件のうち現場語が付いているのは第2編3.18・3.19 の2件（いずれも★）だけであり、`eed:0145`（第1編3.8 関与インタフェース）については「パトライト」「操作盤」「置き治具」等が有力な候補として挙がっている（第1編3.8 Note 4、`backlog.md` P-01）。
 
 NOTE 3 **主語（登場人物）の分布は偏っている。** 現場語を持つ登場人物は20件中17件であり、ワーク35語・産業用ロボット10語・工程内場所9語の3者だけで全体の51%（54語）を占める。逆にセンサ・無人搬送車・設計担当者の3登場人物には現場語が1語もない（2026-09-05 の登録により、HMI・操作盤・作業者・コンベアの3者には初めて現場語が付いた）。この偏りは記述の厚みの直接の指標であり、附属書D.3 の型分けと合わせて読むと、どの登場人物の記述が薄いかが見える。原辞書由来85語について、各登場人物の現場語数は原辞書1.3節の表と全件一致することを本編で再検証した。
 
@@ -242,88 +244,92 @@ NOTE 3 **主語（登場人物）の分布は偏っている。** 現場語を�
 各編の附属書Bを1表に統合したものです。**本編のすべての集計はこの表を単一の集計元とします**（Clause 4.2）。
 
 - **Layers**: RAMI 4.0 軸1。各編の附属書Bはこの欄を持ちません（編構成と一対一に対応するため）。本編は編をまたいで集計するため、ここでだけ明示します。第M編は3軸をいずれも持たないため `—` です。
+- **種別**: 概念種別（2026-09-05 追加。附属書F.1）。object（物・場所・空間・構造）／value（値・状態）／operation（操作）／convention（規約・取り決め）／classification（分類体系）／principle（設計原則）の6値。**convention と principle は Hier. Level を `N/A` とする**（規則から導出）。第M編は `—`（メタ語彙の設計原則 M-D は principle にあたるが、3軸を持たないため種別も付さない）。
 - **Hier. Level / Life Cycle**: RAMI 4.0 軸2・軸3。
 - **P / C**: 責務タグ。PD＝製品設計、MR＝生技ロボティクス、SC＝設備制御、IT＝情報MES、MA＝共通アーキテクチャ。P＝定義・決定する側、C＝参照・利用する側。
 - **語彙区分**: 標準（外部規格に定義あり）／業界一般／独自（本アーキテクチャの造語）。
 - **カバレッジ**: 実例を確認済みの分野。`—` は未確認。
 - **★**: 本仕様書での新設提案。**※提案値**: 原辞書側の承認待ちの値。
 
-| 編・採番 | 用語 (EN) | 和文名 | IRDI | Layers | Hier. Level | Life Cycle | P | C | 語彙区分 | カバレッジ |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 第1編3.1 | bounding volume | バウンディングボリューム | `eed:0001#001` | Asset | Product | Type | PD | MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第1編3.2 | topology | トポロジー構造 | `eed:0002#001` | Asset | Product | Type | PD | MR | 標準 | 生産 ◯ / CAD ◯ |
-| 第1編3.3 | mass properties | 質量特性 | `eed:0003#001` | Asset | Product | Type & Instance | PD | MR, SC | 標準 | 生産 ◯ / CAD — |
-| 第1編3.4 | stable pose | 安定姿勢 | `eed:0004#001` | Asset | Product | Type | MR | SC | 業界一般 | 生産 ◯ / CAD — |
-| 第1編3.5 | resolution | 分解能 | `eed:0005#001` | Asset | Control Device | Type | SC | MR, IT | 標準 | 生産 ◯ / CAD — |
-| 第1編3.6 | process location | 工程内場所 | `eed:0006#001` | Asset | Station | Type & Instance | SC | MR, IT | 独自 | 生産 ◯ / CAD — |
-| 第1編3.7 | human-machine function allocation | 人・機械機能配分 | `eed:0007#001` | Asset | Station | Type & Instance | SC | MR, IT | 業界一般 | 生産 ◯ / CAD — |
-| 第1編3.8 ★ | interaction interface | 関与インタフェース | `eed:0145#001`（新設提案） | Asset | Station | Type & Instance | SC | MR, IT | 独自 | 生産 ◯ / CAD — |
-| 第2編3.1 | coordinate system | 座標系 | `eed:0008#001` | Integration | N/A | Type | MA | PD, MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.2 | reference coordinate frame | 参照座標系 | `eed:0009#001` | Integration | Product | Type | PD | MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.3 | handedness | 座標系のハンドネス | `eed:0010#001` | Integration | Product | Type | MA | PD, MR, SC | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.4 | unit scale convention | 尺度定義 | `eed:0011#001` | Integration | Product | Type | MA | PD, MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第2編3.5 | pose | 姿勢 | `eed:0012#001` | Integration | Product | Type & Instance | PD, MR | SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.6 | rotation representation convention | 回転表現規約 | `eed:0013#001` | Integration | Product | Type | MA | PD, MR, SC | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.7 ★ | spatial representation | 空間表現 | `eed:0146#001`（新設提案） | Integration | Product | Type | MA | PD, MR, SC | 独自 | 生産 ◯ / CAD ◯ |
-| 第2編3.8 | local space | ローカル空間 | `eed:0014#001` | Integration | Product | Type | MA | PD, MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第2編3.9 | world space | ワールド空間 | `eed:0015#001` | Integration | Product | Type | MA | PD, MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第2編3.10 | hierarchical coordinate structure | 階層座標構造 | `eed:0016#001` | Integration | Product | Type & Instance | PD, MR | SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第2編3.11 | distance metric convention | 距離定義規約 | `eed:0017#001` | Integration | N/A | Type | MA | MR, SC, PD | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.12 | homogeneous transformation matrix | 同次変換行列 | `eed:0018#001` | Integration | Product | Type | PD, MR | SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.13 | coordinate transformation | 座標変換 | `eed:0019#001` | Integration | Product | Type & Instance | PD, MR | SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.14 | datum reference feature | 基準フィーチャー | `eed:0020#001` | Integration | Field Device | Type | PD | MR, SC | 標準 | 生産 ◯ / CAD ◯ |
-| 第2編3.15 | calibration reference | キャリブレーション基準 | `eed:0021#001` | Integration | Control Device | Type | SC | MR, PD | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第2編3.16 | exclusion zone | 干渉禁止領域 | `eed:0022#001` | Integration | Field Device | Type | PD, MR | SC | 独自 | 生産 ◯ / CAD — |
-| 第2編3.17 | approach vector | アプローチ方向 | `eed:0023#001` | Integration | Field Device | Type | MR | SC | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第2編3.18 ★ | direction reference frame | 方向参照枠 | `eed:0152#001`（新設提案） | Integration | Station | Type | SC, MA | PD, MR, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第2編3.19 ★ | discrete orientation class | 離散姿勢区分 | `eed:0153#001`（新設提案） | Integration | Product | Type & Instance | PD, SC | MR, IT | 独自 | 生産 ◯ / CAD — |
-| 第3編3.1 ★ | value | 値 | `eed:0147#001`（新設提案） | Information | N/A | Type | MA | PD, MR, IT | 独自 | 生産 ◯ / CAD ◯ |
-| 第3編3.2 | declared value | 入力値 | `eed:0024#001` | Information | N/A | Type | MA | PD, MR, IT | 独自 | 生産 ◯ / CAD ◯ |
-| 第3編3.3 | derived value | 算出値 | `eed:0025#001` | Information | N/A | Type | MA | PD, MR, IT | 独自 | 生産 ◯ / CAD ◯ |
-| 第3編3.4 ★ | identifier | 識別子 | `eed:0148#001`（新設提案） | Information | Product | Type & Instance | PD, IT | MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第3編3.5 | type identifier | 型識別子 | `eed:0026#001` | Information | Product | Type | PD, IT | MR, SC | 標準 | 生産 ◯ / CAD ◯ |
-| 第3編3.6 | instance identifier | 個体識別子 | `eed:0027#001` | Information | Product | Instance | PD, IT | MR, SC | 標準 | 生産 ◯ / CAD — |
-| 第3編3.7 | revision | リビジョン | `eed:0028#001` | Information | Product | Type | PD | MR, SC, IT | 業界一般 | 生産 ◯ / CAD — |
-| 第3編3.8 | property dictionary reference | プロパティ辞書参照 | `eed:0029#001` | Information | Product | Type | MA, PD | IT, SC, MR | 標準 | 生産 ◯ / CAD — |
-| 第3編3.9 | typed relation | 型付き関係 | `eed:0030#001` | Information | Product | Type | PD, MR | SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第3編3.10 | spatial element classification | 空間注記の意味分類 | `eed:0031#001` | Information | Field Device | Type | PD, MR | SC | 業界一般 | 生産 — / CAD ◯ |
-| 第3編3.11 | grasp specification and synthesis | 把持宣言と解決 | `eed:0032#001` | Information | Field Device | Type & Instance | MR | PD, SC | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第3編3.12 | symmetry rule | 対称性ルール | `eed:0033#001` | Information | Product | Type | PD | MR, SC | 業界一般 | 生産 ◯ / CAD — |
-| 第3編3.13 | v&v level | 検証レベル | `eed:0034#001` | Information | Station | Instance | MR, SC | IT | 業界一般 | 生産 ◯ / CAD — |
-| 第3編3.14 | process state | 工程状態 | `eed:0035#001` | Information | Station | Instance | SC, IT | MR | 標準 | 生産 ◯ / CAD — |
-| 第3編3.15 | state expectation | 状態期待値 | `eed:0036#001` | Information | Station | Type & Instance | SC | MR, IT | 業界一般 | 生産 ◯ / CAD — |
-| 第3編3.16 | event | イベント | `eed:0037#001` | Information | Station | Instance | SC, IT | MR | 標準 | 生産 ◯ / CAD — |
-| 第3編3.17 | aggregation window | 集計期間 | `eed:0038#001` | Information | Enterprise | Type | IT | SC, PD | 業界一般 | 生産 ◯ / CAD — |
-| 第3編3.18 | traceability record | トレーサビリティ記録 | `eed:0039#001` | Information | Enterprise | Instance | MR, SC | IT | 標準 | 生産 ◯ / CAD — |
-| 第4編3.1 ★ | geometric operation | 幾何要素に対する操作 | `eed:0149#001`（新設提案） | Functional | N/A | Type | MA, PD | MR, SC | 独自 | 生産 ◯ / CAD ◯ |
-| 第4編3.2 | dimension-raising operation | 次元上昇操作 | `eed:0040#001` | Functional | N/A | Type | MA, PD | MR | 業界一般 ※提案値 | 生産 ◯ / CAD ◯ |
-| 第4編3.3 | measurement | 計測 | `eed:0041#001` | Functional | Field Device | Instance | PD, MR | SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第4編3.4 | work interface | 作業インタフェース | `eed:0042#001` | Functional | Station | Type | SC | MR, IT | 独自 | 生産 ◯ / CAD — |
-| 第4編3.5 | nested IPO decomposition | IPOネスト構造 | `eed:0043#001` | Functional | Station | Type | SC | MR, IT | 標準 | 生産 ◯ / CAD — |
-| 第4編3.6 | transformation activity | 変換行為 | `eed:0044#001` | Functional | Station | Type & Instance | MR, SC | SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第5編3.1 | contract boundary | 契約境界 | `eed:0045#001` | Business | N/A | Type | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.1 | conceptual modeling | 概念モデリング | `eed:0046#001` | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.2 | domain-driven design | ドメイン駆動設計 | `eed:0047#001` | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.3 | bounded context | 境界づけられたコンテキスト | `eed:0048#001` | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.4 ★ | model element | モデル要素 | `eed:0150#001`（新設提案） | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.5 | entity | エンティティ | `eed:0049#001` | — | — | — | MA, PD, IT | MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.6 | value object | 値オブジェクト | `eed:0050#001` | — | — | — | MA, PD | MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.7 | aggregate root | 集約ルート | `eed:0051#001` | — | — | — | MA | PD, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.8 | ubiquitous language | ユビキタス言語 | `eed:0052#001` | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.9 ★ | term–concept mismatch | 用語–概念対応のズレ | `eed:0151#001`（新設提案） | — | — | — | MA | PD, MR, SC, IT | 独自 | 生産 ◯ / CAD ◯ |
-| 第M編3.10 | homonymy | 同音異義 | `eed:0053#001` | — | — | — | MA | PD, MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第M編3.11 | synonymy | 異音同義 | `eed:0054#001` | — | — | — | MA | PD, MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第M編3.12 | canonicalization | 用語正規化 | `eed:0055#001` | — | — | — | MA | PD, MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
-| 第M編3.13 | self-validating freshness guarantee | キャッシュ鮮度の自己保証 | `eed:0056#001` | — | — | — | MA | PD, MR, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.14 | cardinality state | 多重度状態 | `eed:0057#001` | — | — | — | MA | PD, MR, IT | 独自 | 生産 — / CAD ◯ |
-| 第M編3.15 | allowed-transition list | 遷移許可リスト | `eed:0058#001` | — | — | — | MA | MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
-| 第M編3.16 | single write path | 単一更新経路の強制 | `eed:0059#001` | — | — | — | MA, IT | MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 編・採番 | 用語 (EN) | 和文名 | EED-ID | Layers | 種別 | Hier. Level | Life Cycle | P | C | 語彙区分 | カバレッジ |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 第1編3.1 | bounding volume | バウンディングボリューム | `eed:0001#001` | Asset | object | Product | Type | PD | MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第1編3.2 | topology | トポロジー構造 | `eed:0002#001` | Asset | object | Product | Type | PD | MR | 標準 | 生産 ◯ / CAD ◯ |
+| 第1編3.3 | mass properties | 質量特性 | `eed:0003#001` | Asset | value | Product | Type & Instance | PD | MR, SC | 標準 | 生産 ◯ / CAD — |
+| 第1編3.4 | stable pose | 安定姿勢 | `eed:0004#001` | Asset | value | Product | Type | MR | SC | 業界一般 | 生産 ◯ / CAD — |
+| 第1編3.5 | resolution | 分解能 | `eed:0005#001` | Asset | value | Control Device | Type | SC | MR, IT | 標準 | 生産 ◯ / CAD — |
+| 第1編3.6 | process location | 工程内場所 | `eed:0006#001` | Asset | object | Station | Type & Instance | SC | MR, IT | 独自 | 生産 ◯ / CAD — |
+| 第1編3.7 | human-machine function allocation | 人・機械機能配分 | `eed:0007#001` | Asset | classification | Station | Type & Instance | SC | MR, IT | 業界一般 | 生産 ◯ / CAD — |
+| 第1編3.8 ★ | interaction interface | 関与インタフェース | `eed:0145#001`（新設提案） | Asset | object | Station | Type & Instance | SC | MR, IT | 独自 | 生産 ◯ / CAD — |
+| 第2編3.1 | coordinate system | 座標系 | `eed:0008#001` | Integration | convention | N/A | Type | MA | PD, MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.2 | reference coordinate frame | 参照座標系 | `eed:0009#001` | Integration | object | Product | Type | PD | MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.3 | handedness | 座標系のハンドネス | `eed:0010#001` | Integration | convention | N/A ※提案値 | Type | MA | PD, MR, SC | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.4 | unit scale convention | 尺度定義 | `eed:0011#001` | Integration | convention | N/A ※提案値 | Type | MA | PD, MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第2編3.5 | pose | 姿勢 | `eed:0012#001` | Integration | value | Product | Type & Instance | PD, MR | SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.6 | rotation representation convention | 回転表現規約 | `eed:0013#001` | Integration | convention | N/A ※提案値 | Type | MA | PD, MR, SC | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.7 ★ | coordinate space | 座標空間 | `eed:0146#001`（新設提案） | Integration | object | Product | Type | MA | PD, MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第2編3.8 | local space | ローカル空間 | `eed:0014#001` | Integration | object | Product | Type | MA | PD, MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第2編3.9 | world space | ワールド空間 | `eed:0015#001` | Integration | object | Product | Type | MA | PD, MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第2編3.10 | hierarchical coordinate structure | 階層座標構造 | `eed:0016#001` | Integration | object | Product | Type & Instance | PD, MR | SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第2編3.11 | distance metric convention | 距離定義規約 | `eed:0017#001` | Integration | convention | N/A | Type | MA | MR, SC, PD | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.12 | homogeneous transformation matrix | 同次変換行列 | `eed:0018#001` | Integration | value | Product | Type | PD, MR | SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.13 | coordinate transformation | 座標変換 | `eed:0019#001` | Integration | operation | Product | Type & Instance | PD, MR | SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.14 | datum reference feature | 基準フィーチャー | `eed:0020#001` | Integration | object | Field Device | Type | PD | MR, SC | 標準 | 生産 ◯ / CAD ◯ |
+| 第2編3.15 | calibration reference | キャリブレーション基準 | `eed:0021#001` | Integration | object | Control Device | Type | SC | MR, PD | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第2編3.16 | exclusion zone | 干渉禁止領域 | `eed:0022#001` | Integration | object | Field Device | Type | PD, MR | SC | 独自 | 生産 ◯ / CAD — |
+| 第2編3.17 | approach vector | アプローチ方向 | `eed:0023#001` | Integration | value | Field Device | Type | MR | SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第2編3.18 ★ | direction reference frame | 方向参照枠 | `eed:0152#001`（新設提案） | Integration | classification | Station | Type | SC, MA | PD, MR, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第2編3.19 ★ | discrete orientation class | 離散姿勢区分 | `eed:0153#001`（新設提案） | Integration | classification | Product | Type & Instance | PD, SC | MR, IT | 独自 | 生産 ◯ / CAD — |
+| 第3編3.1 ★ | value | 値 | `eed:0147#001`（新設提案） | Information | value | N/A | Type | MA | PD, MR, IT | 独自 | 生産 ◯ / CAD ◯ |
+| 第3編3.2 | declared value | 入力値 | `eed:0024#001` | Information | value | N/A | Type | MA | PD, MR, IT | 独自 | 生産 ◯ / CAD ◯ |
+| 第3編3.3 | derived value | 算出値 | `eed:0025#001` | Information | value | N/A | Type | MA | PD, MR, IT | 独自 | 生産 ◯ / CAD ◯ |
+| 第3編3.4 ★ | identifier | 識別子 | `eed:0148#001`（新設提案） | Information | value | Product | Type & Instance | PD, IT | MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第3編3.5 | type identifier | 型識別子 | `eed:0026#001` | Information | value | Product | Type | PD, IT | MR, SC | 標準 | 生産 ◯ / CAD ◯ |
+| 第3編3.6 | instance identifier | 個体識別子 | `eed:0027#001` | Information | value | Product | Instance | PD, IT | MR, SC | 標準 | 生産 ◯ / CAD — |
+| 第3編3.7 | revision | リビジョン | `eed:0028#001` | Information | value | Product | Type | PD | MR, SC, IT | 業界一般 | 生産 ◯ / CAD — |
+| 第3編3.8 | property dictionary reference | プロパティ辞書参照 | `eed:0029#001` | Information | value | Product | Type | MA, PD | IT, SC, MR | 標準 | 生産 ◯ / CAD — |
+| 第3編3.9 | typed relation | 型付き関係 | `eed:0030#001` | Information | object | Product | Type | PD, MR | SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第3編3.10 | spatial element classification | 空間注記の意味分類 | `eed:0031#001` | Information | classification | Field Device | Type | PD, MR | SC | 業界一般 | 生産 — / CAD ◯ |
+| 第3編3.11 | grasp specification and synthesis | 把持宣言と解決 | `eed:0032#001` | Information | operation | Field Device | Type & Instance | MR | PD, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第3編3.12 | symmetry rule | 対称性ルール | `eed:0033#001` | Information | value | Product | Type | PD | MR, SC | 業界一般 | 生産 ◯ / CAD — |
+| 第3編3.13 | v&v level | 検証レベル | `eed:0034#001` | Information | value | Station | Instance | MR, SC | IT | 業界一般 | 生産 ◯ / CAD — |
+| 第3編3.14 | process state | 工程状態 | `eed:0035#001` | Information | value | Station | Instance | SC, IT | MR | 標準 | 生産 ◯ / CAD — |
+| 第3編3.15 | state expectation | 状態期待値 | `eed:0036#001` | Information | value | Station | Type & Instance | SC | MR, IT | 業界一般 | 生産 ◯ / CAD — |
+| 第3編3.16 | event | イベント | `eed:0037#001` | Information | object | Station | Instance | SC, IT | MR | 標準 | 生産 ◯ / CAD — |
+| 第3編3.17 | aggregation window | 集計期間 | `eed:0038#001` | Information | value | Enterprise | Type | IT | SC, PD | 業界一般 | 生産 ◯ / CAD — |
+| 第3編3.18 | traceability record | トレーサビリティ記録 | `eed:0039#001` | Information | object | Enterprise | Instance | MR, SC | IT | 標準 | 生産 ◯ / CAD — |
+| 第4編3.1 ★ | geometric operation | 幾何要素に対する操作 | `eed:0149#001`（新設提案） | Functional | operation | Product | Type | MA, PD | MR, SC | 独自 | 生産 ◯ / CAD ◯ |
+| 第4編3.2 | dimension-raising operation | 次元上昇操作 | `eed:0040#001` | Functional | operation | Product | Type | MA, PD | MR | 業界一般 ※提案値 | 生産 ◯ / CAD ◯ |
+| 第4編3.3 | measurement | 計測 | `eed:0041#001` | Functional | operation | Field Device | Instance | PD, MR | SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第4編3.4 | work interface | 作業インタフェース | `eed:0042#001` | Functional | classification | Station | Type | SC | MR, IT | 独自 | 生産 ◯ / CAD — |
+| 第4編3.5 | nested IPO decomposition | IPOネスト構造 | `eed:0043#001` | Functional | object | Station | Type | SC | MR, IT | 標準 | 生産 ◯ / CAD — |
+| 第4編3.6 | transformation activity | 変換行為 | `eed:0044#001` | Functional | operation | Station | Type & Instance | MR, SC | SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第5編3.1 | contract boundary | 契約境界 | `eed:0045#001` | Business | convention | N/A | Type | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第C編3.1 ★ | published language | 公開言語 | `eed:0174#001`（新設提案） | Communication | convention | N/A | Type | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.1 | conceptual modeling | 概念モデリング | `eed:0046#001` | — | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.2 | domain-driven design | ドメイン駆動設計 | `eed:0047#001` | — | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.3 | bounded context | 境界づけられたコンテキスト | `eed:0048#001` | — | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.4 ★ | model element | モデル要素 | `eed:0150#001`（新設提案） | — | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.5 | entity | エンティティ | `eed:0049#001` | — | — | — | — | MA, PD, IT | MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.6 | value object | 値オブジェクト | `eed:0050#001` | — | — | — | — | MA, PD | MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.7 | aggregate root | 集約ルート | `eed:0051#001` | — | — | — | — | MA | PD, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.8 | ubiquitous language | ユビキタス言語 | `eed:0052#001` | — | — | — | — | MA | PD, MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.9 ★ | term–concept mismatch | 用語–概念対応のズレ | `eed:0151#001`（新設提案） | — | — | — | — | MA | PD, MR, SC, IT | 独自 | 生産 ◯ / CAD ◯ |
+| 第M編3.10 | homonymy | 同音異義 | `eed:0053#001` | — | — | — | — | MA | PD, MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第M編3.11 | synonymy | 異音同義 | `eed:0054#001` | — | — | — | — | MA | PD, MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第M編3.12 | canonicalization | 用語正規化 | `eed:0055#001` | — | — | — | — | MA | PD, MR, SC, IT | 標準 | 生産 ◯ / CAD ◯ |
+| 第M編3.13 | self-validating freshness guarantee | キャッシュ鮮度の自己保証 | `eed:0056#001` | — | — | — | — | MA | PD, MR, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.14 | cardinality state | 多重度状態 | `eed:0057#001` | — | — | — | — | MA | PD, MR, IT | 独自 | 生産 — / CAD ◯ |
+| 第M編3.15 | allowed-transition list | 遷移許可リスト | `eed:0058#001` | — | — | — | — | MA | MR, SC, IT | 業界一般 | 生産 ◯ / CAD ◯ |
+| 第M編3.16 | single write path | 単一更新経路の強制 | `eed:0059#001` | — | — | — | — | MA, IT | MR, SC | 業界一般 | 生産 ◯ / CAD ◯ |
 
-NOTE 1 **恒久IDは `eed:0001`〜`eed:0059`（原辞書由来59件）と `eed:0145`〜`eed:0153`（本仕様書での新設提案9件）からなり、欠番はない。** `eed:0060`〜`eed:0144`（原辞書由来）と `eed:0154`〜`eed:0173`（本仕様書で登録、★）は現場語に割り当てられている（附属書A）。項目コードは概念・メタ語彙・現場語を単一の番号空間で採番するため、番号の範囲で種別を判定してはならない（附属書G.9）。
+NOTE 1 **恒久IDは `eed:0001`〜`eed:0059`（原辞書由来59件）と `eed:0145`〜`eed:0153`・`eed:0174`（本仕様書での新設提案10件）からなり、欠番はない。** `eed:0060`〜`eed:0144`（原辞書由来）と `eed:0154`〜`eed:0173`（本仕様書で登録、★）は現場語に割り当てられている（附属書A）。項目コードは概念・メタ語彙・現場語を単一の番号空間で採番するため、番号の範囲で種別を判定してはならない（附属書G.9）。
 
-NOTE 2 **`eed:0145` の項目コードは、原辞書の割り当ての末尾 `0144` の直後に置いた。** `eed:0146`〜`0151`、2026-09-05 の `0152`〜`0153`（概念）・`0154`〜`0173`（現場語）はそれに続く。いずれも**発番自体が提案**であり、原辞書側で承認されるまで確定しない（`backlog.md` P-01・P-05・P-06）。
+NOTE 2 **`eed:0145` の項目コードは、原辞書の割り当ての末尾 `0144` の直後に置いた。** `eed:0146`〜`0151`、2026-09-05 の `0152`〜`0153`（概念）・`0154`〜`0173`（現場語）・`0174`（概念、第C編3.1）はそれに続く。いずれも**発番自体が提案**であり、原辞書側で承認されるまで確定しない（`backlog.md` P-01・P-05・P-06・P-08）。
 
 NOTE 3 **第4編3.6（変換行為）は SC を P と C の両方に持つ。** これは原辞書 `原4.04` の責務タグ（`P: [生技ロボティクス] [設備制御] / C: [設備制御] [情報MES]`）をそのまま写したものである。同一エントリ・同一ロールが定義側と利用側を兼ねるのは全59エントリ中この1件だけであり、原辞書8.3節の逆引きでも `4.04 変換行為` が `[設備制御]` の P リストと C リストの両方に現れる。本仕様書では原辞書の記載を変更せず保存し、是正は原辞書側の判断に委ねる（`backlog.md` F-20、附属書H）。附属書G.3 では該当行に `※` を付した。
+
+NOTE 5 **Hier. Level が `N/A` の10件のうち、規則（convention・principle → `N/A`）から導かれるのは7件**（第2編3.1・3.3・3.4・3.6・3.11、第5編3.1、第C編3.1）である。残る3件（第3編3.1 値・3.2 入力値・3.3 算出値。いずれも種別 value）は原辞書由来の `N/A` であり、「値の由来という区分はどの階層の値にも同じ形で成立する」という理由で階層の問いが立たない。**規則の外にある `N/A` はこの3件だけであり、新たに value・object・operation・classification に `N/A` を与えるときは本 NOTE に理由を追記すること**（`decisions.md` D-2026-09-05-10）。第2編3.3・3.4・3.6 の `N/A` は原辞書の `Product` からの変更提案である（`backlog.md` P-07）。第4編3.1・3.2 は operation であり、操作はその対象（ワークの幾何要素）の階層 `Product` を取る（3.2 の `N/A` 提案は撤回した。`backlog.md` B-11 クローズ）。
 
 NOTE 4 **本表の Layers 欄は編構成から導出したものであり、独立した入力ではない。** したがって「Layers 値と所属編が一致するか」という検証（附属書F.4 の1行目）は、本表の上では自明に成立する。実質的な検証は各編の変換時、エントリ本文が本当にその層の関心事を述べているかを読んで行われた。
 
@@ -353,16 +359,16 @@ NOTE 4 **本表の Layers 欄は編構成から導出したものであり、独
 
 ### C.2 全編を通じた使用実績
 
-| 関係型 | 第1編 | 第2編 | 第3編 | 第4編 | 第5編 | 第M編 | 計 | 判定 |
-|---|---|---|---|---|---|---|---:|---|
-| refers-to | ◯ | ◯ | ◯ | ◯ | ◯ | ◯ | — | **確定**（全6編で使用） |
-| is-a | ◯ 1 | ◯ 3 | ◯ 4 | ◯ 2 | — | ◯ 5 | **15** | **確定**（第5編を除く全編） |
-| part-of | 候補 | 候補 | — | ◯ 1 | — | — | **1** | **確定**（第4編で初） |
-| constrained-by | 候補 | 候補 | — | ◯ 1 | — | ◯ 1（逆方向） | **2** | **確定**（第4編で初） |
-| transforms | — | ◯ 1組 | — | ◯ 1 | — | — | **2** | **確定**（第2編で初） |
-| calibrated-from | — | 候補2 | — | — | — | — | **0** | **不採用**（C.3） |
-| aligns-with | — | 候補1 | — | — | — | — | **0** | **不採用**（C.3） |
-| mates-to | 予告のみ | — | — | — | — | — | **0** | **廃止** |
+| 関係型 | 第1編 | 第2編 | 第3編 | 第4編 | 第5編 | 第C編 | 第M編 | 計 | 判定 |
+|---|---|---|---|---|---|---|---|---:|---|
+| refers-to | ◯ | ◯ | ◯ | ◯ | ◯ | ◯ | ◯ | — | **確定**（全7編で使用） |
+| is-a | ◯ 1 | ◯ 3 | ◯ 4 | ◯ 2 | — | — | ◯ 5 | **15** | **確定**（第5編・第C編を除く全編） |
+| part-of | 候補 | 候補 | — | ◯ 1 | — | — | — | **1** | **確定**（第4編で初） |
+| constrained-by | 候補 | 候補 | — | ◯ 1 | — | — | ◯ 1（逆方向） | **2** | **確定**（第4編で初） |
+| transforms | — | ◯ 1組 | — | ◯ 1 | — | — | — | **2** | **確定**（第2編で初） |
+| calibrated-from | — | 候補2 | — | — | — | — | — | **0** | **不採用**（C.3） |
+| aligns-with | — | 候補1 | — | — | — | — | — | **0** | **不採用**（C.3） |
+| mates-to | 予告のみ | — | — | — | — | — | — | **0** | **廃止** |
 
 **`is-a` 15件のうち12件は、対比ペアの親概念を新設したことで生まれた**（`decisions.md` D-2026-09-02-12）。親概念を立てる前、第3編・第4編には `is-a` の確定使用が1件もなく、附属書C.1 は「未確定使用」と記していた。**対比ペアは、上位概念を立てて初めて `is-a` として型付けできる**——それまでは「対比」という注記レベルの対応にとどまっていた。関係型の充実は、親概念を立てたことの副次的な成果である。
 
@@ -442,25 +448,25 @@ NOTE 本項の基準は関係型についてのものであり、エントリの
 | 14 | **検査装置（三次元測定機、画像検査機）** | 良否や寸法を判定する | 情報だけを付加する場所として第4編3.4（変化対象＝情報）、量を取り出す行為は3.3、その上位概念が3.1 ★、結果は第3編3.18へ | 4 | 2 |
 | 15 | **PLC（シーケンサ）** | 設備をどの順で動かすかを制御する頭脳 | 扱う状態は第3編3.14、アラームや稼働ログは3.16。表裏・正逆フラグとして持つ「姿勢」は第2編3.19 ★ | 3 | 3 |
 | 16 | **HMI・操作盤** | 人が値を入れ、状況を見る画面 | 人が明示的に入れた値は第3編3.2、その上位概念が3.1 ★。人側の関与区分は第1編3.7、接点そのものは3.8 ★ | 4 | 1 |
-| 17 | **MES・上位システム** | 生産計画と実績を管理する情報システム | 個体シリアルは第3編3.6とその上位概念3.4 ★、工程の進捗は3.14、時刻つきの出来事は3.16、集計は3.17、履歴は3.18、他システムとの取り決めは第5編3.1 | 7 | 6 |
-| 18 | **CADシステム・PLM** | 設計データの出どころ | 型番と版は第3編3.5・3.7、自動計算された値は3.3とその上位概念3.1 ★、識別の上位概念は3.4 ★、属性の意味づけは3.8。軸の向きと単位の食い違いは第2編3.3・3.4 | 8 | 5 |
+| 17 | **MES・上位システム** | 生産計画と実績を管理する情報システム | 個体シリアルは第3編3.6とその上位概念3.4 ★、工程の進捗は3.14、時刻つきの出来事は3.16、集計は3.17、履歴は3.18、他システムとの取り決めは第5編3.1、そこで交わすデータの語彙は第C編3.1 ★ | 8 | 6 |
+| 18 | **CADシステム・PLM** | 設計データの出どころ | 型番と版は第3編3.5・3.7、自動計算された値は3.3とその上位概念3.1 ★、識別の上位概念は3.4 ★、属性の意味づけは3.8。軸の向きと単位の食い違いは第2編3.3・3.4。他の CAD・下流へ渡す交換語彙は第C編3.1 ★ | 9 | 5 |
 | 19 | **作業者・オペレータ・保全担当** | 手を動かす人、見ている人、異常時に呼ばれる人 | 関与の度合いは第1編3.7、関与の接点は3.8 ★、人が判断して入れた値は第3編3.2とその上位概念3.1 ★、人が埋めている作業は第4編3.6。「右」「左」は作業者の立ち位置を基準にした相対的枠として第2編3.18 ★ | 6 | 3 |
-| 20 | **設計・生技・制御・情報の各担当者（0章の4ドメイン）** | 部署をまたいで会話し、この辞書を書き、使う人たち | 部署間・システム間の取り決めを閉じた形式にするのが第5編3.1 | 1 | 0 |
-| | **計** | | | **94組** | **105語** |
+| 20 | **設計・生技・制御・情報の各担当者（0章の4ドメイン）** | 部署をまたいで会話し、この辞書を書き、使う人たち | 部署間・システム間の取り決めを閉じた形式にするのが第5編3.1、部署間で交わす語彙を公開したものが第C編3.1 ★（本辞書そのものを公開言語として運用する当事者） | 2 | 0 |
+| | **計** | | | **97組** | **105語** |
 
-**★ が付いた箇所は、本仕様書での新設提案エントリ（対比ペアの親概念、`eed:0145`、および2026-09-05 の `eed:0152`〜`0153`）による接続である。** 新設9件のうち対比ペアの親概念5件（対象語彙分）は、いずれも子概念の登場人物をそのまま受け継ぐ。第2編3.18・3.19 は括り出しではなく新しい主題の導入であるため、登場人物との接続7組（作業者・コンベア・工作機械・工程内場所／ワーク・搬送トレー・PLC）は新規に張ったものである。**上位概念は、その下位概念が語られるところでは必ず語られている**——親概念を立てたことで登場人物との接続が新たに13組増えたが、新しい登場人物は1人も増えていない。これは親概念が既存の記述の**括り出し**であって、新しい対象の導入ではないことの裏づけになる（`decisions.md` D-2026-09-02-12 の4操作表「括り出し」）。
+**★ が付いた箇所は、本仕様書での新設提案エントリ（対比ペアの親概念、`eed:0145`、および2026-09-05 の `eed:0152`〜`0153`・`0174`）による接続である。** 新設10件のうち対比ペアの親概念5件（対象語彙分）は、いずれも子概念の登場人物をそのまま受け継ぐ。第2編3.18・3.19 は括り出しではなく新しい主題の導入であるため、登場人物との接続7組（作業者・コンベア・工作機械・工程内場所／ワーク・搬送トレー・PLC）は新規に張ったものである。**上位概念は、その下位概念が語られるところでは必ず語られている**——親概念を立てたことで登場人物との接続が新たに13組増えたが、新しい登場人物は1人も増えていない。これは親概念が既存の記述の**括り出し**であって、新しい対象の導入ではないことの裏づけになる（`decisions.md` D-2026-09-02-12 の4操作表「括り出し」）。
 
 ### D.2 双方向の網羅性（検証結果）
 
-原辞書1.2節が課している2つの不変条件を、68エントリ・20登場人物で検証しました。
+原辞書1.2節が課している2つの不変条件を、69エントリ・20登場人物で検証しました。
 
 | 不変条件 | 検証対象 | 結果 |
 | :--- | :--- | :--- |
 | **すべての登場人物は、少なくとも1つのエントリに接続する** | 登場人物20件 | **成立**（最少1件＝センサ・設計担当者、最多13件＝ワーク） |
-| **すべての対象語彙エントリは、少なくとも1つの登場人物に接続する** | 第1〜5編 52件 | **成立**（52件すべて。最少1件、最多5件＝第1編3.7 人・機械機能配分） |
+| **すべての対象語彙エントリは、少なくとも1つの登場人物に接続する** | 第1〜5編・第C編 53件 | **成立**（53件すべて。最少1件、最多5件＝第1編3.7 人・機械機能配分） |
 | （メタ語彙はこの条件の対象外） | 第M編 16件 | 接続0件。**これは欠落ではなく、対象語彙とメタ語彙を分ける基準そのもの**（第M編附属書D） |
 
-**現在この表が主張している組は94組で、20×52＝1040の組み合わせのうち9.0%にあたる。** 残り91.0%が空であることは、まだ語られていないという意味ではなく、意味のある組だけを明示的に選んでいるという意味です（すべての登場人物にすべての語彙が当てはまるわけではありません）。
+**現在この表が主張している組は97組で、20×53＝1060の組み合わせのうち9.2%にあたる。** 残り90.8%が空であることは、まだ語られていないという意味ではなく、意味のある組だけを明示的に選んでいるという意味です（すべての登場人物にすべての語彙が当てはまるわけではありません）。
 
 NOTE **原辞書1.2節の末尾が挙げる3つの数値は、いずれも自らの1.3節・8.6節と食い違っている**（登場人物「19件」→ 実際は20件、「71組」→ 実際は74組、本文の「ワークが参照エントリ14件」→ 1.3節の表も8.6節も11件）。本編の検証は原辞書の数値ではなく、1.3節の表と8.6節の逆引きを突き合わせて行った（両者は完全に一致する）。原辞書への指摘は `backlog.md` F-18 に登録した（附属書H）。第1編附属書D の NOTE が「完全な一覧（19件）」と書いていたのは、この誤った件数を引き写したものであり、本編の成立にあわせて20件へ是正した。
 
@@ -476,7 +482,7 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 | **〃** | 無人搬送車（AGV／AMR） | I+II | 4 | 0 |
 | **型2 情報型** | ワーク（被加工物・部品・製品） | I+II+III | 13 | 35 |
 | **〃** | エンドエフェクタ（ハンド・グリッパ・吸着パッド） | I+II+III | 4 | 8 |
-| **〃** | CADシステム・PLM | II+III | 8 | 5 |
+| **〃** | CADシステム・PLM | II+C+III | 9 | 5 |
 | **〃** | ビジョンカメラ・3Dスキャナ | I+II+III | 5 | 4 |
 | **〃** | 治具（ジグ）・位置決めピン・突き当て面 | II+III | 3 | 3 |
 | **〃** | 安全柵・ライトカーテン | I+II+III | 3 | 2 |
@@ -488,8 +494,8 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 | **〃** | 工作機械・専用機（CNC、プレス、溶接機など） | II+IV | 5 | 3 |
 | **〃** | 作業者・オペレータ・保全担当 | I+II+III+IV | 6 | 3 |
 | **〃** | コンベア・シュート | I+II+IV | 3 | 2 |
-| **型4 契約型** | MES・上位システム | III+V | 7 | 6 |
-| **〃** | 設計・生技・制御・情報の各担当者（0章の4ドメイン） | V | 1 | 0 |
+| **型4 契約型** | MES・上位システム | C+III+V | 8 | 6 |
+| **〃** | 設計・生技・制御・情報の各担当者（0章の4ドメイン） | C+V | 2 | 0 |
 
 | 型 | 到達する最上位層 | 語られ方 | 件数 |
 | :--- | :--- | :--- | ---: |
@@ -499,7 +505,7 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 | **型3 機能型** | 第4編 | 工程で何かを変える主体として語られる | 6 |
 | **型4 契約型** | 第5編 | システム間・部署間の約束を持つ | 2 |
 
-**新設9件を加えても、型の割り当ては1件も動かなかった。** 親概念はいずれも子と同じ編に置かれているため、到達する最上位層を押し上げることがない。2026-09-05 の第2編3.18・3.19 は7つの登場人物に第2編（II）を新たに加えたが、いずれも既に第3編以上に到達している登場人物であるため、最上位層は変わらない。型分けが記述の抜けを見つける道具として働き続けるのは、この安定性のためである。
+**新設10件を加えても、型の割り当ては1件も動かなかった。** 第C編（Communication 層）は RAMI の並びで Integration と Information のあいだにあり、到達する最上位層を押し上げない（C を含む3登場人物はいずれも III または V が最上位のまま）。 親概念はいずれも子と同じ編に置かれているため、到達する最上位層を押し上げることがない。2026-09-05 の第2編3.18・3.19 は7つの登場人物に第2編（II）を新たに加えたが、いずれも既に第3編以上に到達している登場人物であるため、最上位層は変わらない。型分けが記述の抜けを見つける道具として働き続けるのは、この安定性のためである。
 
 **型が直感とずれている登場人物は、記述不足の候補である。** 原辞書1.3節が挙げた3つの指摘は、本仕様書でもそのまま残っている。
 
@@ -525,7 +531,7 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 | 2章 言葉のズレの実例 | 序文に要約、全文は附属書 (informative) | **実現**（各編 序文。同音異義・異音同義の概念そのものは第M編3.10・3.11、上位概念は3.9 ★） |
 | 3章 基礎規約 | 第2編（Integration層）の Clause 4 として規定 | **実現**（第2編 Clause 4。`decisions.md` D-2026-08-21-02） |
 | 4章 分類軸・MECE検証・空セル一覧 | 附属書F (informative)（全編化時。集計元は附属書B） | **実現**（本編 **附属書F**。集計元は本編 附属書B＝6編ぶんの統合） |
-| 5章 用語及び定義 | 各編の Clause 3 | **実現**（第1〜5編 Clause 3、52概念） |
+| 5章 用語及び定義 | 各編の Clause 3 | **実現**（第1〜5編・第C編 Clause 3、53概念。第C編は原辞書に対応する部を持たない新設編） |
 | 6章 メタ語彙・手順 | 別編（メタ語彙編）または附属書（全編化時に要判断） | **実現**（**別編**として。6.1節→第M編 Clause 3、6.2・6.3節→第M編 附属書G。`decisions.md` D-2026-08-22-19） |
 | 7章 外部規格リファレンス | Clause 2 References | **実現**（各編 Clause 2） |
 | 8章 索引 | 附属書G (informative)（全編化時） | **実現**（本編 **附属書G**。8.7節は引く方向が違うため本編 附属書A へ分離） |
@@ -534,12 +540,12 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 
 ### E.2 附属書記号の対応
 
-本編は独立した文書でありながら、附属書の記号を第1〜5編・第M編と揃えています。
+本編は独立した文書でありながら、附属書の記号を第1〜5編・第C編・第M編と揃えています。
 
 | 記号 | 第1〜5編・第M編での内容 | 本編での内容 | 関係 |
 |---|---|---|---|
 | A | 現場語・通称対応表（その編ぶん） | 現場語・通称対応表（**全105語**、現場語ID順） | 統合 |
-| B | 概念メタデータ一覧（その編ぶん） | 概念メタデータ一覧（**全68件**、Layers欄を追加） | 統合 |
+| B | 概念メタデータ一覧（その編ぶん） | 概念メタデータ一覧（**全69件**、Layers欄・種別欄を追加） | 統合 |
 | C | 関係型セマンティクス（その編での使用） | 関係型セマンティクス（**全編レビューと型の確定**） | 統合＋裁定 |
 | D | 登場人物対応表（その編の抜粋） | 登場人物対応表（**全20件**、双方向網羅性の検証） | 統合＋検証 |
 | E | 変換対応表（その編の採番対応・写像規則） | 変換対応表（**章構成の対応の完了確認**） | 統合 |
@@ -551,7 +557,7 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 
 ### E.3 採番対応
 
-本編は概念を収録しないため、採番対応表はありません。全68概念の採番対応（本仕様書の採番 ↔ 原辞書の採番 ↔ 恒久ID）は各編の附属書E.1 にあり、本編の附属書B と附属書G.1・G.2 がその全編ぶんの一覧を兼ねます。
+本編は概念を収録しないため、採番対応表はありません。全69概念の採番対応（本仕様書の採番 ↔ 原辞書の採番 ↔ 恒久ID）は各編の附属書E.1 にあり、本編の附属書B と附属書G.1・G.2 がその全編ぶんの一覧を兼ねます。
 
 **原辞書の採番と本仕様書の採番の対応は、編によって性質が違います。**
 
@@ -562,9 +568,10 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 | 第3編 | `原3.NN` → `3.N`（`3.1`・`3.4` の新設で2段階繰り下がる） | |
 | 第4編 | **1対1でない**（主題順に振り直し。`原4.05` → `3.3`） | `decisions.md` D-2026-08-22-10。加えて `3.1` の新設 |
 | 第5編 | `原5.01` → `3.1`（1対1） | |
+| 第C編 | **対応なし**（原辞書に部がない新設編。2026-09-05） | `3.1` のみ。原辞書側で Communication 層の部が立てば採番対応が生じる |
 | 第M編 | `原M.NN` → `3.N`（`3.4`・`3.9` の新設で2段階繰り下がる） | |
 
-**恒久ID（IRDI）はこれらの繰り下がりの影響を受けません。** 項目コードは採番に意味を持たせない設計だからです（附属書G.9）。編をまたぐ参照や外部からの参照には、採番ではなく恒久IDを用いてください。
+**恒久ID（EED-ID）はこれらの繰り下がりの影響を受けません。** 項目コードは採番に意味を持たせない設計だからです（附属書G.9）。編をまたぐ参照や外部からの参照には、採番ではなく恒久IDを用いてください。
 
 ---
 
@@ -574,13 +581,14 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 
 ### F.1 三つの分類軸
 
-対象語彙（第1〜5編、52件）のすべてのエントリに、RAMI 4.0 の直交する3軸のメタデータを付与しています。
+対象語彙（第1〜5編・第C編、53件）のすべてのエントリに、RAMI 4.0 の直交する3軸のメタデータを付与しています。3軸に加え、2026-09-05 から**概念種別**（RAMI の軸ではない）を付与しています。
 
 | 軸 | 取りうる値 |
 | :--- | :--- |
-| **軸1 Layers**（関心事） | `Asset`（物理） / `Integration`（仮想化・座標） / `Communication`（標準化された通信・交換。**未収録**、NOTE参照） / `Information`（意味・データ） / `Functional`（機能・変換） / `Business`（契約） |
+| **軸1 Layers**（関心事） | `Asset`（物理） / `Integration`（仮想化・座標） / `Communication`（標準化された通信・交換。第C編、NOTE参照） / `Information`（意味・データ） / `Functional`（機能・変換） / `Business`（契約） |
 | **軸2 Hierarchy Levels**（設備階層） | `Product`（ワーク） / `Field Device`（ハンド・治具） / `Control Device`（PLC・ビジョン） / `Station`（工程内場所・セル） / `Enterprise`（工場・MES） / `N/A（メタ概念）` |
 | **軸3 Life Cycle**（ライフサイクル） | `Type`（型・設計・CAD） / `Instance`（個体・現場実機） / `Type & Instance`（型と個体の両段階で同一の構造がそのまま成立する概念） |
+| **概念種別**（軸ではないファセット。2026-09-05 追加） | `object`（物・場所・空間・構造） / `value`（値・状態） / `operation`（操作） / `convention`（規約・取り決め） / `classification`（分類体系） / `principle`（設計原則） |
 
 **値の使い分けに関する注意:**
 
@@ -588,29 +596,30 @@ D.1 の区分（①〜⑥の役割）とは**別の基準**として、各登場
 - `Type & Instance` は、型としての定義と個体への適用が同一構造でそのまま成立する概念にのみ使う（例：第1編3.6 工程内場所、第3編3.15 状態期待値）。
 - **軸1 Layers だけが編構成を決定する。** 軸2・軸3は編構成に影響しない、横断的なタグである。
 - **第M編（メタ語彙、16件）は3軸をいずれも持たない。** 本附属書の集計にメタ語彙は入らない（Clause 4.1）。
-- **`Communication` は RAMI 4.0 の6層の1つであり、2026-09-05 に軸1の値域へ加えた。** 原辞書4.1節と本編の旧版は Layers 軸を5値としており、RAMI 4.0（DIN SPEC 91345）が Integration 層と Information 層のあいだに置く Communication 層（統一されたデータ形式による標準化された通信）が黙って落ちていた。「空であることを黙っておくと網羅したという誤解を生む」（F.5）という本編の原則に照らし、値域に加えたうえで**未収録**として扱う。何を収めるべきかは判断待ちである——契約境界（第5編3.1）の適用例（JSON Schema・OPC UA情報モデル）は RAMI の Communication 層の内容に近く、またドメイン間で共有される交換語彙（ユビキタス言語 第M編3.8 の**成果物**）もここに分類しうる（`decisions.md` D-2026-09-05-05、`backlog.md` B-09）。編構成との一対一対応は、Communication 層に最初のエントリが立つ時点で `STD-EED-0001-C` 等の編番号を決める。
+- **概念種別は軸2の適用範囲を決める。** 設備階層（軸2）は object・value・operation・classification に適用され、**convention と principle には適用されない**（`N/A（メタ概念）` を規則から導出する）。規約や原則は特定の階層に属さず、どの階層のデータにも同じ形で適用されるためである。operation と classification は、操作の対象・分類の対象が属する階層を取る。**is-a は同一種別の概念のあいだでのみ成立する**（第4編3.1／3.2 の genus 不一致——操作の下に設計パターンを置いていた——はこの規則で検出される）。value・object 等で `N/A` を与えるには附属書B NOTE 5 に理由を書く（現状3件）。原辞書4.5節が「判断保留」としていた `Functional × N/A` や、3.11 Note 3 が「同じ型の落とし穴」と呼ぶ3規約（第2編3.4・3.6・3.11）が `Product`／`Product`／`N/A` と割れていた問題は、種別を持たなかったために `N/A` が個別判断になっていたことに由来する（設計レビュー §3.2、`decisions.md` D-2026-09-05-10）。
+- **`Communication` は RAMI 4.0 の6層の1つであり、2026-09-05 に軸1の値域へ加えた。** 原辞書4.1節と本編の旧版は Layers 軸を5値としており、RAMI 4.0（DIN SPEC 91345）が Integration 層と Information 層のあいだに置く Communication 層（統一されたデータ形式による標準化された通信）が黙って落ちていた。「空であることを黙っておくと網羅したという誤解を生む」（F.5）という本編の原則に照らし、値域に加えたうえで、同日中に**第C編（`STD-EED-0001-C`）を起こして最初のエントリを収めた**——第C編3.1 公開言語 ★（`eed:0174`。ドメイン間で共有される交換語彙。ユビキタス言語 第M編3.8 の**成果物**）。契約境界（第5編3.1）は定義文が統制を画定するため Business 層に据え置き、その適用例（JSON Schema・OPC UA情報モデル）は公開言語の実現物として位置づけた（`decisions.md` D-2026-09-05-05・-08、`backlog.md` B-09 クローズ、P-08）。
 
 ### F.2 分類構造の全体図
 
 ```mermaid
 flowchart TB
-    E["概念エントリ 52件<br/>（原辞書由来45＋新設提案7）"]
+    E["概念エントリ 53件<br/>（原辞書由来45＋新設提案8）"]
 
     M["メタ語彙 16件（第M編）<br/>3軸の対象外<br/>（原辞書由来14＋新設提案2）"]
     X["現場語 105語（各概念の下位）<br/>（語, 主語）の組ごとに代表形1つ"]
-    E --> A1["軸1 Layers 関心事<br/>6値（Communication は未収録）"]
+    E --> A1["軸1 Layers 関心事<br/>6値"]
     E --> A2["軸2 Hierarchy Levels 設備階層<br/>6値"]
     E --> A3["軸3 Life Cycle 型と個体<br/>3値"]
 
     A1 -->|編構成を決定| P
-    A2 -.->|タグのみ| T2["Product 23 / Field Device 6<br/>Control Device 2 / Station 11<br/>Enterprise 2 / N/A 8"]
-    A3 -.->|タグのみ| T3["Type 34 / Instance 6<br/>Type &amp; Instance 12"]
+    A2 -.->|タグのみ| T2["Product 22 / Field Device 6<br/>Control Device 2 / Station 11<br/>Enterprise 2 / N/A 10"]
+    A3 -.->|タグのみ| T3["Type 35 / Instance 6<br/>Type &amp; Instance 12"]
 
     subgraph P["編構成（Layers と1対1）"]
         direction TB
         P1["第1編 Asset 8件"]
         P2["第2編 Integration 19件"]
-        PC["（編なし）Communication 0件 — 未収録"]
+        PC["第C編 Communication 1件"]
         P3["第3編 Information 18件"]
         P4["第4編 Functional 6件"]
         P5["第5編 Business 1件"]
@@ -621,6 +630,7 @@ flowchart TB
     P3 --> F3["III-A 値の由来 3<br/>III-B 識別と意味の同定 5<br/>III-C 関係と宣言 4<br/>III-D 状態・出来事・履歴 6"]
     P4 --> F4["IV-A 幾何に対する機能 3<br/>IV-B 工程に対する機能 3"]
     P5 --> F5["V-A 契約 1"]
+    PC --> FC["C-A 交換語彙 1"]
     M --> F6["M-A 概念モデリングの構え 3<br/>M-B モデル要素の種別 4<br/>M-C 用語と意味の対応 5<br/>M-D データ設計の原則 4"]
 ```
 
@@ -628,49 +638,51 @@ flowchart TB
 
 ### F.3 実際の分布（附属書Bから機械集計）
 
-**軸1 × 軸2 のクロス表**（母数＝対象語彙52件。数字はエントリ件数）
+**軸1 × 軸2 のクロス表**（母数＝対象語彙53件。数字はエントリ件数）
 
 | | Product | Field Device | Control Device | Station | Enterprise | N/A | 計 |
 | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | **Asset** | 4 | 0 | 1 | 3 | 0 | 0 | **8** |
-| **Integration** | 12 | 3 | 1 | 1 | 0 | 2 | **19** |
-| **Communication** | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| **Integration** | 9 | 3 | 1 | 1 | 0 | 5 | **19** |
+| **Communication** | 0 | 0 | 0 | 0 | 0 | 1 | **1** |
 | **Information** | 7 | 2 | 0 | 4 | 2 | 3 | **18** |
-| **Functional** | 0 | 1 | 0 | 3 | 0 | 2 | **6** |
+| **Functional** | 2 | 1 | 0 | 3 | 0 | 0 | **6** |
 | **Business** | 0 | 0 | 0 | 0 | 0 | 1 | **1** |
-| **計** | **23** | **6** | **2** | **11** | **2** | **8** | **52** |
+| **計** | **22** | **6** | **2** | **11** | **2** | **10** | **53** |
 
-36セル中、実際に使われているのは17セル（Communication 行は6セルすべて空）。
+36セル中、実際に使われているのは18セル（Communication 行は `N/A` の1セルのみ）。
 
-**軸1 × 軸3 のクロス表**（母数＝対象語彙52件）
+**軸1 × 軸3 のクロス表**（母数＝対象語彙53件）
 
 | | Type | Instance | Type & Instance | 計 |
 | :--- | ---: | ---: | ---: | ---: |
 | **Asset** | 4 | 0 | 4 | **8** |
 | **Integration** | 15 | 0 | 4 | **19** |
-| **Communication** | 0 | 0 | 0 | **0** |
+| **Communication** | 1 | 0 | 0 | **1** |
 | **Information** | 10 | 5 | 3 | **18** |
 | **Functional** | 4 | 1 | 1 | **6** |
 | **Business** | 1 | 0 | 0 | **1** |
-| **計** | **34** | **6** | **12** | **52** |
+| **計** | **35** | **6** | **12** | **53** |
 
-18セル中、実際に使われているのは11セル。
+18セル中、実際に使われているのは12セル。
 
-**原辞書4.3節との差分（合計45件 → 52件）**
+**原辞書4.3節との差分（合計45件 → 53件）**
 
 | 差分の内訳 | 軸1×軸2 への影響 | 軸1×軸3 への影響 |
 | :--- | :--- | :--- |
 | 原辞書4.3節 Integration 行の集計誤り（`backlog.md` F-07） | `N/A` 1→**2**、行計 15→**16** | なし |
 | `eed:0145` 関与インタフェース ★（第1編3.8） | Asset × Station +1 | Asset × Type & Instance +1 |
-| `eed:0146` 空間表現 ★（第2編3.7） | Integration × Product +1 | Integration × Type +1 |
+| `eed:0146` 座標空間 ★（第2編3.7。2026-09-05 に空間表現から改称） | Integration × Product +1 | Integration × Type +1 |
 | `eed:0147` 値 ★（第3編3.1） | Information × N/A +1 | Information × Type +1 |
 | `eed:0148` 識別子 ★（第3編3.4） | Information × Product +1 | Information × Type & Instance +1 |
-| `eed:0149` 幾何要素に対する操作 ★（第4編3.1） | Functional × N/A +1 | Functional × Type +1 |
-| `eed:0040` の Hierarchy Level 是正 `Product`→`N/A`（`backlog.md` P-03／F-10） | Functional × Product −1、Functional × N/A +1 | なし |
+| `eed:0149` 幾何要素に対する操作 ★（第4編3.1） | Functional × Product +1（2026-09-05 に N/A から改めた） | Functional × Type +1 |
+| ~~`eed:0040` の Hierarchy Level 是正 `Product`→`N/A`~~（P-03 の一部。**2026-09-05 に撤回**。`backlog.md` B-11） | なし（原辞書どおり Functional × Product） | なし |
+| `eed:0010`・`0011`・`0013`（第2編3.3・3.4・3.6）の Hierarchy Level `Product`→`N/A`（種別 convention の規則。`backlog.md` P-07／F-27） | Integration × Product −3、Integration × N/A +3 | なし |
 | `eed:0152` 方向参照枠 ★（第2編3.18、2026-09-05） | Integration × Station +1 | Integration × Type +1 |
 | `eed:0153` 離散姿勢区分 ★（第2編3.19、2026-09-05） | Integration × Product +1 | Integration × Type & Instance +1 |
+| `eed:0174` 公開言語 ★（第C編3.1、2026-09-05） | Communication × N/A +1（新しい行） | Communication × Type +1 |
 
-**この差分表は、提案が却下された場合に元へ戻すための対応表でもある。** ★の7件と P-03 の是正はいずれも原辞書側の承認待ちであり、確定していない（`backlog.md` P-01・P-03・P-05）。F-07 の集計誤りだけは提案ではなく**是正**であり、承認の有無にかかわらず原辞書側の数字が誤っている。
+**この差分表は、提案が却下された場合に元へ戻すための対応表でもある。** ★の8件と P-07 の是正はいずれも原辞書側の承認待ちであり、確定していない（`backlog.md` P-01・P-05・P-06・P-07・P-08）。F-07 の集計誤りだけは提案ではなく**是正**であり、承認の有無にかかわらず原辞書側の数字が誤っている。
 
 ### F.4 MECEはどこまで成立しているか
 
@@ -678,16 +690,16 @@ flowchart TB
 
 | 検証対象 | 母数 | ME（重複なし） | CE（漏れなし） | 判定 |
 | :--- | ---: | :--- | :--- | :--- |
-| **軸1 Layers ↔ 編構成** | **52** | ○ 各エントリのLayers値は1つで、所属する編と必ず一致 | △ RAMI 4.0 の**6層**のうち5層に最低1件ある。`Communication` 層は未収録（`backlog.md` B-09） | **部分的**（2026-09-05 改定） → F.5 |
-| **サブグループ（I-A〜V-A・M-A〜M-D、19グループ）** | **68** | ○ 各エントリはちょうど1グループに属し、**グループ内で採番が連続する** | ○ 各編の概念体系（Clause 4／5）が全サブグループを列挙しており、どこにも属さないエントリはない | **成立** |
-| **軸2 Hierarchy Levels** | **52** | ○ 各エントリに値は1つ | △ 6値のうち `Control Device` と `Enterprise` が各2件のみ。さらに8件が `N/A`（軸が適用されない） | 部分的 → F.5 |
-| **軸3 Life Cycle** | **52** | ○ 各エントリに値は1つ | ✗ `Instance` が6件のみで、うち5件がInformation層に集中 | **実質2値** → F.5 |
+| **軸1 Layers ↔ 編構成** | **53** | ○ 各エントリのLayers値は1つで、所属する編と必ず一致 | ○ RAMI 4.0 の**6層**すべてに最低1件ある（`Communication` は第C編3.1 の1件のみ） | **成立**（2026-09-05 に部分的→成立へ。B-09 クローズ） |
+| **サブグループ（I-A〜V-A・C-A・M-A〜M-D、20グループ）** | **69** | ○ 各エントリはちょうど1グループに属し、**グループ内で採番が連続する** | ○ 各編の概念体系（Clause 4／5）が全サブグループを列挙しており、どこにも属さないエントリはない | **成立** |
+| **軸2 Hierarchy Levels** | **53** | ○ 各エントリに値は1つ | △ 6値のうち `Control Device` と `Enterprise` が各2件のみ。さらに10件が `N/A`（うち7件は種別 convention の規則から、3件は附属書B NOTE 5 の個別理由） | 部分的 → F.5 |
+| **軸3 Life Cycle** | **53** | ○ 各エントリに値は1つ | ✗ `Instance` が6件のみで、うち5件がInformation層に集中 | **実質2値** → F.5 |
 | **現場語の一意性** | **105** | ○ 各（語, 主語）の組はちょうど1つの代表形を持つ（2026-09-05 改定。語単位では「原点」等が複数の代表形を持つが、それは同音異義の登録であり重複ではない） | ○ 現場語ID `0060`〜`0144`・`0154`〜`0173` に欠番がない | **成立** |
-| **登場人物との双方向接続** | 52／20 | — | ○ 両方向とも切れている箇所がない | **成立**（附属書D.2） |
+| **登場人物との双方向接続** | 53／20 | — | ○ 両方向とも切れている箇所がない | **成立**（附属書D.2） |
 
-**「サブグループ内で採番が連続する」は、本仕様書では19グループすべてで成立する。** II-E（第2編3.18〜3.19）は2026-09-05 に末尾へ追加したサブグループであり、既存の採番を動かさずに連続性を保っている。 原辞書4.4節は同じ主張をしているが、第IV部では成立していなかった（IV-A が `原4.01` と `原4.05` の2つで、間に IV-B の3件が挟まっていた。`backlog.md` F-04）。本仕様書は第4編の採番を主題順に振り直すことでこれを解消し（`decisions.md` D-2026-08-22-10）、さらに対比ペアの親概念を**子の直前**に挿入したため（D-2026-09-02-12）、新設によっても連続性は崩れていない。**F-04 が原辞書に示した2つの選択肢——「条件を緩める」か「採番を振り直す」か——のうち、本仕様書は後者を選んだ結果が全編で成立している。**
+**「サブグループ内で採番が連続する」は、本仕様書では20グループすべてで成立する。** II-E（第2編3.18〜3.19）と C-A（第C編3.1）は2026-09-05 に追加したサブグループであり、既存の採番を動かさずに連続性を保っている。 原辞書4.4節は同じ主張をしているが、第IV部では成立していなかった（IV-A が `原4.01` と `原4.05` の2つで、間に IV-B の3件が挟まっていた。`backlog.md` F-04）。本仕様書は第4編の採番を主題順に振り直すことでこれを解消し（`decisions.md` D-2026-08-22-10）、さらに対比ペアの親概念を**子の直前**に挿入したため（D-2026-09-02-12）、新設によっても連続性は崩れていない。**F-04 が原辞書に示した2つの選択肢——「条件を緩める」か「採番を振り直す」か——のうち、本仕様書は後者を選んだ結果が全編で成立している。**
 
-**軸1の判定は2026-09-05 に「成立」から「部分的」へ改めた。** 旧版は「RAMI 4.0の5層すべてに最低1件ある」を CE の根拠としていたが、RAMI 4.0 の Layers 軸は6層であり、Communication 層を数えていなかった。前提が誤っていた判定は成立とは言えない。Communication 層を「適用範囲外」とすれば形式上は成立に戻せるが、契約境界の適用例やドメイン間の交換語彙がこの層に分類しうる以上（F.1 NOTE）、「未収録」が実態に近い（`decisions.md` D-2026-09-05-05）。
+**軸1の判定は2026-09-05 に「成立」→「部分的」→「成立」と2度動いた。** 旧版は「RAMI 4.0の5層すべてに最低1件ある」を CE の根拠としていたが、RAMI 4.0 の Layers 軸は6層であり、Communication 層を数えていなかった。前提が誤っていた判定は成立とは言えず、いったん「部分的」へ改めた（`decisions.md` D-2026-09-05-05）。同日、Communication 層を「適用範囲外」として形式上の成立に戻すのではなく、第C編3.1 公開言語 ★ を新設して実体をもって成立させた（D-2026-09-05-08）。ただし Communication 層は1件のみであり、軸2の `N/A` 以外の5セルは未収録のままである（F.5）。
 
 **軸3の `Instance` について、原辞書4.4節の記述は陳腐化している。** 同節は「`Instance` が5件のみで、しかも全件がInformation層」と書くが、原辞書4.3節のクロス表自身が Instance 計を**6件**とし、うち1件（`原4.05` 計測）を Functional 層に数えている。`原4.05` の追加が4.4節・4.5節へ反映されていない（`backlog.md` F-16、附属書H）。本仕様書での正しい記述は「6件のうち5件がInformation層に集中」である。
 
@@ -704,17 +716,17 @@ flowchart TB
 | **未収録** | 成立し、適用範囲内でもあるが、まだ語彙を立てていない。埋めるべき候補。 |
 | **判断保留** | 成立するかどうかの判断がついていない。 |
 
-**軸1 × 軸2 の空セル（36セル中19セル）**
+**軸1 × 軸2 の空セル（36セル中18セル）**
 
 | 組み合わせ | ラベル | 補足 |
 | :--- | :--- | :--- |
 | Asset × Field Device | **未収録** | ハンド・治具そのものの質量・剛性・最大把持力といった物理特性。第1編3.3 質量特性のツール版にあたる。附属書D.3 の「産業用ロボットが型1止まり」に対応する |
 | Asset × Enterprise | 適用範囲外 | 工場建屋・敷地といった規模の物理 |
 | Asset × N/A | 原理的に空 | 物理資産は必ずいずれかの設備階層に属するため、`N/A` にはならない |
-| Communication × （Product〜N/A の全6値） | **未収録**（6セル） | RAMI 4.0 の Communication 層。2026-09-05 に軸1の値域へ加えた（F.1 NOTE）。契約境界（第5編3.1）の適用例（JSON Schema・OPC UA情報モデル）や、ドメイン間で共有される交換語彙が候補。どの設備階層に立つかは最初のエントリが決まるまで判断できない（`backlog.md` B-09） |
+| Communication × （Product／Field Device／Control Device／Station／Enterprise） | **未収録**（5セル） | RAMI 4.0 の Communication 層。2026-09-05 に軸1の値域へ加え、同日 `Communication × N/A` に第C編3.1 公開言語 ★ が入った。残る5セルは、特定の設備階層に固有の交換語彙（例：PLC タグの交換形式、工程間メッセージの形式）が候補（`backlog.md` B-09 クローズ） |
 | Integration × Enterprise | 適用範囲外 | 工場全体座標系 |
 | Information × Control Device | **未収録** | PLCタグ・ビジョン出力のデータ構造 |
-| Functional × Product | **未収録** | **本仕様書で新たに空になったセル。** `eed:0040` の Hierarchy Level を `Product` から `N/A（メタ概念）` へ是正した結果（`backlog.md` P-03）、ワーク階層に固有の機能を主題とする語彙が1件もなくなった。加工そのものをワークの側から語る語彙が候補 |
+| Functional × N/A | **未収録** | 原辞書4.5節が「判断保留」としていたセル。本仕様書は当初 `eed:0040` を `N/A` へ改めてこのセルを埋めたが、2026-09-05 に撤回して `Product` に戻したため再び空になった（`backlog.md` B-11 クローズ）。種別の規則により、ここに入るのは Functional 層の**規約・原則**（機能の命名規約など）に限られる |
 | Functional × Control Device | **未収録** | 制御ロジックの機能単位 |
 | Functional × Enterprise | 適用範囲外 | 生産計画・スケジューリング機能 |
 | Business × Product | 原理的に空 | 契約は部品単体に対しては結ばれない |
@@ -723,25 +735,25 @@ flowchart TB
 | Business × Station | **未収録** | 工程間の受け渡し契約。第3編3.15 状態期待値がInformation層にある分、Business層側が空洞になっている。**新設しないと裁定済み**（`decisions.md` D-2026-09-02-09、`backlog.md` B-05 クローズ）。空洞を空洞として明示し続けることが本節の趣旨であるため、表示は維持する |
 | Business × Enterprise | **未収録** | 企業間・システム間の契約。第5編3.1 契約境界を階層に具体化したもの |
 
-**軸1 × 軸3 の空セル（18セル中7セル）**
+**軸1 × 軸3 の空セル（18セル中6セル）**
 
 | 組み合わせ | ラベル | 補足 |
 | :--- | :--- | :--- |
-| Communication × （Type／Instance／Type & Instance） | **未収録**（3セル） | 同上（B-09） |
+| Communication × （Instance／Type & Instance） | **未収録**（2セル） | 同上。第C編3.1 は `Type` である |
 | Asset × Instance | **未収録** | 「この1本のワーク」という物理個体そのものを主題とする語彙。軸3が実質2値になっている最大の原因 |
 | Integration × Instance | **未収録** | 実機で実測されたこの1台の座標系（キャリブレーション実測値） |
 | Business × Instance | 原理的に空 | 契約は型として結ばれ、個体ごとには結ばれない |
 | Business × Type & Instance | 原理的に空 | 同上 |
 
-**空セルの内訳（計26セル）:** 原理的に空 6件／適用範囲外 3件／**未収録 17件**（うち Communication 層の9セル）／判断保留 **0件**。
+**空セルの内訳（計24セル）:** 原理的に空 6件／適用範囲外 3件／**未収録 15件**（うち Communication 層の7セル）／判断保留 **0件**。2026-09-05 の第2次追補で 26→24 になった（`Communication × N/A`・`Communication × Type` が埋まり、`Functional × Product` が埋まって `Functional × N/A` が空いた）。
 
 **2026-09-05 に `Integration × Station` が埋まった。** 旧版は「セル原点・ステーション座標系」を未収録としていたが、第2編3.18 方向参照枠 ★（Hierarchy Level `Station`）が入った。現場で「右」「上流」を解決する既定の枠は工程内場所の内在的枠（正面・流れ方向）に固定されるためである。ステーション座標系そのものは第2編3.2（参照座標系）の個体として扱え、独立した概念を要しない。
 
-**判断保留は0件になった。** 原辞書4.5節が唯一の判断保留としていた `Functional × N/A`（`原4.01` を `Product` としてよいか）は、`decisions.md` D-2026-08-22-08 で `N/A（メタ概念）` と裁定され、埋まった。同じセルには本仕様書での新設 `eed:0149`（幾何要素に対する操作）も入っている。**保留は解けたが、その代わりに `Functional × Product` が新しく空になった**——保留の解消は空セルの消滅ではなく、移動だった。
+**判断保留は0件になった。** 原辞書4.5節が唯一の判断保留としていた `Functional × N/A`（`原4.01` を `Product` としてよいか）は、`decisions.md` D-2026-08-22-08 で `N/A（メタ概念）` と裁定され、埋まった。同じセルには本仕様書での新設 `eed:0149`（幾何要素に対する操作）も入っている。**保留は解けたが、その代わりに `Functional × Product` が新しく空になった**——保留の解消は空セルの消滅ではなく、移動だった。（2026-09-05 追補：`N/A` の提案を撤回し `Product` に戻したため、移動は元に戻り `Functional × N/A` が再び空セルになった。今度は「保留」ではなく「未収録」である——種別の規則により、ここに入りうるのは Functional 層の規約・原則だけと決まったからである。）
 
 **原辞書4.5節が挙げていた「新たに判明した未収録」（集計期間）は解消済みである。** `原3.15 Aggregation Window` は既に確定収録されており、Information層・`Enterprise`・`Type` の値も確定している（`decisions.md` D-2026-08-22-02、`backlog.md` F-02）。
 
-**この辞書が主張できるのは「軸1について6層中5層を網羅している」ところまでであり、Communication 層および軸2・軸3の上の17件が未収録であることを明示したうえで使うこと。**
+**この辞書が主張できるのは「軸1について6層すべてに最低1件ある」ところまでであり、Communication 層が1件のみであること、および軸2・軸3の上の15件が未収録であることを明示したうえで使うこと。**
 
 NOTE **原辞書4.5節の空セル一覧は、`原4.05`（計測）の追加を反映していない。** 同節は `Functional × Field Device` と `Functional × Instance` を「未収録」として挙げるが、`原4.05` の RAMI 値は `Functional / Field Device / Instance` であり、どちらのセルも埋まっている。同節末尾の内訳（原理的に空7／適用範囲外3／未収録9／判断保留1）も、同節自身が列挙している20件の内訳（6／3／10／1）と一致しない。`backlog.md` F-16・F-17 に登録した（附属書H）。
 
@@ -779,16 +791,17 @@ NOTE **原辞書4.5節の空セル一覧は、`原4.05`（計測）の追加を�
 | **境界づけられたコンテキスト** | きょうかいづけられたこんてきすと | bounded context | 第M編3.3 | 原M.03 | メタ語彙 | 業界一般 |
 | **距離定義規約** | きょりていぎきやく | distance metric convention | 第2編3.11 | 原2.10 | 概念 | 標準 |
 | **空間注記の意味分類** | くうかんちゅうきのいみぶんるい | spatial element classification | 第3編3.10 | 原3.08 | 概念 | 業界一般 |
-| **空間表現** ★ | くうかんひょうげん | spatial representation | 第2編3.7 | —（新設） | 概念 | 独自 |
 | **計測** | けいそく | measurement | 第4編3.3 | 原4.05 | 概念 | 標準 |
 | **契約境界** | けいやくきょうかい | contract boundary | 第5編3.1 | 原5.01 | 概念 | 業界一般 |
 | **検証レベル** | けんしょうれべる | v&v level | 第3編3.13 | 原3.11 | 概念 | 業界一般 |
 | **工程状態** | こうていじょうたい | process state | 第3編3.14 | 原3.12 | 概念 | 標準 |
+| **公開言語** ★ | こうかいげんご | published language | 第C編3.1 | —（新設） | 概念 | 業界一般 |
 | **工程内場所** | こうていないばしょ | process location | 第1編3.6 | 原1.06 | 概念 | 独自 |
 | **個体識別子** | こたいしきべつし | instance identifier | 第3編3.6 | 原3.04 | 概念 | 標準 |
 | **作業インタフェース** | さぎょういんたふぇーす | work interface | 第4編3.4 | 原4.02 | 概念 | 独自 |
 | **算出値** | さんしゅつち | derived value | 第3編3.3 | 原3.02 | 概念 | 独自 |
 | **参照座標系** | さんしょうざひょうけい | reference coordinate frame | 第2編3.2 | 原2.02 | 概念 | 標準 |
+| **座標空間** ★ | ざひょうくうかん | coordinate space | 第2編3.7 | —（新設） | 概念 | 業界一般 |
 | **座標系** | ざひょうけい | coordinate system | 第2編3.1 | 原2.01 | 概念 | 標準 |
 | **座標系のハンドネス** | ざひょうけいのはんどねす | handedness | 第2編3.3 | 原2.03 | 概念 | 標準 |
 | **座標変換** | ざひょうへんかん | coordinate transformation | 第2編3.13 | 原2.12 | 概念 | 標準 |
@@ -847,6 +860,7 @@ NOTE 3 `原M.11` は**英語主名称のみ**の改称提案（`backlog.md` P-04
 | **cardinality state** | 多重度状態 | 第M編3.14 | 原M.12 | メタ語彙 | `eed:0057#001` |
 | **conceptual modeling** | 概念モデリング | 第M編3.1 | 原M.01 | メタ語彙 | `eed:0046#001` |
 | **contract boundary** | 契約境界 | 第5編3.1 | 原5.01 | 概念 | `eed:0045#001` |
+| **coordinate space** ★ | 座標空間 | 第2編3.7 | —（新設） | 概念 | `eed:0146#001` |
 | **coordinate system** | 座標系 | 第2編3.1 | 原2.01 | 概念 | `eed:0008#001` |
 | **coordinate transformation** | 座標変換 | 第2編3.13 | 原2.12 | 概念 | `eed:0019#001` |
 | **datum reference feature** | 基準フィーチャー | 第2編3.14 | 原2.13 | 概念 | `eed:0020#001` |
@@ -879,6 +893,7 @@ NOTE 3 `原M.11` は**英語主名称のみ**の改称提案（`backlog.md` P-04
 | **process location** | 工程内場所 | 第1編3.6 | 原1.06 | 概念 | `eed:0006#001` |
 | **process state** | 工程状態 | 第3編3.14 | 原3.12 | 概念 | `eed:0035#001` |
 | **property dictionary reference** | プロパティ辞書参照 | 第3編3.8 | 原3.06 | 概念 | `eed:0029#001` |
+| **published language** ★ | 公開言語 | 第C編3.1 | —（新設） | 概念 | `eed:0174#001` |
 | **reference coordinate frame** | 参照座標系 | 第2編3.2 | 原2.02 | 概念 | `eed:0009#001` |
 | **resolution** | 分解能 | 第1編3.5 | 原1.05 | 概念 | `eed:0005#001` |
 | **revision** | リビジョン | 第3編3.7 | 原3.05 | 概念 | `eed:0028#001` |
@@ -886,7 +901,6 @@ NOTE 3 `原M.11` は**英語主名称のみ**の改称提案（`backlog.md` P-04
 | **self-validating freshness guarantee** ※提案値 | キャッシュ鮮度の自己保証 | 第M編3.13 | 原M.11 | メタ語彙 | `eed:0056#001` |
 | **single write path** | 単一更新経路の強制 | 第M編3.16 | 原M.14 | メタ語彙 | `eed:0059#001` |
 | **spatial element classification** | 空間注記の意味分類 | 第3編3.10 | 原3.08 | 概念 | `eed:0031#001` |
-| **spatial representation** ★ | 空間表現 | 第2編3.7 | —（新設） | 概念 | `eed:0146#001` |
 | **stable pose** | 安定姿勢 | 第1編3.4 | 原1.04 | 概念 | `eed:0004#001` |
 | **state expectation** | 状態期待値 | 第3編3.15 | 原3.13 | 概念 | `eed:0036#001` |
 | **symmetry rule** | 対称性ルール | 第3編3.12 | 原3.10 | 概念 | `eed:0033#001` |
@@ -915,36 +929,36 @@ NOTE **`eed:0056` は F の位置から S の位置へ移る。** 英語主名�
 
 **P（定義・決定する 24件）:** 第1編3.1 バウンディングボリューム、第1編3.2 トポロジー構造、第1編3.3 質量特性、第2編3.2 参照座標系、第2編3.5 姿勢、第2編3.10 階層座標構造、第2編3.12 同次変換行列、第2編3.13 座標変換、第2編3.14 基準フィーチャー、第2編3.16 干渉禁止領域、第2編3.19 離散姿勢区分★、第3編3.4 識別子★、第3編3.5 型識別子、第3編3.6 個体識別子、第3編3.7 リビジョン、第3編3.8 プロパティ辞書参照、第3編3.9 型付き関係、第3編3.10 空間注記の意味分類、第3編3.12 対称性ルール、第4編3.1 幾何要素に対する操作★、第4編3.2 次元上昇操作、第4編3.3 計測、第M編3.5 エンティティ、第M編3.6 値オブジェクト
 
-**C（参照・利用する 28件）:** 第2編3.1 座標系、第2編3.3 座標系のハンドネス、第2編3.4 尺度定義、第2編3.6 回転表現規約、第2編3.7 空間表現★、第2編3.8 ローカル空間、第2編3.9 ワールド空間、第2編3.11 距離定義規約、第2編3.15 キャリブレーション基準、第2編3.18 方向参照枠★、第3編3.1 値★、第3編3.2 入力値、第3編3.3 算出値、第3編3.11 把持宣言と解決、第3編3.17 集計期間、第5編3.1 契約境界、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.7 集約ルート、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.13 キャッシュ鮮度の自己保証、第M編3.14 多重度状態
+**C（参照・利用する 29件）:** 第2編3.1 座標系、第2編3.3 座標系のハンドネス、第2編3.4 尺度定義、第2編3.6 回転表現規約、第2編3.7 座標空間★、第2編3.8 ローカル空間、第2編3.9 ワールド空間、第2編3.11 距離定義規約、第2編3.15 キャリブレーション基準、第2編3.18 方向参照枠★、第3編3.1 値★、第3編3.2 入力値、第3編3.3 算出値、第3編3.11 把持宣言と解決、第3編3.17 集計期間、第5編3.1 契約境界、第C編3.1 公開言語★、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.7 集約ルート、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.13 キャッシュ鮮度の自己保証、第M編3.14 多重度状態
 
 #### `[生技ロボティクス]`
 
 **P（定義・決定する 14件）:** 第1編3.4 安定姿勢、第2編3.5 姿勢、第2編3.10 階層座標構造、第2編3.12 同次変換行列、第2編3.13 座標変換、第2編3.16 干渉禁止領域、第2編3.17 アプローチ方向、第3編3.9 型付き関係、第3編3.10 空間注記の意味分類、第3編3.11 把持宣言と解決、第3編3.13 検証レベル、第3編3.18 トレーサビリティ記録、第4編3.3 計測、第4編3.6 変換行為※
 
-**C（参照・利用する 52件）:** 第1編3.1 バウンディングボリューム、第1編3.2 トポロジー構造、第1編3.3 質量特性、第1編3.5 分解能、第1編3.6 工程内場所、第1編3.7 人・機械機能配分、第1編3.8 関与インタフェース★、第2編3.1 座標系、第2編3.2 参照座標系、第2編3.3 座標系のハンドネス、第2編3.4 尺度定義、第2編3.6 回転表現規約、第2編3.7 空間表現★、第2編3.8 ローカル空間、第2編3.9 ワールド空間、第2編3.11 距離定義規約、第2編3.14 基準フィーチャー、第2編3.15 キャリブレーション基準、第2編3.18 方向参照枠★、第2編3.19 離散姿勢区分★、第3編3.1 値★、第3編3.2 入力値、第3編3.3 算出値、第3編3.4 識別子★、第3編3.5 型識別子、第3編3.6 個体識別子、第3編3.7 リビジョン、第3編3.8 プロパティ辞書参照、第3編3.12 対称性ルール、第3編3.14 工程状態、第3編3.15 状態期待値、第3編3.16 イベント、第4編3.1 幾何要素に対する操作★、第4編3.2 次元上昇操作、第4編3.4 作業インタフェース、第4編3.5 IPOネスト構造、第5編3.1 契約境界、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.5 エンティティ、第M編3.6 値オブジェクト、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.13 キャッシュ鮮度の自己保証、第M編3.14 多重度状態、第M編3.15 遷移許可リスト、第M編3.16 単一更新経路の強制
+**C（参照・利用する 53件）:** 第1編3.1 バウンディングボリューム、第1編3.2 トポロジー構造、第1編3.3 質量特性、第1編3.5 分解能、第1編3.6 工程内場所、第1編3.7 人・機械機能配分、第1編3.8 関与インタフェース★、第2編3.1 座標系、第2編3.2 参照座標系、第2編3.3 座標系のハンドネス、第2編3.4 尺度定義、第2編3.6 回転表現規約、第2編3.7 座標空間★、第2編3.8 ローカル空間、第2編3.9 ワールド空間、第2編3.11 距離定義規約、第2編3.14 基準フィーチャー、第2編3.15 キャリブレーション基準、第2編3.18 方向参照枠★、第2編3.19 離散姿勢区分★、第3編3.1 値★、第3編3.2 入力値、第3編3.3 算出値、第3編3.4 識別子★、第3編3.5 型識別子、第3編3.6 個体識別子、第3編3.7 リビジョン、第3編3.8 プロパティ辞書参照、第3編3.12 対称性ルール、第3編3.14 工程状態、第3編3.15 状態期待値、第3編3.16 イベント、第4編3.1 幾何要素に対する操作★、第4編3.2 次元上昇操作、第4編3.4 作業インタフェース、第4編3.5 IPOネスト構造、第5編3.1 契約境界、第C編3.1 公開言語★、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.5 エンティティ、第M編3.6 値オブジェクト、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.13 キャッシュ鮮度の自己保証、第M編3.14 多重度状態、第M編3.15 遷移許可リスト、第M編3.16 単一更新経路の強制
 
 #### `[設備制御]`
 
 **P（定義・決定する 15件）:** 第1編3.5 分解能、第1編3.6 工程内場所、第1編3.7 人・機械機能配分、第1編3.8 関与インタフェース★、第2編3.15 キャリブレーション基準、第2編3.18 方向参照枠★、第2編3.19 離散姿勢区分★、第3編3.13 検証レベル、第3編3.14 工程状態、第3編3.15 状態期待値、第3編3.16 イベント、第3編3.18 トレーサビリティ記録、第4編3.4 作業インタフェース、第4編3.5 IPOネスト構造、第4編3.6 変換行為※
 
-**C（参照・利用する 46件）:** 第1編3.1 バウンディングボリューム、第1編3.3 質量特性、第1編3.4 安定姿勢、第2編3.1 座標系、第2編3.2 参照座標系、第2編3.3 座標系のハンドネス、第2編3.4 尺度定義、第2編3.5 姿勢、第2編3.6 回転表現規約、第2編3.7 空間表現★、第2編3.8 ローカル空間、第2編3.9 ワールド空間、第2編3.10 階層座標構造、第2編3.11 距離定義規約、第2編3.12 同次変換行列、第2編3.13 座標変換、第2編3.14 基準フィーチャー、第2編3.16 干渉禁止領域、第2編3.17 アプローチ方向、第3編3.4 識別子★、第3編3.5 型識別子、第3編3.6 個体識別子、第3編3.7 リビジョン、第3編3.8 プロパティ辞書参照、第3編3.9 型付き関係、第3編3.10 空間注記の意味分類、第3編3.11 把持宣言と解決、第3編3.12 対称性ルール、第3編3.17 集計期間、第4編3.1 幾何要素に対する操作★、第4編3.3 計測、第4編3.6 変換行為※、第5編3.1 契約境界、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.5 エンティティ、第M編3.6 値オブジェクト、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.15 遷移許可リスト、第M編3.16 単一更新経路の強制
+**C（参照・利用する 47件）:** 第1編3.1 バウンディングボリューム、第1編3.3 質量特性、第1編3.4 安定姿勢、第2編3.1 座標系、第2編3.2 参照座標系、第2編3.3 座標系のハンドネス、第2編3.4 尺度定義、第2編3.5 姿勢、第2編3.6 回転表現規約、第2編3.7 座標空間★、第2編3.8 ローカル空間、第2編3.9 ワールド空間、第2編3.10 階層座標構造、第2編3.11 距離定義規約、第2編3.12 同次変換行列、第2編3.13 座標変換、第2編3.14 基準フィーチャー、第2編3.16 干渉禁止領域、第2編3.17 アプローチ方向、第3編3.4 識別子★、第3編3.5 型識別子、第3編3.6 個体識別子、第3編3.7 リビジョン、第3編3.8 プロパティ辞書参照、第3編3.9 型付き関係、第3編3.10 空間注記の意味分類、第3編3.11 把持宣言と解決、第3編3.12 対称性ルール、第3編3.17 集計期間、第4編3.1 幾何要素に対する操作★、第4編3.3 計測、第4編3.6 変換行為※、第5編3.1 契約境界、第C編3.1 公開言語★、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.5 エンティティ、第M編3.6 値オブジェクト、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.15 遷移許可リスト、第M編3.16 単一更新経路の強制
 
 #### `[情報MES]`
 
 **P（定義・決定する 8件）:** 第3編3.4 識別子★、第3編3.5 型識別子、第3編3.6 個体識別子、第3編3.14 工程状態、第3編3.16 イベント、第3編3.17 集計期間、第M編3.5 エンティティ、第M編3.16 単一更新経路の強制
 
-**C（参照・利用する 40件）:** 第1編3.5 分解能、第1編3.6 工程内場所、第1編3.7 人・機械機能配分、第1編3.8 関与インタフェース★、第2編3.1 座標系、第2編3.2 参照座標系、第2編3.5 姿勢、第2編3.10 階層座標構造、第2編3.12 同次変換行列、第2編3.13 座標変換、第2編3.18 方向参照枠★、第2編3.19 離散姿勢区分★、第3編3.1 値★、第3編3.2 入力値、第3編3.3 算出値、第3編3.7 リビジョン、第3編3.8 プロパティ辞書参照、第3編3.9 型付き関係、第3編3.13 検証レベル、第3編3.15 状態期待値、第3編3.18 トレーサビリティ記録、第4編3.3 計測、第4編3.4 作業インタフェース、第4編3.5 IPOネスト構造、第4編3.6 変換行為※、第5編3.1 契約境界、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.6 値オブジェクト、第M編3.7 集約ルート、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.13 キャッシュ鮮度の自己保証、第M編3.14 多重度状態、第M編3.15 遷移許可リスト
+**C（参照・利用する 41件）:** 第1編3.5 分解能、第1編3.6 工程内場所、第1編3.7 人・機械機能配分、第1編3.8 関与インタフェース★、第2編3.1 座標系、第2編3.2 参照座標系、第2編3.5 姿勢、第2編3.10 階層座標構造、第2編3.12 同次変換行列、第2編3.13 座標変換、第2編3.18 方向参照枠★、第2編3.19 離散姿勢区分★、第3編3.1 値★、第3編3.2 入力値、第3編3.3 算出値、第3編3.7 リビジョン、第3編3.8 プロパティ辞書参照、第3編3.9 型付き関係、第3編3.13 検証レベル、第3編3.15 状態期待値、第3編3.18 トレーサビリティ記録、第4編3.3 計測、第4編3.4 作業インタフェース、第4編3.5 IPOネスト構造、第4編3.6 変換行為※、第5編3.1 契約境界、第C編3.1 公開言語★、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.6 値オブジェクト、第M編3.7 集約ルート、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.13 キャッシュ鮮度の自己保証、第M編3.14 多重度状態、第M編3.15 遷移許可リスト
 
 #### `[共通アーキテクチャ]`
 
-**P（定義・決定する 32件）:** 第2編3.1 座標系、第2編3.3 座標系のハンドネス、第2編3.4 尺度定義、第2編3.6 回転表現規約、第2編3.7 空間表現★、第2編3.8 ローカル空間、第2編3.9 ワールド空間、第2編3.11 距離定義規約、第2編3.18 方向参照枠★、第3編3.1 値★、第3編3.2 入力値、第3編3.3 算出値、第3編3.8 プロパティ辞書参照、第4編3.1 幾何要素に対する操作★、第4編3.2 次元上昇操作、第5編3.1 契約境界、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.5 エンティティ、第M編3.6 値オブジェクト、第M編3.7 集約ルート、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.13 キャッシュ鮮度の自己保証、第M編3.14 多重度状態、第M編3.15 遷移許可リスト、第M編3.16 単一更新経路の強制
+**P（定義・決定する 33件）:** 第2編3.1 座標系、第2編3.3 座標系のハンドネス、第2編3.4 尺度定義、第2編3.6 回転表現規約、第2編3.7 座標空間★、第2編3.8 ローカル空間、第2編3.9 ワールド空間、第2編3.11 距離定義規約、第2編3.18 方向参照枠★、第3編3.1 値★、第3編3.2 入力値、第3編3.3 算出値、第3編3.8 プロパティ辞書参照、第4編3.1 幾何要素に対する操作★、第4編3.2 次元上昇操作、第5編3.1 契約境界、第C編3.1 公開言語★、第M編3.1 概念モデリング、第M編3.2 ドメイン駆動設計、第M編3.3 境界づけられたコンテキスト、第M編3.4 モデル要素★、第M編3.5 エンティティ、第M編3.6 値オブジェクト、第M編3.7 集約ルート、第M編3.8 ユビキタス言語、第M編3.9 用語–概念対応のズレ★、第M編3.10 同音異義、第M編3.11 異音同義、第M編3.12 用語正規化、第M編3.13 キャッシュ鮮度の自己保証、第M編3.14 多重度状態、第M編3.15 遷移許可リスト、第M編3.16 単一更新経路の強制
 
 **C（参照・利用する）:** なし（横断ガバナンス役割のため。附属書B の凡例を参照）
-NOTE 1 **`※` を付した第4編3.6（変換行為）は、`[設備制御]` の P リストと C リストの両方に現れる。** 原辞書 `原4.04` の責務タグをそのまま保存した結果であり、全68エントリ中この1件だけに起きている（附属書B NOTE 3、`backlog.md` F-20）。是正は原辞書側の判断を待つ。
+NOTE 1 **`※` を付した第4編3.6（変換行為）は、`[設備制御]` の P リストと C リストの両方に現れる。** 原辞書 `原4.04` の責務タグをそのまま保存した結果であり、全69エントリ中この1件だけに起きている（附属書B NOTE 3、`backlog.md` F-20）。是正は原辞書側の判断を待つ。
 
-NOTE 2 **`[共通アーキテクチャ]` は C を1件も持たない。** 横断ガバナンス役割であり、語彙を定義・決定する側にのみ立つためである（原辞書0章）。P が32件と最多になるのは、メタ語彙16件すべての P を担うこと（第M編附属書B NOTE 1）と、層をまたぐ約束事（座標系・値・契約境界）の定義者であることによる。
+NOTE 2 **`[共通アーキテクチャ]` は C を1件も持たない。** 横断ガバナンス役割であり、語彙を定義・決定する側にのみ立つためである（原辞書0章）。P が33件と最多になるのは、メタ語彙16件すべての P を担うこと（第M編附属書B NOTE 1）と、層をまたぐ約束事（座標系・値・契約境界）の定義者であることによる。
 
-NOTE 3 **新設提案7件は、いずれも既存の子概念と同じ責務タグを継承している。** 上位概念を立てても、それを定義・決定する主体と参照・利用する主体は変わらない。この継承により、`[生技ロボティクス]` の C が43件から50件へ、`[製品設計]` の C が23件から27件へ増えている。**責務タグの分布そのものは動いていない**——増えたのは接続の本数であって、役割の配分ではない。2026-09-05 の第2編3.18・3.19 は継承ではなく新規の付与であり、`[設備制御]` の P（現場の既定の方向枠と受け入れ時の向き区分を決める側）が13件から15件へ増えた。
+NOTE 3 **新設提案の親概念6件と `eed:0145` は、いずれも既存の子概念と同じ責務タグを継承している。** 第C編3.1 公開言語 ★（2026-09-05）は第5編3.1 契約境界と同じ責務タグ（P＝共通アーキテクチャ、C＝4ドメイン）を持つ。 上位概念を立てても、それを定義・決定する主体と参照・利用する主体は変わらない。この継承により、`[生技ロボティクス]` の C が43件から50件へ、`[製品設計]` の C が23件から27件へ増えている。**責務タグの分布そのものは動いていない**——増えたのは接続の本数であって、役割の配分ではない。2026-09-05 の第2編3.18・3.19 は継承ではなく新規の付与であり、`[設備制御]` の P（現場の既定の方向枠と受け入れ時の向き区分を決める側）が13件から15件へ増えた。
 
 ### G.4 テーマ別ビュー（編をまたいで読むための導線）
 
@@ -953,19 +967,19 @@ NOTE 3 **新設提案7件は、いずれも既存の子概念と同じ責務タ�
 | テーマ | 読む順序 |
 | :--- | :--- |
 | **工程内の場所を設計する** | 第1編3.6 工程内場所 → 第4編3.4 作業インタフェース → 第4編附属書F（場所種別のファセット分類） → 第1編3.7 人・機械機能配分 → 第1編3.8 関与インタフェース ★ → 第3編3.14 工程状態 → 第4編3.5 IPOネスト構造 → 第3編3.15 状態期待値 → 第4編3.6 変換行為 → 第4編附属書G（適用例） |
-| **座標と空間を扱う** | 第2編 Clause 4 基礎規約 → 第2編3.1 座標系 → 3.2 参照座標系 → 3.3 ハンドネス → 3.4 尺度定義 → 3.5 姿勢 → **3.7 空間表現 ★** → 3.8 ローカル空間 → 3.9 ワールド空間 → 3.10 階層座標構造 → 3.12 同次変換行列 → 3.13 座標変換 → **3.18 方向参照枠 ★**（数値ではなく言葉で方向を語るとき） → **3.19 離散姿勢区分 ★** |
+| **座標と空間を扱う** | 第2編 Clause 4 基礎規約 → 第2編3.1 座標系 → 3.2 参照座標系 → 3.3 ハンドネス → 3.4 尺度定義 → 3.5 姿勢 → **3.7 座標空間 ★** → 3.8 ローカル空間 → 3.9 ワールド空間 → 3.10 階層座標構造 → 3.12 同次変換行列 → 3.13 座標変換 → **3.18 方向参照枠 ★**（数値ではなく言葉で方向を語るとき） → **3.19 離散姿勢区分 ★** |
 | **把持を宣言し、解決する** | 第3編3.11 把持宣言と解決 → 第2編3.17 アプローチ方向 → 第2編3.16 干渉禁止領域 → 第1編3.4 安定姿勢 → 第3編3.12 対称性ルール → 第2編3.5 姿勢 → 第1編3.3 質量特性 → 第3編3.13 検証レベル |
 | **個体を識別し、追跡する** | **第3編3.4 識別子 ★** → 第3編3.5 型識別子 → 3.6 個体識別子 → 3.7 リビジョン → 第M編3.5 エンティティ → 第3編3.18 トレーサビリティ記録 → 第M編3.16 単一更新経路の強制 |
 | **用語のズレを解消する** | 各編 序文（言葉のズレの実例） → 第M編3.8 ユビキタス言語 → **第M編3.9 用語–概念対応のズレ ★** → 3.10 同音異義 → 3.11 異音同義 → 3.12 用語正規化 → 3.3 境界づけられたコンテキスト |
 | **値の由来と信頼性を管理する** | **第3編3.1 値 ★** → 第3編3.2 入力値 → 3.3 算出値 → 第M編3.13 キャッシュ鮮度の自己保証 → 第3編3.13 検証レベル → 第1編3.5 分解能 |
 | **形状を表現する** | 第1編3.1 バウンディングボリューム → 3.2 トポロジー構造 → **第4編3.1 幾何要素に対する操作 ★** → 第4編3.2 次元上昇操作 → 第2編3.14 基準フィーチャー → 第3編3.10 空間注記の意味分類 |
-| **システム間の契約を定める** | 第5編3.1 契約境界 → 第3編3.15 状態期待値 → 第M編3.15 遷移許可リスト → 第M編3.16 単一更新経路の強制 → 第M編3.3 境界づけられたコンテキスト → 第M編附属書G.1 手順4 |
+| **システム間の契約を定める** | 第5編3.1 契約境界 → **第C編3.1 公開言語 ★** → 第3編3.15 状態期待値 → 第M編3.15 遷移許可リスト → 第M編3.16 単一更新経路の強制 → 第M編3.3 境界づけられたコンテキスト → 第M編附属書G.1 手順4 |
 
 **新設した親概念は、8テーマ中5テーマで読む順序の先頭または上流に入った。** これは対比ペアの親概念を立てた判断（`decisions.md` D-2026-09-02-12）に対する、テーマ側からの裏づけになる——テーマから入る読者は、まず「何の話か」を求めており、それに答えるのが上位概念だからである。逆に、親概念がテーマの入口にならなかった3テーマ（把持・工程内の場所・契約）は、いずれも**実務の手順**をたどるテーマであり、概念の階層ではなく作業の順序で並んでいる。
 
 ### G.5 実例カバレッジ一覧
 
-全68エントリ中、両分野の実例を確認できているのは **46件**です。以下の **22件**は片方が未確認です（実例を創作しない方針による）。
+全69エントリ中、両分野の実例を確認できているのは **47件**です。以下の **22件**は片方が未確認です（実例を創作しない方針による）。
 
 | 編・採番 | 見出し語 | 実例カバレッジ |
 | :--- | :--- | :--- |
@@ -1016,7 +1030,7 @@ NOTE **原辞書8.5節の20件に対し、増えたのは第1編3.8（関与イ�
 | 第2編3.4 | 尺度定義 | CADシステム |
 | 第2編3.5 | 姿勢 | 産業用ロボット、ビジョンカメラ |
 | 第2編3.6 | 回転表現規約 | 産業用ロボット |
-| 第2編3.7 ★ | 空間表現 | 架台、無人搬送車 |
+| 第2編3.7 ★ | 座標空間 | 架台、無人搬送車 |
 | 第2編3.8 | ローカル空間 | 無人搬送車 |
 | 第2編3.9 | ワールド空間 | 架台、無人搬送車 |
 | 第2編3.10 | 階層座標構造 | 架台、産業用ロボット |
@@ -1054,6 +1068,7 @@ NOTE **原辞書8.5節の20件に対し、増えたのは第1編3.8（関与イ�
 | 第4編3.5 | IPOネスト構造 | 搬送トレー、工程内場所 |
 | 第4編3.6 | 変換行為 | 作業者 |
 | 第5編3.1 | 契約境界 | MES、設計・生技・制御・情報の各担当者 |
+| 第C編3.1 ★ | 公開言語 | MES、CADシステム、設計・生技・制御・情報の各担当者 |
 
 NOTE 本表の組は94組であり、附属書D.1 の登場人物側から数えた94組と一致する（両方向の集計が一致することが、双方向網羅性の検証そのものである。附属書D.2）。
 
@@ -1063,28 +1078,28 @@ NOTE 本表の組は94組であり、附属書D.1 の登場人物側から数え
 
 ### G.8 語彙区分別一覧
 
-全68エントリを出どころで分けたものです。**独自の12件は、他社・他部門に対して説明責任が生じる語**です。外部と共有する資料では、この12件に定義を添える必要があります。
+全69エントリを出どころで分けたものです。**独自の11件は、他社・他部門に対して説明責任が生じる語**です。外部と共有する資料では、この11件に定義を添える必要があります。
 
 | 区分 | 件数 | 原辞書8.8節 | 差分 | 意味 |
 | :--- | ---: | ---: | :--- | :--- |
 | **標準** | 23 | 24 | −1 | 外部の規格・標準文書に定義があり、典拠を示せる |
-| **業界一般** | 33 | 29 | +4 | 規格名はないが、業界で広く通用し説明を要さない |
-| **独自** | 12 | 6 | +6 | 本アーキテクチャが定義した語。外部には通じない |
-| **計** | **68** | **59** | **+9** | |
+| **業界一般** | 35 | 29 | +6 | 規格名はないが、業界で広く通用し説明を要さない |
+| **独自** | 11 | 6 | +5 | 本アーキテクチャが定義した語。外部には通じない |
+| **計** | **69** | **59** | **+10** | |
 
-**差分の内訳:** 標準 −1 と 業界一般 +1 は `eed:0040` の語彙区分の是正提案（`backlog.md` P-03）による。残る 業界一般 +3・独自 +6 は新設提案9件の内訳（業界一般3件＝`eed:0148` 識別子・`eed:0150` モデル要素・`eed:0152` 方向参照枠／独自6件＝`eed:0145`・`0146`・`0147`・`0149`・`0151`・`0153`）である。**新設が独自に偏るのは当然の結果である**——既存の呼称があるなら3段判定の第2段でそれを採ることになり、独自造語にはならないからである（`decisions.md` 冒頭）。
+**差分の内訳:** 標準 −1 と 業界一般 +1 は `eed:0040` の語彙区分の是正提案（`backlog.md` P-03）による。残る 業界一般 +5・独自 +5 は新設提案10件の内訳（業界一般5件＝`eed:0146` 座標空間・`eed:0148` 識別子・`eed:0150` モデル要素・`eed:0152` 方向参照枠・`eed:0174` 公開言語／独自5件＝`eed:0145`・`0147`・`0149`・`0151`・`0153`）である。`eed:0146` は 2026-09-05 の改称（空間表現→座標空間）で CG の慣用に典拠を得たため独自から業界一般へ、`eed:0174` は DDD の既存呼称を採ったため業界一般になった。**新設が独自に偏るのは当然の結果である**——既存の呼称があるなら3段判定の第2段でそれを採ることになり、独自造語にはならないからである（`decisions.md` 冒頭）。
 
-#### 独自（12件）
+#### 独自（11件）
 
-第1編3.6 工程内場所（process location）、第1編3.8 関与インタフェース ★（interaction interface）、第2編3.7 空間表現 ★（spatial representation）、第2編3.16 干渉禁止領域（exclusion zone）、第2編3.19 離散姿勢区分 ★（discrete orientation class）、第3編3.1 値 ★（value）、第3編3.2 入力値（declared value）、第3編3.3 算出値（derived value）、第4編3.1 幾何要素に対する操作 ★（geometric operation）、第4編3.4 作業インタフェース（work interface）、第M編3.9 用語–概念対応のズレ ★（term–concept mismatch）、第M編3.14 多重度状態（cardinality state）
+第1編3.6 工程内場所（process location）、第1編3.8 関与インタフェース ★（interaction interface）、第2編3.16 干渉禁止領域（exclusion zone）、第2編3.19 離散姿勢区分 ★（discrete orientation class）、第3編3.1 値 ★（value）、第3編3.2 入力値（declared value）、第3編3.3 算出値（derived value）、第4編3.1 幾何要素に対する操作 ★（geometric operation）、第4編3.4 作業インタフェース（work interface）、第M編3.9 用語–概念対応のズレ ★（term–concept mismatch）、第M編3.14 多重度状態（cardinality state）
 
 #### 標準（23件）
 
 第1編3.2 トポロジー構造（topology）、第1編3.3 質量特性（mass properties）、第1編3.5 分解能（resolution）、第2編3.1 座標系（coordinate system）、第2編3.2 参照座標系（reference coordinate frame）、第2編3.3 座標系のハンドネス（handedness）、第2編3.5 姿勢（pose）、第2編3.6 回転表現規約（rotation representation convention）、第2編3.11 距離定義規約（distance metric convention）、第2編3.12 同次変換行列（homogeneous transformation matrix）、第2編3.13 座標変換（coordinate transformation）、第2編3.14 基準フィーチャー（datum reference feature）、第3編3.5 型識別子（type identifier）、第3編3.6 個体識別子（instance identifier）、第3編3.8 プロパティ辞書参照（property dictionary reference）、第3編3.14 工程状態（process state）、第3編3.16 イベント（event）、第3編3.18 トレーサビリティ記録（traceability record）、第4編3.3 計測（measurement）、第4編3.5 IPOネスト構造（nested IPO decomposition）、第M編3.10 同音異義（homonymy）、第M編3.11 異音同義（synonymy）、第M編3.12 用語正規化（canonicalization）
 
-#### 業界一般（33件）
+#### 業界一般（35件）
 
-第1編3.1 バウンディングボリューム（bounding volume）、第1編3.4 安定姿勢（stable pose）、第1編3.7 人・機械機能配分（human-machine function allocation）、第2編3.4 尺度定義（unit scale convention）、第2編3.8 ローカル空間（local space）、第2編3.9 ワールド空間（world space）、第2編3.10 階層座標構造（hierarchical coordinate structure）、第2編3.15 キャリブレーション基準（calibration reference）、第2編3.17 アプローチ方向（approach vector）、第2編3.18 方向参照枠 ★（direction reference frame）、第3編3.4 識別子 ★（identifier）、第3編3.7 リビジョン（revision）、第3編3.9 型付き関係（typed relation）、第3編3.10 空間注記の意味分類（spatial element classification）、第3編3.11 把持宣言と解決（grasp specification and synthesis）、第3編3.12 対称性ルール（symmetry rule）、第3編3.13 検証レベル（v&v level）、第3編3.15 状態期待値（state expectation）、第3編3.17 集計期間（aggregation window）、第4編3.2 次元上昇操作（dimension-raising operation）※提案値、第4編3.6 変換行為（transformation activity）、第5編3.1 契約境界（contract boundary）、第M編3.1 概念モデリング（conceptual modeling）、第M編3.2 ドメイン駆動設計（domain-driven design）、第M編3.3 境界づけられたコンテキスト（bounded context）、第M編3.4 モデル要素 ★（model element）、第M編3.5 エンティティ（entity）、第M編3.6 値オブジェクト（value object）、第M編3.7 集約ルート（aggregate root）、第M編3.8 ユビキタス言語（ubiquitous language）、第M編3.13 キャッシュ鮮度の自己保証（self-validating freshness guarantee）、第M編3.15 遷移許可リスト（allowed-transition list）、第M編3.16 単一更新経路の強制（single write path）
+第1編3.1 バウンディングボリューム（bounding volume）、第1編3.4 安定姿勢（stable pose）、第1編3.7 人・機械機能配分（human-machine function allocation）、第2編3.4 尺度定義（unit scale convention）、第2編3.7 座標空間 ★（coordinate space）、第2編3.8 ローカル空間（local space）、第2編3.9 ワールド空間（world space）、第2編3.10 階層座標構造（hierarchical coordinate structure）、第2編3.15 キャリブレーション基準（calibration reference）、第2編3.17 アプローチ方向（approach vector）、第2編3.18 方向参照枠 ★（direction reference frame）、第3編3.4 識別子 ★（identifier）、第3編3.7 リビジョン（revision）、第3編3.9 型付き関係（typed relation）、第3編3.10 空間注記の意味分類（spatial element classification）、第3編3.11 把持宣言と解決（grasp specification and synthesis）、第3編3.12 対称性ルール（symmetry rule）、第3編3.13 検証レベル（v&v level）、第3編3.15 状態期待値（state expectation）、第3編3.17 集計期間（aggregation window）、第4編3.2 次元上昇操作（dimension-raising operation）※提案値、第4編3.6 変換行為（transformation activity）、第5編3.1 契約境界（contract boundary）、第M編3.1 概念モデリング（conceptual modeling）、第M編3.2 ドメイン駆動設計（domain-driven design）、第M編3.3 境界づけられたコンテキスト（bounded context）、第M編3.4 モデル要素 ★（model element）、第M編3.5 エンティティ（entity）、第M編3.6 値オブジェクト（value object）、第M編3.7 集約ルート（aggregate root）、第M編3.8 ユビキタス言語（ubiquitous language）、第M編3.13 キャッシュ鮮度の自己保証（self-validating freshness guarantee）、第M編3.15 遷移許可リスト（allowed-transition list）、第M編3.16 単一更新経路の強制（single write path）、第C編3.1 公開言語 ★（published language）
 
 ### G.9 恒久IDの体系
 
@@ -1101,6 +1116,8 @@ eed:0042#003
 ```
 
 `eed` は名前空間プレフィクスであり、解決可能なURIに束縛されます（`eed:` → `https://<authority>/dict/`）。IEC 61360／ECLASS の IRDI（`0173-1#02-AAO677#002`）と同じ考え方で、**登録機関・不透明なコード本体・版**の3要素からなります。
+
+**本恒久IDは正式な IRDI ではない（2026-09-05 追記）。** IRDI（ISO/IEC 6523 の ICD ＋ ISO 29002-5）は登録機関識別子（RAI）を含む3部構成であり、`eed:0001#001` はそれを持たない。本仕様書では本IDを **EED-ID** と呼び、エントリ頭の行ラベルも `EED-ID:` とする（旧版の `IRDI:` から改めた。`decisions.md` D-2026-09-05-11）。「IRDI 型」と呼ぶのは考え方を借りているという意味にとどまる。将来 ECLASS／IEC CDD へ登録する際は RAI を得て振り直す前提であり、その時点で本IDと正式 IRDI の対応表を附属書として起こす。
 
 | 決めごと | 内容 | 理由 |
 | :--- | :--- | :--- |
@@ -1119,9 +1136,10 @@ eed:0042#003
 | `eed:0145`〜`eed:0151` | 概念（本仕様書での新設提案 ★） | 7 |
 | `eed:0152`〜`eed:0153` | 概念（本仕様書での新設提案 ★、2026-09-05） | 2 |
 | `eed:0154`〜`eed:0173` | 現場語（本仕様書で登録 ★、2026-09-05。存在確認前） | 20 |
-| **計** | すべて版 `#001`、欠番なし | **173** |
+| `eed:0174` | 概念（本仕様書での新設提案 ★、2026-09-05。第C編3.1 公開言語） | 1 |
+| **計** | すべて版 `#001`、欠番なし | **174** |
 
-**この割り当ては登録順にすぎず、番号の範囲で種別を判定してはなりません。** `0145`〜`0153` が概念で `0154`〜`0173` が現場語であることは、`0060`〜`0144` が現場語であることと同じ番号空間の中で起きており、今後の追加も末尾に続くため範囲は混ざります。
+**この割り当ては登録順にすぎず、番号の範囲で種別を判定してはなりません。** `0145`〜`0153`・`0174` が概念で `0154`〜`0173` が現場語であることは、`0060`〜`0144` が現場語であることと同じ番号空間の中で起きており、今後の追加も末尾に続くため範囲は混ざります。
 
 **本仕様書が実際に適用した規則が2つあります。**
 

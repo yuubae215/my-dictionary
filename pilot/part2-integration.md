@@ -16,7 +16,7 @@ Conceptual vocabulary for spatial-data modelling — Part 2: Spatial integration
 
 - 原辞書の**恒久ID（IRDI）は一切変更していない**。第II部の概念採番（原 `2.01`〜`2.16`）は本仕様書の `3.1`〜`3.16` に**欠番なく1対1で対応**する（附属書E.1）。第1編で発生した概念分離（原1.07 → 3.8／3.9）のような番号のずれは、本編には生じていない。
 - 第1編の申し合わせどおり、**エントリ本文には IRDI のみを残し、その他のメタデータは附属書Bに集約**する。
-- **概念間関係には第1編で定義した4型（is-a／part-of／refers-to／constrained-by）に加え、本編で新たに `transforms` 型を導入する**（附属書C.1）。第1編附属書C.1 NOTE 1 で予告した4型のうち、`transforms` は 3.13（座標変換）が 3.8（ローカル空間）の値を 3.9（ワールド空間）の値へ変換するという操作関係を表すために確定使用した。`calibrated-from`・`aligns-with`・`mates-to` は本編でも根拠となりうる候補箇所が見つかったが、確信度が is-a／transforms ほど高くないため、各該当エントリの Note に**候補**として明記するにとどめ、正式な型としては採用していない（確定は全編化時のレビューに委ねる。詳細は `decisions.md` D-2026-08-21-03）。
+- **概念間関係には第1編で定義した4型（is-a／part-of／refers-to／constrained-by）に加え、本編で新たに `transforms` 型を導入する**（附属書C.1）。第1編附属書C.1 NOTE 1 で予告した4型のうち、`transforms` は 3.13（座標変換）が 3.8（ローカル空間）の値を 3.9（ワールド空間）の値へ変換するという操作関係を表すために確定使用した。`calibrated-from`・`aligns-with`・`mates-to` は本編でも根拠となりうる候補箇所が見つかったが、確信度が is-a／transforms ほど高くないため、各該当エントリの Note に**候補**として明記するにとどめ、正式な型としては採用しなかった（`decisions.md` D-2026-08-21-03）。**2026-09-03 追補：全編化時のレビュー（全編附属書C.3）により、3型はいずれも概念間関係型として採用しないことが確定した。** `calibrated-from` の候補2件は概念のすべての個体について成立する結びつきではなく（個体レベルの由来）、`aligns-with` の候補1件は作業手順の連鎖であって概念間の関係ではない。該当箇所は `refers-to` のまま据え置き、Note の注記を書き改めた（`decisions.md` D-2026-09-03-02、`backlog.md` B-08 クローズ）。
 - **対比ペア「ローカル空間／ワールド空間」の上位概念として `3.7`（空間表現、`eed:0146#001`）を新設した**（**新設提案**）。子概念だけが並んでいると、読み手はそれが何の一種なのかを掴めないまま定義文に入ることになる、という理由による（`decisions.md` D-2026-09-02-12、`backlog.md` P-05）。これにともない `3.7` 以降の採番が1つずつ繰り下がった（附属書E.1。恒久IDは不変）。
 - **写像作業（定義文の逐語読み直し）による検証の結果、原辞書由来の16概念に、原1.07（`eed:0007`、第1編3.7）のような概念ドリフト（定義文と命名意図の乖離）は確認されなかった（0/16）。** 英語主名称・旧恒久ID（`term.*` スラグ）・定義文の三者は全エントリで整合していた。
 - **原辞書の記述に、部立て説明文（4.2節相当）の件数・範囲の誤記を1件発見した。** 原辞書該当箇所（前文592行目付近）は「II-B 位置・姿勢という値（2.05〜2.09、4件）」「II-D 空間に設置される意味づけられた要素（2.13〜2.16、3件）」と記すが、実際の本文見出し・エントリ配置は II-B が `2.05`〜`2.10`（6件、見出し自体は「位置・姿勢・**隔たり**という値」と正しく `2.10` を含意している）、II-D が `2.13`〜`2.16`（4件）である。本仕様書 Clause 5 では実体に合わせて是正した表記を採用する（`decisions.md` D-2026-08-21-01）。
@@ -110,9 +110,9 @@ Note 1 to entry: Core image：空間のどこかに立てられた、それ自�
 Note 2 to entry: Concept relations:
 — is-a 3.1 (coordinate system)
 — refers-to 3.3 (handedness), 3.4 (unit scale convention), 3.5 (pose), 3.8 (local space), 3.9 (world space), 3.12 (homogeneous transformation matrix), 3.13 (coordinate transformation)
-— refers-to 3.10 (hierarchical coordinate structure) ※階層座標構造を構成する各ノードは参照座標系であり、part-of（3.2 が 3.10 の部分）の候補。確信度は is-a ほど高くなく、全編化時に精密化する
+— refers-to 3.10 (hierarchical coordinate structure) ※階層座標構造を構成する各ノードは参照座標系である。**part-of（3.2 が 3.10 の部分）への精密化は行わない**——単独で立つ参照座標系は階層に属さないため、すべての個体については成立しない（全編附属書C.5）
 — refers-to 3.14 (datum reference feature) ※constrained-by（拘束）の候補。3-2-1データム拘束によって参照座標系（例：製品基準座標系）が確立される関係にあたる
-— refers-to 3.15 (calibration reference) ※calibrated-from の候補。2つの参照座標系間の未知変換がキャリブレーション基準によって解かれる関係にあたる
+— refers-to 3.15 (calibration reference) ※2つの参照座標系間の未知変換がキャリブレーション基準によって解かれる関係にあたる。**この由来は個体レベルのものであり、概念間関係型（`calibrated-from`）としては採用しない**——CAD上でデータムから立てた参照座標系にはこの由来がないため、すべての個体について成立しない（全編附属書C.3）
 
 ### 3.3
 **handedness**
@@ -269,7 +269,7 @@ EXAMPLE 2 （CAD）座標フレームの親子関係、ロボットのベース�
 Note 1 to entry: Core image：体の各部位が親子関係でつながった骨格アニメーションの骨。
 
 Note 2 to entry: Concept relations:
-— refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame) ※3.2は3.10の構成要素である可能性（part-of候補、全編化時に精密化）
+— refers-to 3.1 (coordinate system), 3.2 (reference coordinate frame) ※3.2 を本エントリの部分とする精密化は行わない（3.2 のNote 2、全編附属書C.5）
 — refers-to 3.12 (homogeneous transformation matrix), 3.13 (coordinate transformation)
 — refers-to 第3編3.9 (typed relation)
 
@@ -311,7 +311,7 @@ Note 1 to entry: Core image：「回転」と「平行移動」という別々�
 
 Note 2 to entry: Concept relations:
 — refers-to 3.2 (reference coordinate frame), 3.4 (unit scale convention), 3.5 (pose), 3.6 (rotation representation convention), 3.10 (hierarchical coordinate structure), 3.13 (coordinate transformation)
-— refers-to 3.15 (calibration reference) ※calibrated-from の候補。キャリブレーションで得られた変換行列である場合に成立する関係であり、全ての同次変換行列がこの由来を持つわけではない
+— refers-to 3.15 (calibration reference) ※キャリブレーションで得られた変換行列である場合に成立する関係であり、全ての同次変換行列がこの由来を持つわけではない。**この留保がそのまま、概念間関係型（`calibrated-from`）を採用しない根拠になった**（全編附属書C.3）
 
 Note 3 to entry: 姿勢（3.5）が「位置と向きという値そのもの」を指すのに対し、本エントリはその値を座標変換の計算に使える形に変換した**表現手段**を指す。
 
@@ -353,7 +353,7 @@ Note 1 to entry: Core image：測るときに誰もが指を置く物差しの�
 Note 2 to entry: Concept relations:
 — refers-to 第1編3.2 (topology)
 — refers-to 3.2 (reference coordinate frame) ※constrained-by の候補（3.2 のNote 2参照）
-— refers-to 3.15 (calibration reference) ※aligns-with の候補。カメラ座標系とロボットベース座標系はランドマーク（3.15）で結び、ロボットとワーク座標系は本エントリ（データム）を実測して結ぶという、2つの位置合わせ手段が連鎖する関係にあたる
+— refers-to 3.15 (calibration reference) ※カメラ座標系とロボットベース座標系はランドマーク（3.15）で結び、ロボットとワーク座標系は本エントリ（データム）を実測して結ぶという、2つの位置合わせ手段が連鎖する関係にあたる。**連鎖しているのは概念ではなくキャリブレーション作業の段取りであるため、概念間関係型（`aligns-with`）としては採用しない**（全編附属書C.3）
 — refers-to 第3編3.9 (typed relation), 第3編3.10 (spatial element classification)
 
 ### 3.15
@@ -372,10 +372,10 @@ Note 1 to entry: Core image：寸法が分かっているものを1つ置いて�
 
 Note 2 to entry: Concept relations:
 — refers-to 第1編3.5 (resolution)
-— refers-to 3.2 (reference coordinate frame) ※calibrated-from の候補（3.2 のNote 2参照）
-— refers-to 3.12 (homogeneous transformation matrix) ※calibrated-from の候補（3.12 のNote 2参照）
+— refers-to 3.2 (reference coordinate frame) ※個体レベルの由来（3.2 のNote 2参照）
+— refers-to 3.12 (homogeneous transformation matrix) ※個体レベルの由来（3.12 のNote 2参照）
 — refers-to 3.13 (coordinate transformation)
-— refers-to 3.14 (datum reference feature) ※aligns-with の候補（3.14 のNote 2参照）
+— refers-to 3.14 (datum reference feature) ※位置合わせ手段の連鎖（3.14 のNote 2参照。概念間関係型としては採用しない）
 — refers-to 第3編3.10 (spatial element classification)
 
 Note 3 to entry: 3.14（基準フィーチャー）とは役割が異なるが、実務では**連鎖して使う**。カメラ座標系とロボットベース座標系はランドマークや校正ボード（本エントリ）で結び、ロボットとワーク座標系はデータム（3.14）を実測して結ぶ。どちらか一方だけでは、カメラで見た点をワークのどこかとして語れない。読み取れる細かさは 第1編3.5（分解能）が上限を決める。
@@ -461,12 +461,12 @@ flowchart TB
     C2 -->|transforms| B3
     C2 -->|transforms| B4
     B3 <-->|"対比ペア"| B4
-    D1 -.->|"aligns-with 候補"| D2
-    A2 -.->|"calibrated-from 候補"| D2
+    D1 -.->|"位置合わせ手段の連鎖"| D2
+    A2 -.->|"個体レベルの由来"| D2
     A2 -.->|"constrained-by 候補"| D1
 ```
 
-図の見方：実線矢印は本編で確定した関係型（is-a・transforms）、点線矢印は根拠はあるが確信度が十分でないため候補にとどめた関係型（`decisions.md` D-2026-08-21-03）。
+図の見方：実線矢印は本編で確定した関係型（is-a・transforms）、点線矢印は根拠はあるが型としては確定しなかった結びつきである。`D1 -.-> D2`・`A2 -.-> D2` の2本は全編化時のレビューで**概念間関係型としない**ことが確定し（`calibrated-from`・`aligns-with` の不採用。全編附属書C.3）、`A2 -.-> D1` は `constrained-by` の候補のまま第4編で同型が確定使用された（`decisions.md` D-2026-08-21-03、D-2026-09-03-02）。
 
 ---
 
@@ -541,15 +541,15 @@ NOTE 本編で Hierarchy Level が `N/A` なのは `eed:0008`（3.1 座標系、
 | 関係型 | 意味 | ISO 704 分類 | 本編での使用 |
 |---|---|---|---|
 | is-a | 上位概念・下位概念関係（Taxonomic Specialization） | 類種関係 (generic) | **3件**（3.2 → 3.1、および 3.8・3.9 → 3.7 空間表現。後者は本仕様書での新設提案にともなう。`decisions.md` D-2026-09-02-12） |
-| part-of | 全体・部分構成関係（Aggregation / Composition） | 部分関係 (partitive) | 未確定使用（3.2/3.10 は候補にとどめる） |
+| part-of | 全体・部分構成関係（Aggregation / Composition） | 部分関係 (partitive) | 本編では未使用（3.2/3.10 の候補は全編化時に**据え置き**が確定 — 全編附属書C.5）。型としては第4編で確定使用がある |
 | refers-to | 参照・パラメータ関連付け（Semantic Reference） | 連想関係 (associative) | 大多数の関係 |
-| constrained-by | 幾何条件・境界拘束（Constraint Enforcement） | 連想関係 (associative) | 未確定使用（3.2/3.14 は候補にとどめる） |
+| constrained-by | 幾何条件・境界拘束（Constraint Enforcement） | 連想関係 (associative) | 本編では未確定使用（3.2/3.14 は候補にとどめる）。型としては第4編・第M編で確定使用がある |
 | **transforms** | ある空間・座標系上の値を、別の空間・座標系上の値へ変換する操作関係（本編で新規確定） | 連想関係 (associative) | 3.13 → 3.8, 3.9（1組） |
-| calibrated-from | 未知の変換が、既知幾何を持つ基準物によって解かれた、という由来関係（提案・未確定） | 連想関係 (associative) | 候補：3.2↔3.15、3.12↔3.15 |
-| aligns-with | 異なる位置合わせ手段が、同じ2座標系間の対応づけを目的として連鎖的に使われる関係（提案・未確定） | 連想関係 (associative) | 候補：3.14↔3.15 |
+| ~~calibrated-from~~ | 未知の変換が、既知幾何を持つ基準物によって解かれた、という由来関係 | 連想関係 (associative) | 候補：3.2↔3.15、3.12↔3.15 → **不採用**（NOTE 1） |
+| ~~aligns-with~~ | 異なる位置合わせ手段が、同じ2座標系間の対応づけを目的として連鎖的に使われる関係 | 連想関係 (associative) | 候補：3.14↔3.15 → **不採用**（NOTE 1） |
 | ~~mates-to~~ | 嵌合・作業一致を表す関係（第1編で予告） | 連想関係 (associative) | 本編でも未出現。第3〜5編・第M編でも出現せず、**廃止**（第M編附属書C.1 NOTE 3） |
 
-NOTE 1 `calibrated-from`・`aligns-with` を候補にとどめた理由：どちらも実務上の連携（キャリブレーションのワークフロー、位置合わせ手段の使い分け）としては明確だが、概念定義そのものが相手概念を前提とする関係（is-aやtransformsのように定義文が直接その関係を述べている）ではなく、**エントリの用法上の注意・具体例が間接的に示す運用上の関係**にとどまる。ISO 704の連想関係は本来幅広い実務上の関連付けを許容するため、全編化時のレビューで正式採用してよい候補である（`decisions.md` D-2026-08-21-03）。
+NOTE 1 `calibrated-from`・`aligns-with` を候補にとどめた理由：どちらも実務上の連携（キャリブレーションのワークフロー、位置合わせ手段の使い分け）としては明確だが、概念定義そのものが相手概念を前提とする関係（is-aやtransformsのように定義文が直接その関係を述べている）ではなく、**エントリの用法上の注意・具体例が間接的に示す運用上の関係**にとどまるためである（`decisions.md` D-2026-08-21-03）。**2026-09-03 追補：全編化時のレビューで両型とも不採用が確定した。** 決め手は「概念間関係は、その概念の**すべての個体**について成立しなければならない」という基準であり、`calibrated-from` の候補2件はこれを満たさない（3.12 の Note 2 が自ら「全ての同次変換行列がこの由来を持つわけではない」と書いている）。`aligns-with` の候補1件は、連鎖しているのが概念ではなく作業手順であるうえ、対称関係であって `refers-to` と情報量が変わらない。該当3箇所は `refers-to` のまま据え置く（全編附属書C.3、`decisions.md` D-2026-09-03-02、`backlog.md` B-08 クローズ）。
 
 NOTE 2 `transforms` の方向は「操作 → 操作対象（変換前・変換後）」で統一する。3.13 の場合、変換前（3.8）・変換後（3.9）の両方を transforms の対象として記載した。
 
@@ -638,7 +638,7 @@ NOTE（2026-09-02追補） 本編の Note 2（Concept relations）が編をま�
 | 原辞書 | 第1編附属書E.3の計画 | 本編（第2編）での実現 |
 |---|---|---|
 | 3章 基礎規約 | 第2編（Integration層）の Clause 4 として規定 | Clause 4 として実現。第1編ではこの内容に相当するClauseがなかったため、本編で初めて登場する |
-| 4章 分類軸・MECE検証・空セル一覧 | 附属書F (informative)（全編化時。集計元は附属書B） | 未実施（全編化時に対応） |
+| 4章 分類軸・MECE検証・空セル一覧 | 附属書F (informative)（全編化時。集計元は附属書B） | **実現**（全編附属書 STD-EED-0001-0 の附属書F。本編の附属書Bが集計元の一部となった） |
 | 5章 用語及び定義 | 各編の Clause 3 | Clause 3（3.1〜3.17）として実現 |
 
 NOTE Clause 4 を基礎規約に割り当てたことに伴い、第1編で Clause 4 だった「概念体系」は本編では **Clause 5** に繰り下がる。この繰り下げは編ごとの構成差であり、恒久IDやエントリ内容には影響しない。
